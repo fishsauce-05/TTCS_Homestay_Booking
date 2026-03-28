@@ -3,27 +3,27 @@ import { IsEmail, IsString, MinLength, IsPhoneNumber, IsNotEmpty } from 'class-v
 export class RegisterDto {
   @IsString()
   @IsNotEmpty()
-  fullName: string;
+  fullName!: string;
 
   @IsString()
   @IsNotEmpty()
-  nickname: string;
+  nickname!: string;
 
   @IsEmail()
   @IsNotEmpty()
-  email: string;
+  email!: string;
 
   @IsString()
   @MinLength(8)
   @IsNotEmpty()
-  password: string;
+  password!: string;
 
   @IsString()
   @MinLength(8)
   @IsNotEmpty()
-  passwordConfirm: string;
+  passwordConfirm!: string;
 
   @IsPhoneNumber('VN')
   @IsNotEmpty()
-  phone: string;
+  phone!: string;
 }

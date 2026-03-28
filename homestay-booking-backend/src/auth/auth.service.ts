@@ -1,7 +1,8 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { User, UserRole } from '../user/entities/user.entity';
+import { User } from '../user/entities/user.entity';
+import { UserRole } from '../user/enums/user-role.enum';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { PasswordService } from './services/password.service';
@@ -21,6 +22,7 @@ export class AuthService {
   async register(registerDto: RegisterDto): Promise<{ message: string; user: any }> {
     const { fullName, nickname, email, password, passwordConfirm, phone } = registerDto;
 
+    this.validationService.validatePasswordStrength(password);
     this.validationService.validatePasswordMatch(password, passwordConfirm);
     await this.validationService.validateEmailNotExists(email);
     await this.validationService.validateNicknameNotExists(nickname);

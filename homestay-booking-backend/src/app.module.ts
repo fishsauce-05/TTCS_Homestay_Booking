@@ -4,28 +4,37 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { HomestayModule } from './homestay/homestay.module';
-import { User } from './user/entities/user.entity';
-import { Homestay } from './homestay/entities/homestay.entity';
+import { AmenityModule } from './amenity/amenity.module';
+import { ImageModule } from './image/image.module';
+import { PriceCalendarModule } from './price-calendar/price-calendar.module';
+import { VoucherModule } from './voucher/voucher.module';
+import { BookingModule } from './booking/booking.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '.env',
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST || 'localhost',
       port: parseInt(process.env.DB_PORT || '5432'),
       username: process.env.DB_USERNAME || 'postgres',
-      password: process.env.DB_PASSWORD || '',
+      password: process.env.DB_PASSWORD || 'fishsauce',
       database: process.env.DB_NAME || 'homestay_booking',
-      entities: [User, Homestay],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
       logging: true,
     }),
     AuthModule,
     UserModule,
     HomestayModule,
+    AmenityModule,
+    ImageModule,
+    PriceCalendarModule,
+    VoucherModule,
+    BookingModule,
   ],
 })
 export class AppModule {}

@@ -1,11 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
-
-export enum UserRole {
-  GUEST = 'guest',
-  CUSTOMER = 'customer',
-  OWNER = 'owner',
-  ADMIN = 'admin',
-}
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, JoinColumn } from 'typeorm';
+import { UserRole } from '../enums/user-role.enum';
+import { Voucher } from '../../voucher/entities/voucher.entity';
 
 @Entity('users')
 export class User {
@@ -54,4 +49,8 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => Voucher, (voucher) => voucher.user)
+  @JoinColumn({ name: 'userId' })
+  vouchers: Voucher[];
 }
