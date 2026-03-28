@@ -1,0 +1,24 @@
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Homestay } from '../../homestay/entities/homestay.entity';
+
+@Entity('amenities')
+export class Amenity {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
+
+  @ManyToOne(() => Homestay, homestay => homestay.amenities, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'homestayId' })
+  homestay!: Homestay;
+
+  @Column({ type: 'varchar', length: 100, unique: true })
+  name!: string;
+
+  @Column({ type: 'varchar', length: 50, nullable: true })
+  icon!: string;
+
+  @CreateDateColumn()
+  createdAt!: Date;
+
+  @UpdateDateColumn()
+  updatedAt!: Date;
+}

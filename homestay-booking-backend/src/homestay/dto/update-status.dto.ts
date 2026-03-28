@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional, IsString } from 'class-validator';
-import { HomestayStatus } from '../entities/homestay.entity';
+import { HomestayStatus } from '../enums/homestay-status.enum';
 
 export class UpdateStatusDto {
   @IsEnum(HomestayStatus)

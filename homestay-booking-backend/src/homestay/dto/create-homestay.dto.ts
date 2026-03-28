@@ -1,55 +1,33 @@
-import { IsString, IsNumber, IsArray, IsOptional, Min, Max } from 'class-validator';
+import { IsString, IsNumber, IsInt, IsUUID } from 'class-validator';
 
 export class CreateHomestayDto {
-  @IsString()
-  title: string;
+  @IsUUID()
+  ownerId!: string;
 
   @IsString()
-  description: string;
+  title!: string;
 
   @IsString()
-  address: string;
-
-  @IsNumber()
-  @Min(-90)
-  @Max(90)
-  latitude: number;
-
-  @IsNumber()
-  @Min(-180)
-  @Max(180)
-  longitude: number;
+  description!: string;
 
   @IsString()
-  city: string;
-
-  @IsString()
-  district: string;
-
-  @IsString()
-  ward: string;
+  address!: string;
 
   @IsNumber()
-  @Min(1)
-  bedrooms: number;
+  latitude!: number;
 
   @IsNumber()
-  @Min(1)
-  bathrooms: number;
+  longitude!: number;
+
+  @IsInt()
+  maxGuests!: number;
+
+  @IsInt()
+  bedrooms!: number;
+
+  @IsInt()
+  bathrooms!: number;
 
   @IsNumber()
-  @Min(1)
-  guests: number;
-
-  @IsNumber()
-  @Min(0)
-  pricePerNight: number;
-
-  @IsArray()
-  @IsOptional()
-  amenities?: string[];
-
-  @IsArray()
-  @IsOptional()
-  images?: string[];
+  basePrice!: number;
 }
