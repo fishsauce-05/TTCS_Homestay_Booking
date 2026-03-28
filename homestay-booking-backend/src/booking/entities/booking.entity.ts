@@ -3,6 +3,7 @@ import { User } from '../../user/entities/user.entity';
 import { Homestay } from '../../homestay/entities/homestay.entity';
 import { Voucher } from '../../voucher/entities/voucher.entity';
 import { BookingStatus } from '../enums/booking-status.enum';
+import { Payment } from 'src/payment/entities/payment.entity';
 
 @Entity('bookings')
 export class Booking {
@@ -26,6 +27,10 @@ export class Booking {
   @OneToOne(() => Voucher, (voucher) => voucher.booking, { nullable: true, onDelete: 'SET NULL' })
   @JoinColumn({ name: 'voucherId' })
   voucher: Voucher;
+
+  @OneToOne(() => Payment, (payment) => payment.booking, { nullable: true, onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'paymentId' })
+  payment: Payment;
 
   @Column({ type: 'uuid', nullable: true })
   voucherId: string | null;

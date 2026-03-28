@@ -9,6 +9,10 @@ import { ImageModule } from './image/image.module';
 import { PriceCalendarModule } from './price-calendar/price-calendar.module';
 import { VoucherModule } from './voucher/voucher.module';
 import { BookingModule } from './booking/booking.module';
+import { BankAccountModule } from './bank-account/bank-account.module';
+import { PaymentModule } from './payment/payment.module';
+import { ReviewModule } from './review/review.module';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: [
@@ -35,6 +39,10 @@ import { BookingModule } from './booking/booking.module';
     PriceCalendarModule,
     VoucherModule,
     BookingModule,
+    BankAccountModule,
+    PaymentModule,
+    ReviewModule,
+    NotificationModule,
   ],
 })
 export class AppModule {}

@@ -25,14 +25,14 @@ export class HomestayService {
 
   async getAllHomestays(): Promise<Homestay[]> {
     return this.homestayRepository.find({
-      relations: ['owner', 'amenities', 'images', 'priceCalendars'],
+      relations: ['user', 'amenities', 'images', 'priceCalendars'],
     });
   }
 
   async getHomestayById(id: string): Promise<Homestay> {
     const homestay = await this.homestayRepository.findOne({
       where: { id },
-      relations: ['owner', 'amenities', 'images', 'priceCalendars'],
+      relations: ['user', 'amenities', 'images', 'priceCalendars'],
     });
 
     if (!homestay) {
@@ -42,9 +42,9 @@ export class HomestayService {
     return homestay;
   }
 
-  async getHomestaysByOwner(ownerId: string): Promise<Homestay[]> {
+  async getHomestaysByOwner(userId: string): Promise<Homestay[]> {
     return this.homestayRepository.find({
-      where: { ownerId },
+      where: { userId },
       relations: ['amenities', 'images', 'priceCalendars'],
     });
   }
@@ -78,7 +78,7 @@ export class HomestayService {
   async getHomestaysByStatus(status: HomestayStatus): Promise<Homestay[]> {
     return this.homestayRepository.find({
       where: { status },
-      relations: ['owner', 'amenities', 'images'],
+      relations: ['user', 'amenities', 'images'],
     });
   }
 
@@ -88,7 +88,7 @@ export class HomestayService {
       .where('homestay.title ILIKE :keyword', { keyword: `%${keyword}%` })
       .orWhere('homestay.description ILIKE :keyword', { keyword: `%${keyword}%` })
       .orWhere('homestay.address ILIKE :keyword', { keyword: `%${keyword}%` })
-      .leftJoinAndSelect('homestay.owner', 'owner')
+      .leftJoinAndSelect('homestay.user', 'user')
       .leftJoinAndSelect('homestay.amenities', 'amenities')
       .leftJoinAndSelect('homestay.images', 'images')
       .orderBy('homestay.createdAt', 'DESC')

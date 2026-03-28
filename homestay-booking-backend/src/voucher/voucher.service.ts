@@ -13,10 +13,14 @@ export class VoucherService {
   ) {}
 
   async createVoucher(createVoucherDto: CreateVoucherDto, adminId: string): Promise<Voucher> {
-    const voucher = this.voucherRepository.create({
-      ...createVoucherDto,
-      userId: adminId, 
-    });
+    const voucher = this.voucherRepository.create();
+    voucher.code = createVoucherDto.code;
+    voucher.discountValue = createVoucherDto.discountValue;
+    voucher.type = createVoucherDto.type;
+    voucher.maxUses = createVoucherDto.maxUses || null;
+    voucher.expiryDate = createVoucherDto.expiryDate;
+    voucher.userId = adminId;
+    
     return this.voucherRepository.save(voucher);
   }
 
@@ -68,10 +72,10 @@ export class VoucherService {
 
   calculateDiscount(
     discountValue: number,
-    type: 'fixed' | 'percent',
+    type: any,
     totalPrice: number,
   ): number {
-    if (type === 'fixed') {
+    if (type === 'fixed' || type.toString() === 'fixed') {
       return Math.min(discountValue, totalPrice);
     } else {
       return Math.floor((totalPrice * discountValue) / 100);

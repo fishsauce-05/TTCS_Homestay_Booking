@@ -39,7 +39,6 @@ export class BookingService {
       throw new BadRequestException('Ngày check-out phải sau check-in');
     }
 
-    //Check if number of guests is valid (this can be further enhanced by checking homestay's max capacity)
     if (numberOfGuests <= 0) {
       throw new BadRequestException('Số lượng khách phải lớn hơn 0');
     }
@@ -47,7 +46,6 @@ export class BookingService {
     // Calculate number of nights
     const numberOfNights = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
 
-    // Get prices from PriceCalendar
     const prices = await this.priceCalendarService.getPriceRange(
       homestayId,
       checkInDate,
@@ -93,7 +91,6 @@ export class BookingService {
       throw new BadRequestException('Ngày check-out phải sau check-in');
     }
 
-    // Check if homestay is available
     const existingBooking = await this.bookingRepository.findOne({
       where: {
         homestayId,
@@ -106,10 +103,8 @@ export class BookingService {
       throw new ConflictException('Homestay đã được đặt trong khoảng thời gian này');
     }
 
-    // Calculate price
     const priceInfo = await this.calculatePrice(createBookingDto);
 
-    // Create booking
     const booking = this.bookingRepository.create({
       userId,
       homestayId,
@@ -125,7 +120,6 @@ export class BookingService {
 
     const savedBooking = await this.bookingRepository.save(booking);
 
-    // Mark voucher as used if provided
     if (voucherId) {
       await this.voucherService.useVoucher(voucherId, savedBooking.id);
     }
@@ -167,7 +161,6 @@ export class BookingService {
 
     const { status, cancellationReason } = updateBookingStatusDto;
 
-    // Validate status transitions
     if (booking.status === BookingStatus.COMPLETED) {
       throw new BadRequestException('Không thể thay đổi booking đã hoàn thành');
     }

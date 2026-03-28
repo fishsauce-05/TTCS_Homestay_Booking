@@ -29,4 +29,8 @@ export class CreateUserDto {
   @IsEnum(UserRole)
   @IsOptional()
   role?: UserRole;
+
+  @IsOptional()
+  @IsString()
+  lockReason?: string;
 }

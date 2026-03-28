@@ -1,6 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, JoinColumn, OneToOne } from 'typeorm';
 import { UserRole } from '../enums/user-role.enum';
 import { Voucher } from '../../voucher/entities/voucher.entity';
+import { BankAccount } from '../../bank-account/entities/bank-account.entity';
+import { Notification } from '../../notification/entities/notification.entity';
 
 @Entity('users')
 export class User {
@@ -53,4 +55,11 @@ export class User {
   @OneToMany(() => Voucher, (voucher) => voucher.user)
   @JoinColumn({ name: 'userId' })
   vouchers: Voucher[];
+
+  @OneToOne(() => BankAccount, (bankAccount) => bankAccount.user)
+  bankAccount: BankAccount;
+
+  @OneToMany(() => Notification, (notification) => notification.user)
+  notifications: Notification[];
+
 }

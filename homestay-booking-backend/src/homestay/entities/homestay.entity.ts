@@ -4,6 +4,8 @@ import { Amenity } from '../../amenity/entities/amenity.entity';
 import { Image } from '../../image/entities/image.entity';
 import { PriceCalendar } from '../../price-calendar/entities/price-calendar.entity';
 import { HomestayStatus } from '../enums/homestay-status.enum';
+import { Booking } from 'src/booking/entities/booking.entity';
+import { Review } from 'src/review/entities/review.entity';
 
 @Entity('homestays')
 export class Homestay {
@@ -11,11 +13,11 @@ export class Homestay {
   id: string;
 
   @ManyToOne(() => User, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'ownerId' })
-  owner: User;
+  @JoinColumn({ name: 'userId' })
+  user: User;
 
   @Column({ type: 'uuid' })
-  ownerId: string;
+  userId: string;
 
   @Column({ type: 'varchar', length: 255 })
   title: string;
@@ -58,6 +60,12 @@ export class Homestay {
 
   @OneToMany(() => PriceCalendar, priceCalendar => priceCalendar.homestay, { cascade: true })
   priceCalendars: PriceCalendar[];
+
+  @OneToMany(() => Booking, booking => booking.homestay)
+  booking: Booking[];
+
+  @OneToMany(() => Review, review => review.homestay)
+  reviews: Review[];
 
   @CreateDateColumn()
   createdAt: Date;

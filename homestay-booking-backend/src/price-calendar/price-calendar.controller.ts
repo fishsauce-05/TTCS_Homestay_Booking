@@ -13,7 +13,6 @@ export class PriceCalendarController {
     return this.priceCalendarService.createPriceCalendar(createPriceCalendarDto);
   }
 
-  // ⭐ PHẢI ĐẶT TRƯỚC route /:id
   @Patch('bulk-update')
   async bulkUpdatePriceCalendar(@Body() bulkUpdateDto: BulkUpdatePriceCalendarDto) {
     return this.priceCalendarService.bulkUpdatePriceCalendar(bulkUpdateDto);
@@ -31,7 +30,6 @@ export class PriceCalendarController {
     );
   }
 
-  // ⭐ ĐẶT SAU các route cố định
   @Patch(':id')
   async updatePriceCalendar(
     @Param('id') id: string,

@@ -2,7 +2,7 @@ import { IsString, IsNumber, IsInt, IsUUID } from 'class-validator';
 
 export class CreateHomestayDto {
   @IsUUID()
-  ownerId!: string;
+  userId!: string;
 
   @IsString()
   title!: string;

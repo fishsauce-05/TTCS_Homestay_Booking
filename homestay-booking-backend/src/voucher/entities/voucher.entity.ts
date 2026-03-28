@@ -28,7 +28,7 @@ export class Voucher {
   expiryDate: Date;
 
   @Column({ type: 'int', nullable: true })
-  maxUses: number;
+  maxUses: number | null;
 
   @Column({ type: 'boolean', default: false })
   isUsed: boolean;
