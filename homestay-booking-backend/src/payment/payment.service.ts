@@ -55,10 +55,8 @@ export class PaymentService {
       throw new NotFoundException('Owner chưa có tài khoản ngân hàng');
     }
 
-    // ✅ Gen QR code
     const qrCode = this.generateQRCode(amount, createPaymentDto.bookingId);
 
-    // ✅ Tạo payment
     const payment = this.paymentRepository.create({
       bookingId: createPaymentDto.bookingId,
       userId,
@@ -76,7 +74,6 @@ export class PaymentService {
     checkInDate: string,
     checkOutDate: string,
   ): Promise<number> {
-    // ✅ Lấy price từ PriceCalendar
     const priceCalendars = await this.priceCalendarRepository.find({
       where: {
         homestayId,

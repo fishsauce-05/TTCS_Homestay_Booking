@@ -14,13 +14,13 @@ export class BankAccount {
   userId: string;
 
   @Column({ type: 'varchar', length: 100 })
-  bankName: string; // VietcomBank, Techcombank, MB Bank...
+  bankName: string;
 
   @Column({ type: 'varchar', length: 20 })
-  accountNumber: string; // 0123456789
+  accountNumber: string;
 
   @Column({ type: 'boolean', default: true })
-  isVerified: boolean; // Đã xác minh chưa?
+  isVerified: boolean;
 
   @CreateDateColumn()
   createdAt: Date;
