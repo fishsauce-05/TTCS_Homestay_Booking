@@ -45,7 +45,7 @@ const Attraction = ({ title, description, distance, imagePath, linkUrl, altText 
                         rel="noopener noreferrer"
                         className="text-[#27548A] text-sm font-semibold hover:text-[#183B4E] transition-colors duration-300 flex items-center"
                     >
-                        Lihat di Maps
+                        Xem Trên Maps
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                         </svg>
@@ -59,76 +59,76 @@ const Attraction = ({ title, description, distance, imagePath, linkUrl, altText 
 export default function NearbyAttractions() {
     const attractions = [
         {
-            title: "Muzium Padi",
-            description: "Menghormati warisan padi Malaysia dengan pameran interaktif mengenai penanaman dan pemprosesan padi.",
-            distance: "15 min",
+            title: "Homestay Hồ Tây View",
+            description: "Không gian gần Hồ Tây, thuận tiện di chuyển tới phố cổ và các quán cafe nổi tiếng.",
+            distance: "15 phút từ phố cổ",
             imagePath: "/attractions/muzium-padi.jpg",
             linkUrl: "https://maps.app.goo.gl/UGVGLcRbS2Ke24A27",
-            altText: "Muzium Padi Alor Setar - tempat menarik berhampiran homestay Kedah dengan pameran warisan padi Malaysia"
+            altText: "Homestay Hồ Tây Hà Nội gần khu trung tâm"
         },
         {
-            title: "Menara Alor Setar",
-            description: "Menara telekomunikasi dan pelancongan setinggi 165.5 meter dengan pemandangan panoramik bandar Alor Setar.",
-            distance: "25 min",
+            title: "Homestay Phố Cổ Hà Nội",
+            description: "Nằm trong khu vực phố cổ, phù hợp cho khách muốn khám phá văn hóa và ẩm thực Hà Nội.",
+            distance: "5 phút tới Hồ Gươm",
             imagePath: "/attractions/menara-alor-setar.jpg",
             linkUrl: "https://maps.app.goo.gl/2nn1HfkReHJ1XbyF9",
-            altText: "Menara Alor Setar 165.5 meter - landmark terkenal dekat homestay Pokok Sena dengan pemandangan panoramik"
+            altText: "Homestay khu phố cổ Hà Nội"
         },
         {
-            title: "Masjid Zahir",
-            description: "Salah satu masjid tertua dan terindah di Malaysia dengan seni bina Islam yang menakjubkan.",
-            distance: "25 min",
+            title: "Homestay Long Biên Riverside",
+            description: "Không gian yên tĩnh gần sông Hồng, thuận tiện đi Bát Tràng và cầu Long Biên.",
+            distance: "20 phút từ trung tâm",
             imagePath: "/attractions/masjid-zahir.jpg",
             linkUrl: "https://maps.app.goo.gl/ePegdcqnQ2xLJ8i47",
-            altText: "Masjid Zahir Alor Setar - masjid bersejarah dengan seni bina Islam indah berhampiran homestay Kedah"
+            altText: "Homestay khu Long Biên Hà Nội"
         },
         {
-            title: "Bukit Mak Cun",
-            description: "Tempat menarik untuk hiking dan menikmati pemandangan indah dari puncak bukit.",
-            distance: "50 min",
+            title: "Homestay Sóc Sơn Pine Hill",
+            description: "Phong cách nghỉ dưỡng ngoại thành với nhiều cây xanh, gần Việt Phủ Thành Chương.",
+            distance: "45 phút từ nội thành",
             imagePath: "/attractions/bukit-kokdiang.jpg",
             linkUrl: "https://maps.app.goo.gl/8WjugKsa97W741wZA",
-            altText: "Bukit Mak Cun Kedah - destinasi hiking dengan pemandangan indah dekat homestay Tuah Suci"
+            altText: "Homestay khu Sóc Sơn Hà Nội"
         },
         {
-            title: "Dataran Balai Besar",
-            description: "Kawasan bersejarah dan pusat aktiviti budaya di jantung bandar Alor Setar.",
-            distance: "25 min",
+            title: "Homestay Ba Vì Mountain",
+            description: "Lựa chọn phù hợp cho nhóm bạn và gia đình muốn gần Vườn Quốc gia Ba Vì.",
+            distance: "70 phút từ trung tâm",
             imagePath: "/attractions/dataran-balai-besar.jpg",
             linkUrl: "https://maps.app.goo.gl/ChCUyENGBrDyH9To6",
-            altText: "Dataran Balai Besar Alor Setar - kawasan bersejarah dan budaya dekat homestay Pokok Sena Kedah"
+            altText: "Homestay khu Ba Vì Hà Nội"
         },
         {
-            title: "Pekan Rabu",
-            description: "Pasar tradisional ikonik dengan pelbagai barangan tempatan, kraftangan dan makanan tradisional.",
-            distance: "25 min",
+            title: "Homestay Gia Lâm Garden",
+            description: "Không gian xanh mát tại Gia Lâm, phù hợp nghỉ cuối tuần và đi làng gốm Bát Tràng.",
+            distance: "30 phút từ nội thành",
             imagePath: "/attractions/pekan-rabu.jpg",
             linkUrl: "https://maps.app.goo.gl/PsTwarEm127RkoK36",
-            altText: "Pekan Rabu Alor Setar - pasar tradisional dengan barangan tempatan dekat homestay keluarga Kedah"
+            altText: "Homestay khu Gia Lâm Hà Nội"
         },
         {
-            title: "Hospital Sultanah Bahiyah",
-            description: "Hospital utama di Kedah dengan pelbagai kemudahan perubatan dan pakar.",
-            distance: "5 min",
+            title: "Homestay Hoài Đức Countryside",
+            description: "Mô hình homestay sân vườn gần trung tâm Mỹ Đình, thuận tiện đi đại lộ Thăng Long.",
+            distance: "35 phút từ trung tâm",
             imagePath: "/attractions/hospital-sultanah-bahiyah.jpg",
             linkUrl: "https://maps.app.goo.gl/PMANWERJTUxZqBzB9",
-            altText: "Hospital Sultanah Bahiyah - hospital utama Kedah yang sangat dekat dengan homestay Tuah Suci"
+            altText: "Homestay khu Hoài Đức Hà Nội"
         },
         {
-            title: "Lapangan Terbang Sultan Abdul Halim",
-            description: "Lapangan terbang utama di Kedah yang menghubungkan negeri ini dengan destinasi lain.",
-            distance: "20 min",
+            title: "Homestay Đông Anh Airport Stay",
+            description: "Phù hợp khách công tác hoặc transit, dễ kết nối sân bay Nội Bài và trung tâm Hà Nội.",
+            distance: "15 phút tới Nội Bài",
             imagePath: "/attractions/lapangan-terbang.jpg",
             linkUrl: "https://maps.app.goo.gl/2tviEyF1njjzG73P9",
-            altText: "Lapangan Terbang Sultan Abdul Halim - airport Kedah dengan akses mudah dari homestay Pokok Sena"
+            altText: "Homestay khu Đông Anh gần sân bay Nội Bài"
         },
         {
-            title: "Aman Central Mall",
-            description: "Pusat membeli-belah moden dengan pelbagai kedai, restoran dan hiburan.",
-            distance: "20 min",
+            title: "Homestay Hà Đông Urban",
+            description: "Căn hộ homestay hiện đại, tiện kết nối Aeon Mall Hà Đông và tuyến metro Cát Linh - Hà Đông.",
+            distance: "25 phút tới trung tâm",
             imagePath: "/attractions/aman-central-mall.jpg",
             linkUrl: "https://maps.app.goo.gl/U9eDFwuWr8qg6ioW9",
-            altText: "Aman Central Mall Alor Setar - pusat shopping moden dengan akses mudah dari homestay Kedah"
+            altText: "Homestay khu Hà Đông Hà Nội"
         }
     
         
@@ -138,9 +138,9 @@ export default function NearbyAttractions() {
         <section id="nearby" className="py-10 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-24 bg-[#F5EEDC]">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-3 sm:mb-4">Kawasan Sekitar</h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-3 sm:mb-4">Những homestay phổ biến</h2>
                     <p className="text-sm sm:text-base text-[#183B4E] font-montserrat max-w-2xl mx-auto font-bold">
-                        Jelajahi tempat menarik berhampiran Pokok Sena dan Alor Setar yang boleh dilawati semasa menginap di Tuah Suci Homestay.
+                        Gợi ý homestay được đặt nhiều quanh Hà Nội, từ nội thành tới ngoại thành, thuận tiện tham quan các danh lam thắng cảnh.
                     </p>
                 </div>
 

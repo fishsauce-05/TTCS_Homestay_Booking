@@ -7,11 +7,11 @@ export default function StructuredData({ type = 'homepage' }: StructuredDataProp
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": ["LodgingBusiness", "TouristAccommodation"],
-    "name": "Tuah Suci Homestay",
-    "description": "Homestay mewah di Kedah dengan 3 bilik tidur, kolam renang, dan pemandangan indah. Lokasi strategik di Pokok Sena dengan kemudahan moden.",
+    "name": "Fishsauce Homestay",
+    "description": "Nền tảng booking homestay quanh Hà Nội, từ nội thành tới ngoại thành, gần nhiều danh lam thắng cảnh nổi tiếng.",
     "url": "https://tuahsuci.vercel.app",
-    "telephone": "+60175240056",
-    "email": "mohdnazet1@gmail.com",
+    "telephone": "+84847318696",
+    "email": "booking@fishsaucehomestay.vn",
     "priceRange": "$$",
     "currenciesAccepted": "MYR",
     "paymentAccepted": ["Cash", "Bank Transfer"],
@@ -73,9 +73,8 @@ export default function StructuredData({ type = 'homepage' }: StructuredDataProp
       "https://tuahsuci.vercel.app/facilities/kolam.jpg"
     ],
     "sameAs": [
-      "https://www.facebook.com/share/1Jd9jnZjX6/",
-      "https://www.instagram.com/tuahsucihomestay",
-      "https://www.tiktok.com/@tuahsucihomestay"
+      "https://www.facebook.com/profile.php?id=61573273947769",
+      "https://www.instagram.com/fishsauce.05"
     ],
     "areaServed": {
       "@type": "GeoCircle",
@@ -96,19 +95,18 @@ export default function StructuredData({ type = 'homepage' }: StructuredDataProp
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Tuah Suci Homestay",
+    "name": "Fishsauce Homestay",
     "url": "https://tuahsuci.vercel.app",
     "logo": "https://tuahsuci.vercel.app/icon1.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+60175240056",
+      "telephone": "+84847318696",
       "contactType": "Customer Service",
       "availableLanguage": ["Malay", "English"]
     },
     "sameAs": [
-      "https://www.facebook.com/share/1Jd9jnZjX6/",
-      "https://www.instagram.com/tuahsucihomestay",
-      "https://www.tiktok.com/@tuahsucihomestay"
+      "https://www.facebook.com/profile.php?id=61573273947769",
+      "https://www.instagram.com/fishsauce.05"
     ]
   };
 
@@ -116,12 +114,12 @@ export default function StructuredData({ type = 'homepage' }: StructuredDataProp
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Tuah Suci Homestay",
+    "name": "Fishsauce Homestay",
     "url": "https://tuahsuci.vercel.app",
-    "description": "Homestay mewah di Kedah dengan kolam renang dan pemandangan indah",
+    "description": "Booking homestay quanh Hà Nội nhanh chóng và thuận tiện",
     "publisher": {
       "@type": "Organization",
-      "name": "Tuah Suci Homestay"
+      "name": "Fishsauce Homestay"
     },
     "potentialAction": {
       "@type": "SearchAction",
@@ -147,8 +145,8 @@ export default function StructuredData({ type = 'homepage' }: StructuredDataProp
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Homestay Kedah",
-        "item": "https://tuahsuci.vercel.app/#facilities"
+        "name": "Những homestay phổ biến",
+        "item": "https://tuahsuci.vercel.app/#nearby"
       }
     ]
   };

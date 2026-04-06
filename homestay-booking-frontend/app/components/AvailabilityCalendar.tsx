@@ -49,7 +49,7 @@ export default function AvailabilityCalendar() {
         const response = await fetch(`/api/calendar-events?timeMin=${timeMin}&timeMax=${timeMax}`);
         
         if (!response.ok) {
-          throw new Error('Failed to fetch calendar events');
+          throw new Error('Lỗi khi tải sự kiện lịch');
         }
         
         const data = await response.json();
@@ -67,7 +67,7 @@ export default function AvailabilityCalendar() {
         setEvents(processedEvents);
       } catch (err) {
         console.error('Error fetching calendar events:', err);
-        setError('Unable to load availability calendar. Please try again later.');
+        setError('Không thể tải lịch sẵn có. Vui lòng thử lại sau.');
       } finally {
         setLoading(false);
       }
@@ -139,15 +139,15 @@ export default function AvailabilityCalendar() {
   };
   
   // Week day headers
-  const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const weekDays = ['CN', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'];
   
   return (
     <section id="availability" className="py-16 px-4 sm:px-8 md:px-16 lg:px-24 bg-[#F5EEDC]/90">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#183B4E] mb-4 animate-fadeIn">Kekosongan</h2>
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#183B4E] mb-4 animate-fadeIn">Tình Trạng Còn Trống</h2>
           <p className="text-[#183B4E] font-montserrat max-w-2xl mx-auto font-bold">
-            Semak tarikh kekosongan Tuah Suci Homestay untuk perancangan percutian anda.
+            Kiểm tra ngày còn trống của Tuah Suci Homestay để lên kế hoạch kỳ nghỉ của bạn.
           </p>
         </div>
         
@@ -247,15 +247,15 @@ export default function AvailabilityCalendar() {
             <div className="flex justify-center items-center space-x-8">
               <div className="flex items-center">
                 <div className="w-4 h-4 bg-green-100 rounded-md border border-green-300 mr-2"></div>
-                <span className="text-sm text-[#183B4E] font-montserrat">Tersedia</span>
+                <span className="text-sm text-[#183B4E] font-montserrat">Còn Trống</span>
               </div>
               <div className="flex items-center">
                 <div className="w-4 h-4 bg-red-100 rounded-md border border-red-300 mr-2"></div>
-                <span className="text-sm text-[#183B4E] font-montserrat">Telah Ditempah</span>
+                <span className="text-sm text-[#183B4E] font-montserrat">Đã Được Đặt</span>
               </div>
               <div className="flex items-center">
                 <div className="w-4 h-4 border-2 border-blue-400 rounded-md mr-2"></div>
-                <span className="text-sm text-[#183B4E] font-montserrat">Hari Ini</span>
+                <span className="text-sm text-[#183B4E] font-montserrat">Hôm Nay</span>
               </div>
             </div>
           </div>
@@ -263,14 +263,12 @@ export default function AvailabilityCalendar() {
         
         <div className="mt-8 text-center">
           <p className="text-[#183B4E]/80 font-montserrat text-sm bg-white rounded-lg p-4 shadow-md inline-block">
-            Untuk menempah tarikh yang tersedia, sila hubungi kami melalui WhatsApp. 
+            Để đặt các ngày còn trống, vui lòng gọi trực tiếp cho chúng tôi. 
             <a 
-              href="https://wa.me/60175240056?text=Tuah%20Suci%20Homestay%20-%20Saya%20berminat%20untuk%20tempah%20homestay." 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="tel:+84847318696"
               className="inline-flex items-center ml-1 text-[#27548A] hover:text-[#183B4E] font-medium hover:underline transition-colors duration-200"
             >
-              <span>+60 17-524 0056</span>
+              <span>(+84) 847-318-696</span>
               <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>

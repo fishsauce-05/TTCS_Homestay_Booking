@@ -32,45 +32,44 @@ const Facility = ({ title, description, imagePath, altText }: FacilityProps) => 
 export default function Facilities() {
     const facilitiesList = [
         {
-            title: "Kolam Renang",
-            description: "Nikmati masa santai berenang di kolam renang untuk dewasa dan kanak-kanak.",
+            title: "Bể Bơi",
+            description: "Thưḝng thức khoảng thời gian thư giãn bơi lặn ở bể bơi dành cho người lớn và trẻ em.",
             imagePath: "/facilities/kolam.jpg",
-            altText: "Kolam renang peribadi yang bersih dengan air jernih di homestay keluarga Tuah Suci Kedah"
+            altText: "Bể bơi riêng tư sạch sẽ với nước trong lành ở nhà ở gia đình Tuah Suci Kedah"
         },
         {
-            title: "Dapur Memasak",
-            description: "Dapur memasak yang lengkap beserta peti ais untuk memudahkan tetamu.",
+            title: "Nhà Bếp Nấu Nước",
+            description: "Nhà bếp đầy đủ tiện nghi kèm theo tỪnh lạnh để tiền lợi cho khách.",
             imagePath: "/facilities/dapur.jpg",
-            altText: "Dapur lengkap dengan peralatan memasak moden dan kabinet besar di homestay Pokok Sena"
+            altText: "Nhà bếp hoàn chỉnh với dụng cụ nấu ăn hiện đại và tủ lạnh lớn ở homestay Pokok Sena"
         },
         {
-            title: "Kawasan Sawah Padi",
-            description: "Nikmati pengalaman unik dengan pemandangan sawah padi yang menghijau di sekeliling homestay.",
+            title: "Vùng Cảnh Đồng Lú",
+            description: "Thưḝng thức trải nghiệm độc đáo với tầm nhìn cánh đồng lú xanh tươm xung quanh homestay.",
             imagePath: "/facilities/padi.jpg",
-            altText: "Pemandangan sawah padi hijau yang menawan di sekeliling homestay kampung Kedah"
+            altText: "Tàm nhìn cảnh đồng lú xanh nó bao quanh hôm nghĩ quê hương ở Kedah"
         },
         {
-            title: "Ruang Santai",
-            description: "Ruang istirehat yang selesa untuk menikmati suasana kampung dan pemandangan kolam.",
+            title: "Không Gian Thư Giãn",
+            description: "Khu vực nước lạnh để thư giãn và tận hưởng không khí quê hương và tầm nhìn hồ bơi.",
             imagePath: "/facilities/santai.jpg",
-            altText: "Ruang santai outdoor yang nyaman dengan pemandangan kolam di homestay mewah Kedah"
+            altText: "Khu vực thư giãn ngoài trời thoải mái với tầm nhìn hồ bơi ở nhà ở sang trọng Kedah"
         },
         {
-            title: "Kemudahan BBQ",
-            description: "Ruang khas untuk aktiviti BBQ dengan kemudahan yang lengkap.",
+            title: "Tiện Nghi Nướng Thịt",
+            description: "Khu vực đặc biệt để hoạt động nướng thịt với tiện nghi đầy đủ.",
             imagePath: "/facilities/bbq.jpg",
-            altText: "Area BBQ lengkap dengan grill dan meja untuk keluarga di homestay Tuah Suci"
+            altText: "Khu vực nướng thịt đầy đủ với vỉ nướng và bàn cho gia đình ở homestay Tuah Suci"
         },
-
     ];
 
     return (
         <section id="facilities" className="py-10 sm:py-16 px-4 sm:px-8 md:px-16 lg:px-24 bg-[#F5EEDC]">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-8 sm:mb-12">
-                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-3 sm:mb-4">Kemudahan & Fasiliti</h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-3 sm:mb-4">Tiện Nghi & Cơ Sở Vật Chất</h2>
                     <p className="text-sm sm:text-base text-[#183B4E] font-montserrat max-w-2xl mx-auto font-bold">
-                        Nikmati pelbagai kemudahan dan fasiliti yang disediakan untuk memastikan penginapan anda selesa dan menyeronokkan.
+                        Thưḝng thức nhiều tiện nghi và cơ sở được cung cấp để đảm bảo lưu trú của bạn thoải mái và vui vẻ.
                     </p>
                 </div>
 

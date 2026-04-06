@@ -10,7 +10,7 @@ export default function Hero() {
                 {/* Mobile Background Image */}
                 <Image
                     src="/hero-img-mobile.jpg"
-                    alt="Tuah Suci Homestay Kedah - Homestay mewah dengan kolam renang dan pemandangan sawah padi di Pokok Sena"
+                    alt="Fishsauce Homestay Hà Nội - hệ thống homestay từ nội thành đến ngoại thành"
                     fill
                     priority
                     className="object-cover object-center sm:hidden"
@@ -18,7 +18,7 @@ export default function Hero() {
                 {/* Desktop Background Image */}
                 <Image
                     src="/hero-image.jpg"
-                    alt="Tuah Suci Homestay Kedah - Homestay mewah dengan kolam renang dan pemandangan sawah padi di Pokok Sena"
+                    alt="Fishsauce Homestay Hà Nội - hệ thống homestay từ nội thành đến ngoại thành"
                     fill
                     priority
                     className="object-cover object-center hidden sm:block"
@@ -31,39 +31,37 @@ export default function Hero() {
                 <div className="flex flex-col justify-center w-full max-w-xl py-12 md:py-20 items-center sm:items-start text-center sm:text-left mx-auto sm:mx-0">
                     <div>
                         <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight text-shadow select-none cursor-default">
-                            <span className="block relative overflow-visible pb-2 hover:text-[#F5EEDC] transition-colors duration-300 sm:whitespace-nowrap">Tuah Suci Homestay</span>
-                            <span className="block text-[#DDA853] relative overflow-visible hover:text-white transition-colors duration-300 sm:whitespace-nowrap">Kedah Darul Aman</span>
+                            <span className="block relative overflow-visible pb-2 hover:text-[#F5EEDC] transition-colors duration-300 sm:whitespace-nowrap">Fishsauce Homestay</span>
+                            <span className="block text-[#DDA853] relative overflow-visible hover:text-white transition-colors duration-300 sm:whitespace-nowrap">Hà Nội</span>
                         </h1>
                     </div>
 
                     <div className="flex flex-wrap mt-4 md:mt-6 text-[#F5EEDC] font-semibold tracking-wide font-montserrat select-none cursor-default">
                         <p className="flex items-center text-sm sm:text-base">
-                            <span className="mr-2 text-lg">•</span> 3 Bilik Tidur, 2 Bilik Air
+                            <span className="mr-2 text-lg">•</span> Homestay đa dạng từ nội thành tới ngoại thành
                         </p>
                     </div>
 
                     <div className="flex flex-wrap mt-2 text-[#F5EEDC] font-semibold tracking-wide font-montserrat select-none cursor-default">
                         <p className="flex items-center text-sm sm:text-base">
-                            <span className="mr-2 text-lg">•</span> Kolam Renang, Dapur Lengkap
+                            <span className="mr-2 text-lg">•</span> Gần Hồ Tây, Ba Vì, Sóc Sơn và các điểm nổi tiếng
                         </p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8 md:mt-10 w-full sm:w-auto">
                         <Link
-                            href="https://wa.me/60175240056?text=Tuah%20Suci%20Homestay%20-%20Saya%20berminat%20untuk%20tempah%20homestay."
+                            href="/register"
                             className="font-montserrat px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold uppercase tracking-widest text-white bg-[#27548A] rounded-lg shadow-lg hover:bg-[#183B4E] transition-all duration-300 hover:translate-y-[-2px] active:translate-y-0 select-none w-full sm:w-auto text-center cursor-pointer z-10 touch-manipulation"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Tempah Sekarang melalui WhatsApp"
+                            aria-label="Đặt ngay"
                             role="button"
                         >
-                            Tempah Sekarang
+                            Đặt Ngay
                         </Link>
                     </div>
 
                     {/* Feature highlights */}
                     <div className="flex flex-wrap justify-center max-w-xl gap-2 sm:gap-3 md:gap-4 mt-8 sm:mt-10 md:mt-12">
-                        {["Pemandangan Indah", "Kemudahan Moden", "Suasana Kampung"].map((feature) => (
+                        {["Nội thành thuận tiện", "Ngoại thành thư giãn", "Gần danh lam thắng cảnh"].map((feature) => (
                             <div key={feature} className="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium tracking-wide bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 transition-all duration-300 font-montserrat select-none cursor-default">
                                 {feature}
                             </div>
@@ -73,7 +71,7 @@ export default function Hero() {
                     {/* Social Media Links */}
                     <div className="flex gap-4 mt-6 sm:mt-8 justify-center sm:justify-start">
                         <Link
-                            href="https://www.facebook.com/share/1Jd9jnZjX6/"
+                            href="https://www.facebook.com/profile.php?id=61573273947769"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group p-3 bg-[#1877F2] backdrop-blur-sm rounded-full hover:bg-[#166FE5] transition-all duration-300 hover:translate-y-[-2px] active:translate-y-0"
@@ -85,7 +83,7 @@ export default function Hero() {
                         </Link>
                         
                         <Link
-                            href="https://www.instagram.com/tuahsucihomestay"
+                            href="https://www.instagram.com/fishsauce.05"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group p-3 bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F56040] rounded-full hover:opacity-90 transition-all duration-300 hover:translate-y-[-2px] active:translate-y-0"
@@ -96,17 +94,6 @@ export default function Hero() {
                             </svg>
                         </Link>
 
-                        <Link
-                            href="https://www.tiktok.com/@tuahsucihomestay"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group p-3 bg-[#000000] backdrop-blur-sm rounded-full hover:bg-[#333333] transition-all duration-300 hover:translate-y-[-2px] active:translate-y-0"
-                            aria-label="TikTok"
-                        >
-                            <svg className="w-5 h-5 text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                            </svg>
-                        </Link>
                     </div>
                 </div>
             </div>

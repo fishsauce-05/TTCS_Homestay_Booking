@@ -40,36 +40,36 @@ const FaqItem = ({ question, answer, isOpen, toggleOpen }: FaqItemProps) => {
 export default function Faq() {
     const faqItems = [
         {
-            question: " Waktu Check-In / Check-Out?",
-            answer: "🕒 Masa Check in 3.00pm / 🕛 Masa Check out 12.00pm"
+            question: "Giờ nhận phòng và trả phòng như thế nào?",
+            answer: "Giờ nhận phòng tiêu chuẩn từ 14:00 và trả phòng trước 12:00. Một số homestay có hỗ trợ linh hoạt theo tình trạng phòng."
         },
         {
-            question: "Berapa jumlah bilik dan katil yang tersedia?",
-            answer: "Tuah Suci Homestay menawarkan 3 bilik tidur dengan kapasiti maksimum 12 orang. Terdapat 2 bilik mandi untuk keselesaan tetamu."
+            question: "Fishsauce Homestay có những khu vực nào tại Hà Nội?",
+            answer: "Hệ thống hiện có các lựa chọn tại khu phố cổ, Tây Hồ, Long Biên, Sóc Sơn, Ba Vì, Gia Lâm và Hà Đông."
         },
         {
-            question: "Adakah tempat ini sesuai untuk keluarga dengan anak-anak?",
-            answer: "Ya, homestay kami sangat sesuai untuk keluarga. Kami menyediakan kawasan luas untuk anak-anak bermain, termasuk kawasan kolam renang untuk dewasa."
+            question: "Làm sao để chọn homestay phù hợp?",
+            answer: "Bạn chỉ cần cho chúng tôi biết số lượng khách, ngân sách, khu vực mong muốn và mục đích chuyến đi, đội ngũ sẽ gợi ý danh sách phù hợp."
         },
         {
-            question: "Berapa kadar sewa untuk satu malam?",
-            answer: "Kadar sewa bermula dari RM 350 semalam. Hubungi kami melalui WhatsApp untuk mendapatkan harga berdasarkan keperluan anda."
+            question: "Giá thuê homestay khoảng bao nhiêu?",
+            answer: "Giá dao động theo khu vực, ngày trong tuần/cuối tuần và số lượng khách. Liên hệ để nhận báo giá cập nhật theo nhu cầu của bạn."
         },
         {
-            question: "Adakah tetamu boleh menggunakan kolam renang?",
-            answer: "Ya, tetamu boleh menggunakan kolam renang yang terletak di kawasan homestay."
+            question: "Có hỗ trợ đoàn đông hoặc công ty không?",
+            answer: "Có. Fishsauce Homestay hỗ trợ đặt nhiều căn cùng lúc cho nhóm bạn, gia đình lớn hoặc đoàn công ty."
         },
         {
-            question: "Apakah kemudahan yang disediakan dalam homestay?",
-            answer: "Homestay kami dilengkapi TV, penghawa dingin di semua bilik, dapur lengkap, tempat letak kereta dan ruang serta peralatan BBQ."
+            question: "Có thể đặt homestay gần danh lam thắng cảnh không?",
+            answer: "Có. Chúng tôi có nhiều lựa chọn gần Hồ Gươm, Hồ Tây, phố cổ, Ba Vì, Sóc Sơn và các điểm tham quan nổi bật khác."
         },
         {
-            question: "Adakah aktiviti yang boleh dilakukan di sekitar homestay?",
-            answer: "Terdapat pelbagai aktiviti di sekitar homestay termasuk lawatan ke sawah padi, aktiviti dalam kolam renang, aktiviti BBQ, serta lawatan ke tempat-tempat menarik berhampiran"
+            question: "Chính sách hủy/đổi lịch như thế nào?",
+            answer: "Mỗi căn có chính sách riêng theo đối tác. Trước khi xác nhận, chúng tôi luôn gửi rõ chính sách để bạn chủ động kế hoạch."
         },
         {
-            question: "Bagaimana saya boleh menempah homestay?",
-            answer: "Penempahan boleh dibuat melalui WhatsApp kami di +6017-524 0056."
+            question: "Đặt phòng bằng cách nào nhanh nhất?",
+            answer: "Bạn có thể gọi trực tiếp hotline (+84) 847-318-696 để được tư vấn và xác nhận đặt phòng nhanh nhất."
         }
     ];
 
@@ -83,9 +83,9 @@ export default function Faq() {
         <section id="faq" className="py-16 px-4 sm:px-8 md:px-16 lg:px-24 bg-[#F5EEDC]">
             <div className="max-w-3xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-4">Soalan Lazim</h2>
+                    <h2 className="text-4xl md:text-6xl font-playfair font-bold text-[#183B4E] mb-4">Thông Tin Đặt Homestay</h2>
                     <p className="text-[#183B4E] font-montserrat max-w-2xl mx-auto font-bold">
-                        Jawapan kepada pertanyaan yang sering ditanya mengenai Tuah Suci Homestay.
+                        Những thông tin quan trọng trước khi bạn đặt Fishsauce Homestay quanh Hà Nội.
                     </p>
                 </div>
 
@@ -103,12 +103,12 @@ export default function Faq() {
 
                 <div className="mt-8 text-center">
                     <p className="text-[#183B4E]/90 font-montserrat text-sm">
-                        Mempunyai pertanyaan lain? Hubungi kami di <br/>{' '}
+                        Có câu hỏi khác? Liên hệ với chúng tôi tại <br/>{' '}
                         <a
-                            href="tel:+60175240056"
+                            href="tel:+84847318696"
                             className="text-[#27548A] font-semibold hover:text-[#183B4E] transition-colors duration-300"
                         >
-                            +6017-524 0056
+                            (+84) 847-318-696
                         </a>
                     </p>
                 </div>

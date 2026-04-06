@@ -6,35 +6,35 @@ import Image from 'next/image';
 const galleryImages = [
     {
         src: '/gallery/image1.jpg',
-        alt: 'Ruang tamu luas dan selesa',
+        alt: 'Phòng khách rộng và thoải mái',
     },
     {
         src: '/gallery/image2.jpg',
-        alt: 'Dapur lengkap dengan kemudahan',
+        alt: 'Nhà bếp đầy đủ tiện nghi',
     },
     {
         src: '/gallery/image3.jpg',
-        alt: 'Ruang tamu homestay dengan TV',
+        alt: 'Phòng khách homestay với TV',
     },
     {
         src: '/gallery/image4.jpg',
-        alt: 'Bilik tidur utama dengan katil queen & penghawa dingin ',
+        alt: 'Phòng ngủ chính với giường queen & máy lạnh ',
     },
     {
         src: '/gallery/image5.jpg',
-        alt: 'Kolam renang private pool yang tenang',
+        alt: 'Bể bơi riêng yên tĩnh',
     },
         {
         src: '/gallery/image6.jpg',
-        alt: 'Ruang makan keluarga yang luas',
+        alt: 'Phòng ăn gia đình rộng',
     },
         {
         src: '/gallery/image7.jpg',
-        alt: 'Bilik tidur kedua dengan katil queen & penghawa dingin',
+        alt: 'Phòng ngủ thứ hai với giường queen & máy lạnh',
     },
         {
         src: '/gallery/image8.jpg',
-        alt: 'Bilik tidur ketiga dengan tilam single & penghawa dingin',
+        alt: 'Phòng ngủ thứ ba với giường đơn & máy lạnh',
     },
 ];
 
@@ -105,10 +105,10 @@ export default function Gallery() {
         <section id="gallery" className="w-full py-16 bg-[#F5EEDC]/90">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-4xl md:text-6xl font-playfair font-bold text-center mb-10 text-[#183B4E] select-none">
-                    Galeri
+                    Thư Viện Ảnh
                 </h2>
                 <p className="text-[#183B4E] font-montserrat max-w-2xl mx-auto font-bold text-center">
-                    Lihat keindahan homestay kami melalui gambar-gambar yang memukau. Setiap sudut mempunyai cerita tersendiri.
+                    Xem vẻ đẹp của homestay qua những hình ảnh tuyệt vời. Mỗi góc đều có câu chuyện riêng của nó.
                 </p>
 
                 <div
