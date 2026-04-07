@@ -4,7 +4,7 @@ import { Injectable, NotFoundException, BadRequestException, ForbiddenException 
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Review } from './entities/review.entity';
-import { ReviewImage } from './entities/review-image.entity';
+import { Image } from '../image/entities/image.entity';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { ReviewReplyDto } from './dto/review-reply.dto';
 
@@ -13,8 +13,8 @@ export class ReviewService {
   constructor(
     @InjectRepository(Review)
     private reviewRepository: Repository<Review>,
-    @InjectRepository(ReviewImage)
-    private reviewImageRepository: Repository<ReviewImage>,
+    @InjectRepository(Image)
+    private imageRepository: Repository<Image>,
   ) {}
 
   async create(homestayId: string, userId: string, createReviewDto: CreateReviewDto) {
@@ -30,10 +30,12 @@ export class ReviewService {
     // Save images nếu có
     if (createReviewDto.images && createReviewDto.images.length > 0) {
       const images = createReviewDto.images.map((url) => ({
-        reviewId: savedReview.id,
         url,
+        reviewId: savedReview.id,
+        homestayId: null,
+        altText: null,
       }));
-      await this.reviewImageRepository.insert(images);
+      await this.imageRepository.insert(images);
     }
 
     return this.getReviewById(savedReview.id);

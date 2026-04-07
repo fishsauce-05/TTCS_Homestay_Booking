@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsInt, IsUUID, IsOptional } from 'class-validator';
+import { IsString, IsNumber, IsInt, IsUUID, IsOptional, IsArray } from 'class-validator';
 
 export class UpdateHomestayDto {
   @IsString()
@@ -36,4 +36,9 @@ export class UpdateHomestayDto {
   @IsNumber()
   @IsOptional()
   basePrice?: number;
+
+  @IsOptional()
+  @IsArray()
+  @IsUUID('4', { each: true })
+  amenityIds?: string[];
 }

@@ -1,24 +1,18 @@
-import { IsString, IsOptional, IsNumber, IsEnum, IsUUID } from 'class-validator';
-import { Image } from '../entities/image.entity';
+import { IsString, IsOptional, IsUUID } from 'class-validator';
 
 export class CreateImageDto {
   @IsString()
   url!: string;
 
-  @IsString()
-  filename!: string;
-
-  @IsOptional()
-  @IsNumber()
-  fileSize?: number;
-
   @IsOptional()
   @IsString()
-  mimeType?: string;
+  altText?: string;
 
-  @IsEnum(Image)
-  entityType!: Image;
-
+  @IsOptional()
   @IsUUID()
-  entityId!: string;
+  homestayId?: string;
+
+  @IsOptional()
+  @IsUUID()
+  reviewId?: string;
 }

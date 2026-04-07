@@ -17,6 +17,11 @@ export class ImageController {
     return this.imageService.getImagesByHomestay(homestayId);
   }
 
+  @Get('review/:reviewId')
+  async getImagesByReview(@Param('reviewId') reviewId: string) {
+    return this.imageService.getImagesByReview(reviewId);
+  }
+
   @Get(':id')
   async getImageById(@Param('id') id: string) {
     return this.imageService.getImageById(id);

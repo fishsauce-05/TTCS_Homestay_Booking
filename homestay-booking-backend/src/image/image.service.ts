@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Image } from './entities/image.entity';
@@ -13,6 +13,14 @@ export class ImageService {
   ) {}
 
   async createImage(createImageDto: CreateImageDto): Promise<Image> {
+    if (!createImageDto.homestayId && !createImageDto.reviewId) {
+      throw new BadRequestException('Ảnh phải thuộc homestay hoặc review');
+    }
+
+    if (createImageDto.homestayId && createImageDto.reviewId) {
+      throw new BadRequestException('Ảnh chỉ được thuộc một loại thực thể');
+    }
+
     const image = this.imageRepository.create(createImageDto);
     return this.imageRepository.save(image);
   }
@@ -25,10 +33,18 @@ export class ImageService {
     });
   }
 
+  async getImagesByReview(reviewId: string): Promise<Image[]> {
+    return this.imageRepository.find({
+      where: { reviewId },
+      relations: ['review'],
+      order: { createdAt: 'DESC' },
+    });
+  }
+
   async getImageById(id: string): Promise<Image> {
     const image = await this.imageRepository.findOne({
       where: { id },
-      relations: ['homestay'],
+      relations: ['homestay', 'review'],
     });
 
     if (!image) {

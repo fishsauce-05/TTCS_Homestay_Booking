@@ -1,14 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToMany } from 'typeorm';
 import { Homestay } from '../../homestay/entities/homestay.entity';
 
 @Entity('amenities')
 export class Amenity {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
-
-  @ManyToOne(() => Homestay, homestay => homestay.amenities, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'homestayId' })
-  homestay!: Homestay;
 
   @Column({ type: 'varchar', length: 100, unique: true })
   name!: string;
@@ -21,4 +17,7 @@ export class Amenity {
 
   @UpdateDateColumn()
   updatedAt!: Date;
+
+  @ManyToMany(() => Homestay, (homestay) => homestay.amenities)
+  homestays!: Homestay[];
 }

@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Homestay } from '../../homestay/entities/homestay.entity';
+import { Review } from '../../review/entities/review.entity';
 
 @Entity('images')
 export class Image {
@@ -8,16 +9,23 @@ export class Image {
 
   @ManyToOne(() => Homestay, (homestay) => homestay.images, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'homestayId' })
-  homestay: Homestay;
+  homestay: Homestay | null;
 
-  @Column({ type: 'uuid' })
-  homestayId: string;
+  @Column({ type: 'uuid', nullable: true })
+  homestayId: string | null;
+
+  @ManyToOne(() => Review, (review) => review.images, { onDelete: 'CASCADE', nullable: true })
+  @JoinColumn({ name: 'reviewId' })
+  review: Review | null;
+
+  @Column({ type: 'uuid', nullable: true })
+  reviewId: string | null;
 
   @Column({ type: 'varchar', length: 500 })
   url: string;
 
   @Column({ type: 'varchar', length: 255, nullable: true })
-  altText: string;
+  altText: string | null;
 
   @CreateDateColumn()
   createdAt: Date;

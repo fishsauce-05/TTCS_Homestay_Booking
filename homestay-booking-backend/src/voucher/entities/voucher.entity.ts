@@ -1,7 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, OneToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { User } from '../../user/entities/user.entity';
-import { Booking } from '../../booking/entities/booking.entity';
 import { VoucherType } from '../enums/voucher-type.enum';
+import { VoucherRedemption } from '../../voucher-redemption/entities/voucher-redemption.entity';
 
 @Entity('vouchers')
 export class Voucher {
@@ -18,6 +18,9 @@ export class Voucher {
   @Column({ type: 'varchar', length: 50, unique: true })
   code: string;
 
+  @Column({ type: 'text', nullable: true })
+  description: string | null;
+
   @Column({ type: 'enum', enum: VoucherType })
   type: VoucherType;
 
@@ -30,15 +33,8 @@ export class Voucher {
   @Column({ type: 'int', nullable: true })
   maxUses: number | null;
 
-  @Column({ type: 'boolean', default: false })
-  isUsed: boolean;
-
-  @OneToOne(() => Booking, (booking) => booking.voucher, { onDelete: 'SET NULL', nullable: true })
-  @JoinColumn({ name: 'bookingId' })
-  booking: Booking;
-
-  @Column({ type: 'uuid', nullable: true })
-  bookingId: string;
+  @OneToMany(() => VoucherRedemption, (redemption) => redemption.voucher)
+  redemptions: VoucherRedemption[];
 
   @CreateDateColumn()
   createdAt: Date;

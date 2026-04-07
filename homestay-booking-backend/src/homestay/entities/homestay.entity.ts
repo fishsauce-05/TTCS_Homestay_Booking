@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { User } from '../../user/entities/user.entity';
 import { Amenity } from '../../amenity/entities/amenity.entity';
 import { Image } from '../../image/entities/image.entity';
@@ -52,7 +52,12 @@ export class Homestay {
   @Column({ type: 'text', nullable: true })
   rejectionReason: string | null;
 
-  @OneToMany(() => Amenity, amenity => amenity.homestay, { cascade: true })
+  @ManyToMany(() => Amenity, (amenity) => amenity.homestays, { cascade: false })
+  @JoinTable({
+    name: 'homestay_amenities',
+    joinColumn: { name: 'homestayId', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'amenityId', referencedColumnName: 'id' },
+  })
   amenities: Amenity[];
 
   @OneToMany(() => Image, image => image.homestay, { cascade: true })

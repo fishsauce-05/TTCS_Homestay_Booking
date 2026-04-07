@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request, Query } from '@nestjs/common';
 import { HomestayService } from './homestay.service';
 import { CreateHomestayDto } from './dto/create-homestay.dto';
 import { UpdateHomestayDto } from './dto/update-homestay.dto';
@@ -14,7 +14,7 @@ export class HomestayController {
   }
 
   @Get('search')
-  async searchHomestays(@Body('keyword') keyword: string) {
+  async searchHomestays(@Query('keyword') keyword: string) {
     return this.homestayService.searchHomestays(keyword);
   }
 

@@ -4,13 +4,13 @@ import { BookingController } from './booking.controller';
 import { Booking } from './entities/booking.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PriceCalendarModule } from 'src/price-calendar/price-calendar.module';
-import { VoucherModule } from 'src/voucher/voucher.module';
 import { HomestayModule } from 'src/homestay/homestay.module';
+import { VoucherRedemptionModule } from 'src/voucher-redemption/voucher-redemption.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Booking]),
     PriceCalendarModule,
-    VoucherModule,
+    VoucherRedemptionModule,
     HomestayModule
   ],
   controllers: [BookingController],

@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToMany, JoinColumn } from 'typeorm';
 import { User } from '../../user/entities/user.entity';
 import { Homestay } from '../../homestay/entities/homestay.entity';
-import { ReviewImage } from './review-image.entity';
+import { Image } from '../../image/entities/image.entity';
 
 @Entity('reviews')
 export class Review {
@@ -47,6 +47,6 @@ export class Review {
   @JoinColumn({ name: 'ownerId' })
   owner: User;
 
-  @OneToMany(() => ReviewImage, (image) => image.review)
-  images: ReviewImage[];
+  @OneToMany(() => Image, (image) => image.review)
+  images: Image[];
 }

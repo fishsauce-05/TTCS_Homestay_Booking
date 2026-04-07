@@ -1,24 +1,47 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, In } from 'typeorm';
 import { Homestay } from './entities/homestay.entity';
 import { CreateHomestayDto } from './dto/create-homestay.dto';
 import { UpdateHomestayDto } from './dto/update-homestay.dto';
 import { UpdateStatusHomestayDto } from './dto/update-status-homestay.dto';
 import { HomestayStatus } from './enums/homestay-status.enum';
+import { Amenity } from '../amenity/entities/amenity.entity';
 
 @Injectable()
 export class HomestayService {
   constructor(
     @InjectRepository(Homestay)
     private readonly homestayRepository: Repository<Homestay>,
+    @InjectRepository(Amenity)
+    private readonly amenityRepository: Repository<Amenity>,
   ) {}
 
+  private async resolveAmenities(amenityIds?: string[]): Promise<Amenity[]> {
+    if (!amenityIds || amenityIds.length === 0) {
+      return [];
+    }
+
+    const amenities = await this.amenityRepository.find({
+      where: { id: In(amenityIds) },
+    });
+
+    if (amenities.length !== amenityIds.length) {
+      throw new BadRequestException('Một hoặc nhiều amenity không tồn tại');
+    }
+
+    return amenities;
+  }
+
   async createHomestay(createHomestayDto: CreateHomestayDto): Promise<Homestay> {
+    const { amenityIds, ...payload } = createHomestayDto;
+    const amenities = await this.resolveAmenities(amenityIds);
+
     const homestay = this.homestayRepository.create({
-      ...createHomestayDto,
+      ...payload,
       status: HomestayStatus.PENDING,
       rejectionReason: null,
+      amenities,
     });
     return this.homestayRepository.save(homestay);
   }
@@ -51,8 +74,13 @@ export class HomestayService {
 
   async updateHomestay(id: string, updateHomestayDto: UpdateHomestayDto): Promise<Homestay> {
     const homestay = await this.getHomestayById(id);
+    const { amenityIds, ...payload } = updateHomestayDto;
 
-    Object.assign(homestay, updateHomestayDto);
+    Object.assign(homestay, payload);
+    if (amenityIds !== undefined) {
+      homestay.amenities = await this.resolveAmenities(amenityIds);
+    }
+
     return this.homestayRepository.save(homestay);
   }
 

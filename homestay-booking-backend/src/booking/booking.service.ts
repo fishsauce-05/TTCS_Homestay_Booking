@@ -7,8 +7,8 @@ import { UpdateBookingStatusDto } from './dto/update-booking-status.dto';
 import { CalculatePriceDto } from './dto/calculate-price.dto';
 import { BookingStatus } from './enums/booking-status.enum';
 import { PriceCalendarService } from '../price-calendar/price-calendar.service';
-import { VoucherService } from '../voucher/voucher.service';
 import { HomestayService } from '../homestay/homestay.service';
+import { VoucherRedemptionService } from '../voucher-redemption/voucher-redemption.service';
 
 @Injectable()
 export class BookingService {
@@ -16,7 +16,7 @@ export class BookingService {
     @InjectRepository(Booking)
     private readonly bookingRepository: Repository<Booking>,
     private readonly priceCalendarService: PriceCalendarService,
-    private readonly voucherService: VoucherService,
+    private readonly voucherRedemptionService: VoucherRedemptionService,
     private readonly homestayService: HomestayService,
   ) {}
 
@@ -62,8 +62,8 @@ export class BookingService {
     let discountAmount = 0;
 
     if (voucherId) {
-      const voucher = await this.voucherService.getVoucherById(voucherId);
-      discountAmount = this.voucherService.calculateDiscount(
+      const voucher = await this.voucherRedemptionService.validateVoucherForBooking(voucherId);
+      discountAmount = this.voucherRedemptionService.calculateDiscount(
         voucher.discountValue,
         voucher.type,
         totalRoomPrice,
@@ -121,7 +121,12 @@ export class BookingService {
     const savedBooking = await this.bookingRepository.save(booking);
 
     if (voucherId) {
-      await this.voucherService.useVoucher(voucherId, savedBooking.id);
+      await this.voucherRedemptionService.reserveVoucher(
+        voucherId,
+        savedBooking.id,
+        userId,
+        priceInfo.discountAmount,
+      );
     }
 
     return savedBooking;
@@ -130,7 +135,7 @@ export class BookingService {
   async getBookingById(id: string): Promise<Booking> {
     const booking = await this.bookingRepository.findOne({
       where: { id },
-      relations: ['user', 'homestay', 'voucher'],
+      relations: ['user', 'homestay'],
     });
 
     if (!booking) {
@@ -143,7 +148,7 @@ export class BookingService {
   async getMyBookings(userId: string): Promise<Booking[]> {
     return this.bookingRepository.find({
       where: { userId },
-      relations: ['homestay', 'voucher'],
+      relations: ['homestay'],
       order: { createdAt: 'DESC' },
     });
   }
@@ -151,7 +156,7 @@ export class BookingService {
   async getHomestayBookings(homestayId: string): Promise<Booking[]> {
     return this.bookingRepository.find({
       where: { homestayId },
-      relations: ['user', 'voucher'],
+      relations: ['user'],
       order: { createdAt: 'DESC' },
     });
   }
@@ -198,8 +203,13 @@ export class BookingService {
 
     booking.status = BookingStatus.CANCELLED;
     booking.cancellationReason = cancellationReason || null;
+    const updatedBooking = await this.bookingRepository.save(booking);
 
-    return this.bookingRepository.save(booking);
+    if (updatedBooking.voucherId) {
+      await this.voucherRedemptionService.releaseByBookingId(updatedBooking.id);
+    }
+
+    return updatedBooking;
   }
 
   async completeBooking(id: string): Promise<Booking> {
@@ -218,6 +228,10 @@ export class BookingService {
 
     if (booking.status !== BookingStatus.PENDING) {
       throw new BadRequestException('Chỉ có thể xóa booking pending');
+    }
+
+    if (booking.voucherId) {
+      await this.voucherRedemptionService.releaseByBookingId(booking.id);
     }
 
     await this.bookingRepository.remove(booking);

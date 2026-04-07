@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Voucher } from './entities/voucher.entity';
@@ -15,6 +15,7 @@ export class VoucherService {
   async createVoucher(createVoucherDto: CreateVoucherDto, adminId: string): Promise<Voucher> {
     const voucher = this.voucherRepository.create();
     voucher.code = createVoucherDto.code;
+    voucher.description = createVoucherDto.description || null;
     voucher.discountValue = createVoucherDto.discountValue;
     voucher.type = createVoucherDto.type;
     voucher.maxUses = createVoucherDto.maxUses || null;
@@ -55,30 +56,5 @@ export class VoucherService {
     const voucher = await this.getVoucherById(id);
     await this.voucherRepository.remove(voucher);
     return { message: 'Xóa voucher thành công' };
-  }
-
-  async useVoucher(voucherId: string, bookingId: string): Promise<Voucher> {
-    const voucher = await this.getVoucherById(voucherId);
-
-    if (voucher.isUsed) {
-      throw new BadRequestException('Voucher đã được sử dụng');
-    }
-
-    voucher.isUsed = true;
-    voucher.bookingId = bookingId;
-
-    return this.voucherRepository.save(voucher);
-  }
-
-  calculateDiscount(
-    discountValue: number,
-    type: any,
-    totalPrice: number,
-  ): number {
-    if (type === 'fixed' || type.toString() === 'fixed') {
-      return Math.min(discountValue, totalPrice);
-    } else {
-      return Math.floor((totalPrice * discountValue) / 100);
-    }
   }
 }

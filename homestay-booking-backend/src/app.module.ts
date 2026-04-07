@@ -13,6 +13,7 @@ import { BankAccountModule } from './bank-account/bank-account.module';
 import { PaymentModule } from './payment/payment.module';
 import { ReviewModule } from './review/review.module';
 import { NotificationModule } from './notification/notification.module';
+import { VoucherRedemptionModule } from './voucher-redemption/voucher-redemption.module';
 
 @Module({
   imports: [
@@ -43,6 +44,7 @@ import { NotificationModule } from './notification/notification.module';
     PaymentModule,
     ReviewModule,
     NotificationModule,
+    VoucherRedemptionModule,
   ],
 })
 export class AppModule {}
