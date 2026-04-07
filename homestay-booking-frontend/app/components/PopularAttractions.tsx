@@ -56,7 +56,7 @@ const Attraction = ({ title, description, distance, imagePath, linkUrl, altText 
     );
 };
 
-export default function NearbyAttractions() {
+export default function PopularAttractions() {
     const attractions = [
         {
             title: "Homestay Hồ Tây View",

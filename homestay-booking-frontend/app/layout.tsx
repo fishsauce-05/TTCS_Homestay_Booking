@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Fishsauce Homestay" }],
   creator: "Fishsauce Homestay",
   publisher: "Fishsauce Homestay",
-  metadataBase: new URL("https://tuahsuci.vercel.app"),
+  metadataBase: new URL("https://fishsauce.vercel.app"),
   alternates: {
-    canonical: "https://tuahsuci.vercel.app"
+    canonical: "https://fishsauce.vercel.app"
   },
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    url: "https://tuahsuci.vercel.app",
+    url: "https://fishsauce.vercel.app",
     title: "Fishsauce Homestay - Booking Homestay Quanh Hà Nội",
     description: "Hệ thống homestay quanh Hà Nội, từ nội thành tới ngoại thành, phù hợp nghỉ dưỡng và du lịch trải nghiệm.",
     siteName: "Fishsauce Homestay",
@@ -76,7 +76,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Homestay" />
         <meta name="theme-color" content="#27548A" />
         <meta name="msapplication-TileColor" content="#27548A" />
-        <link rel="canonical" href="https://tuahsuci.vercel.app" />
+        <link rel="canonical" href="https://fishsauce.vercel.app" />
         <StructuredData type="homepage" />
       </head>
       <body className={`${beVietnamPro.variable} antialiased`} suppressHydrationWarning={true}>
