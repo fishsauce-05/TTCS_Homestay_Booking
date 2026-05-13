@@ -1,11 +1,11 @@
-import { Review } from '../../entities/review.entity';
+import { ReviewDomain } from '../../domain/review';
 
 export const REVIEW_REPOSITORY = Symbol('REVIEW_REPOSITORY');
 
 export interface ReviewRepositoryPort {
-  create(data: Partial<Review>): Review;
-  save(review: Review): Promise<Review>;
-  remove(review: Review): Promise<void>;
-  findById(id: string): Promise<Review | null>;
-  findByHomestay(homestayId: string): Promise<Review[]>;
+  create(data: Partial<ReviewDomain>): ReviewDomain;
+  save(review: ReviewDomain): Promise<ReviewDomain>;
+  remove(review: ReviewDomain): Promise<void>;
+  findById(id: string): Promise<ReviewDomain | null>;
+  findByHomestay(homestayId: string): Promise<ReviewDomain[]>;
 }

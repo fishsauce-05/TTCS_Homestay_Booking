@@ -61,3 +61,4 @@ export class Invoice {
   @CreateDateColumn()
   createdAt!: Date;
 }
+

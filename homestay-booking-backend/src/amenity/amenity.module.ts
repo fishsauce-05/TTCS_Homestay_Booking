@@ -11,3 +11,5 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   exports: [AmenityService],
 })
 export class AmenityModule {}
+
+

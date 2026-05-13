@@ -4,3 +4,4 @@ export class StatsRoomParamDto {
   @IsUUID()
   roomId!: string;
 }
+

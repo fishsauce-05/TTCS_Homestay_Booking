@@ -30,3 +30,4 @@ export class NotificationService {
     await this.notificationRepo.update({ id, userId }, { isRead: true });
   }
 }
+

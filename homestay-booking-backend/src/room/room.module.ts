@@ -5,9 +5,10 @@ import { Room } from './entities/room.entity';
 import { RoomService } from './room.service';
 import { RoomController } from './room.controller';
 import { Amenity } from '../amenity/entities/amenity.entity';
-import { RoomCommandHandlers, RoomQueryHandlers } from './application/handlers';
+import { RoomCommandHandlers } from './application/commands';
+import { RoomQueryHandlers } from './application/queries';
 import { ROOM_REPOSITORY } from './application/ports/room-repository.port';
-import { TypeOrmRoomRepository } from './infrastructure/persistence/typeorm-room.repository';
+import { TypeOrmRoomRepository } from './infra/persistence/typeorm-room.repository';
 
 @Module({
   imports: [CqrsModule, TypeOrmModule.forFeature([Room, Amenity])],

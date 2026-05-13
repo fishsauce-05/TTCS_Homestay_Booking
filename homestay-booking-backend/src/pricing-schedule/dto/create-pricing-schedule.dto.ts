@@ -18,3 +18,4 @@ export class CreatePricingScheduleDto {
   @IsPositive()
   pricePerNight!: number;
 }
+

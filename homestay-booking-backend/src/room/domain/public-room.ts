@@ -1,8 +1,8 @@
-import { Room } from '../entities/room.entity';
+import { RoomDomain } from './room';
 
 export type PublicRoom = ReturnType<typeof toPublicRoom>;
 
-export function toPublicRoom(room: Room) {
+export function toPublicRoom(room: RoomDomain) {
   const basePrice = Number(room.basePrice ?? 0);
   const images = room.images ?? [];
 

@@ -3,7 +3,10 @@ import { Voucher } from './voucher';
 
 export class DiscountPolicy {
   calculate(voucher: Voucher, totalPrice: number): number {
-    if (voucher.type === VoucherType.FIXED || voucher.type === ('fixed' as VoucherType)) {
+    if (
+      voucher.type === VoucherType.FIXED ||
+      voucher.type === ('fixed' as VoucherType)
+    ) {
       return Math.min(voucher.discountValue, totalPrice);
     }
 

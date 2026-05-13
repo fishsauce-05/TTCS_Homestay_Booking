@@ -1,9 +1,16 @@
 export class ReviewDomain {
   constructor(
-    readonly id: string,
-    readonly userId: string,
-    readonly homestayId: string,
-    readonly rating: number,
-    readonly comment: string,
+    public readonly id: string,
+    public readonly userId: string,
+    public readonly homestayId: string,
+    public rating: number,
+    public comment: string,
+    public ownerReply: string | null = null,
+    public ownerId: string | null = null,
+    public replyAt: Date | null = null,
+    public readonly createdAt?: Date,
+    public readonly updatedAt?: Date,
+    public readonly user?: unknown,
+    public readonly owner?: unknown,
   ) {}
 }

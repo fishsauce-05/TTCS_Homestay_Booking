@@ -11,3 +11,4 @@ import { UserController } from './user.controller';
   exports: [UserService, TypeOrmModule],
 })
 export class UserModule {}
+

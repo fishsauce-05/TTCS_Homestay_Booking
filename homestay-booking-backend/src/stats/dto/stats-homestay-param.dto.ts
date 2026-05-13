@@ -4,3 +4,4 @@ export class StatsHomestayParamDto {
   @IsUUID()
   homestayId!: string;
 }
+

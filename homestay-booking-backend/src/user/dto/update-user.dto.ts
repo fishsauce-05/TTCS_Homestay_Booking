@@ -39,3 +39,4 @@ export class UpdateUserDto {
   @IsString()
   lockReason?: string;
 }
+

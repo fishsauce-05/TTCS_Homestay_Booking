@@ -21,3 +21,5 @@ export class Amenity {
   @ManyToMany(() => Room, (room) => room.amenities)
   rooms!: Room[];
 }
+
+

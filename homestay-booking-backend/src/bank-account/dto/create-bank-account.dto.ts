@@ -16,3 +16,5 @@ export class CreateBankAccountDto {
   @MaxLength(100)
   accountHolderName!: string;
 }
+
+

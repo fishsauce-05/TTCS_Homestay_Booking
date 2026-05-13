@@ -53,3 +53,5 @@ export class SearchHomestayDto {
   @Type(() => Number)
   limit?: number;
 }
+
+

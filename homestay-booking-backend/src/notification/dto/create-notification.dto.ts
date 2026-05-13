@@ -18,3 +18,4 @@ export class CreateNotificationDto {
   @IsOptional()
   data?: Record<string, unknown>;
 }
+

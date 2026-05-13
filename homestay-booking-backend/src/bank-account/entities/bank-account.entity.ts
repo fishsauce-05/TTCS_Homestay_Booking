@@ -34,3 +34,5 @@ export class BankAccount {
   @UpdateDateColumn()
   updatedAt!: Date;
 }
+
+

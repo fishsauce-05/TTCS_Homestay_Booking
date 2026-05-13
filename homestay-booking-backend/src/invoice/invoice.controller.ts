@@ -30,3 +30,5 @@ export class InvoiceController {
     return this.invoiceService.getByBookingId(params.bookingId);
   }
 }
+
+

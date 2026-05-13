@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Invoice } from './entities/invoice.entity';
 import { Booking } from '../booking/entities/booking.entity';
+import { NotificationService } from '../notification/notification.service';
 import { CreateInvoiceDto } from './dto/create-invoice.dto';
 
 @Injectable()
@@ -12,6 +13,7 @@ export class InvoiceService {
     private readonly invoiceRepo: Repository<Invoice>,
     @InjectRepository(Booking)
     private readonly bookingRepo: Repository<Booking>,
+    private readonly notificationService: NotificationService,
   ) {}
 
   async createFromBooking(booking: Booking): Promise<Invoice> {
@@ -28,7 +30,15 @@ export class InvoiceService {
     if (!full.room) throw new InternalServerErrorException(`Booking ${booking.id} thiếu thông tin room`);
 
     const invoice = this.invoiceRepo.create(this.buildCreateInvoiceDto(full));
-    return this.invoiceRepo.save(invoice);
+    const saved = await this.invoiceRepo.save(invoice);
+    await this.notificationService.create({
+      userId: full.userId,
+      title: 'Hóa đơn đã được tạo',
+      message: 'Hóa đơn cho booking của bạn đã được tạo thành công.',
+      type: 'invoice_created',
+      data: { invoiceId: saved.id, bookingId: full.id, totalAmount: Number(full.totalPrice) },
+    });
+    return saved;
   }
 
   private buildCreateInvoiceDto(booking: Booking): CreateInvoiceDto {
@@ -77,3 +87,5 @@ export class InvoiceService {
     });
   }
 }
+
+

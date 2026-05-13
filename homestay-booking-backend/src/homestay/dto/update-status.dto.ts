@@ -9,3 +9,4 @@ export class UpdateStatusDto {
   @IsString()
   rejectionReason?: string;
 }
+

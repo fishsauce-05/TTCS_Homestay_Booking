@@ -3,20 +3,20 @@ import { UserRole } from '../../common/enums';
 
 export class CreateUserDto {
   @IsString()
-  fullName: string;
+  fullName!: string;
 
   @IsString()
-  nickname: string;
+  nickname!: string;
 
   @IsEmail()
-  email: string;
+  email!: string;
 
   @IsString()
   @MinLength(8)
-  password: string;
+  password!: string;
 
   @IsPhoneNumber('VN')
-  phone: string;
+  phone!: string;
 
   @IsString()
   @IsOptional()
@@ -34,3 +34,4 @@ export class CreateUserDto {
   @IsString()
   lockReason?: string;
 }
+

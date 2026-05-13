@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, OneToOne, JoinColumn } from 'typeorm';
 import { UserRole } from '../../common/enums';
-import { Voucher } from '../../promotion/infrastructure/persistence/entities/voucher.entity';
+import { Voucher } from '../../promotion/infra/persistence/entities/voucher.entity';
 import { BankAccount } from '../../bank-account/entities/bank-account.entity';
 
 @Entity('users')
@@ -59,3 +59,4 @@ export class User {
   bankAccount!: BankAccount | null;
 
 }
+

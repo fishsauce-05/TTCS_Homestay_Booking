@@ -1,32 +1,21 @@
 import { VoucherStatus, VoucherType } from '../../common/enums';
-import { Voucher as VoucherEntity } from '../infrastructure/persistence/entities/voucher.entity';
 
 export class Voucher {
   constructor(
-    readonly id: string,
-    readonly code: string,
-    readonly type: VoucherType,
-    readonly discountValue: number,
-    readonly status: VoucherStatus,
-    readonly expiryDate: Date,
-    readonly startDate: string | null,
-    readonly maxUses: number | null,
-    readonly usedCount: number,
-    readonly minOrderValue: number | null,
+    public readonly id: string,
+    public readonly code: string,
+    public name: string | null,
+    public description: string | null,
+    public type: VoucherType,
+    public discountValue: number,
+    public status: VoucherStatus,
+    public expiryDate: Date,
+    public startDate: string | null,
+    public maxUses: number | null,
+    public usedCount: number,
+    public minOrderValue: number | null,
+    public readonly userId: string,
+    public readonly createdAt?: Date,
+    public readonly updatedAt?: Date,
   ) {}
-
-  static fromEntity(entity: VoucherEntity): Voucher {
-    return new Voucher(
-      entity.id,
-      entity.code,
-      entity.type,
-      Number(entity.discountValue),
-      entity.status,
-      entity.expiryDate,
-      entity.startDate,
-      entity.maxUses,
-      entity.usedCount,
-      entity.minOrderValue === null ? null : Number(entity.minOrderValue),
-    );
-  }
 }

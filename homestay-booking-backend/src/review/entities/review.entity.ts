@@ -1,4 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 import { User } from '../../user/entities/user.entity';
 import { Homestay } from '../../homestay/entities/homestay.entity';
 
@@ -38,7 +46,9 @@ export class Review {
   @JoinColumn({ name: 'userId' })
   user!: User;
 
-  @ManyToOne(() => Homestay, (homestay) => homestay.reviews, { onDelete: 'CASCADE' })
+  @ManyToOne(() => Homestay, (homestay) => homestay.reviews, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'homestayId' })
   homestay!: Homestay;
 

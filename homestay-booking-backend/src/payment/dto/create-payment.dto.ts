@@ -4,3 +4,4 @@ export class CreatePaymentDto {
   @IsUUID()
   bookingId!: string;
 }
+

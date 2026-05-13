@@ -59,3 +59,4 @@ export class PaymentController {
     return this.paymentService.rejectPayment(paymentId, user, body.reason);
   }
 }
+

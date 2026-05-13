@@ -1,5 +1,8 @@
 export class CancellationPolicy {
-  calculate(totalPrice: number, checkInDate: string): {
+  calculate(
+    totalPrice: number,
+    checkInDate: string,
+  ): {
     penaltyAmount: number;
     refundAmount: number;
     penaltyPercent: number;
@@ -8,7 +11,9 @@ export class CancellationPolicy {
     now.setHours(0, 0, 0, 0);
     const checkIn = new Date(checkInDate);
     checkIn.setHours(0, 0, 0, 0);
-    const daysUntilCheckIn = Math.ceil((checkIn.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    const daysUntilCheckIn = Math.ceil(
+      (checkIn.getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
+    );
 
     let penaltyPercent = 0;
     if (daysUntilCheckIn <= 0) penaltyPercent = 100;

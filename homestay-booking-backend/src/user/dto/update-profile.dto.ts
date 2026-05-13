@@ -17,3 +17,4 @@ export class UpdateProfileDto {
   @IsString()
   address?: string;
 }
+

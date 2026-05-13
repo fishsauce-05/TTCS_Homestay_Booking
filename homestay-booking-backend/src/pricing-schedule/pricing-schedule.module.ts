@@ -12,3 +12,4 @@ import { Room } from '../room/entities/room.entity';
   exports: [PricingScheduleService],
 })
 export class PricingScheduleModule {}
+

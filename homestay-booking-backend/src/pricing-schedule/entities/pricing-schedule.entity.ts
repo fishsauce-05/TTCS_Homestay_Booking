@@ -32,3 +32,4 @@ export class PricingSchedule {
   @UpdateDateColumn()
   updatedAt!: Date;
 }
+

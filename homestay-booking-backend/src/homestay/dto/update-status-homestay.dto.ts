@@ -9,3 +9,5 @@ export class UpdateStatusHomestayDto {
   @IsOptional()
   rejectionReason?: string | null;
 }
+
+

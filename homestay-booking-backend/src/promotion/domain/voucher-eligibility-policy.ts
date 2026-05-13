@@ -22,7 +22,9 @@ export class VoucherEligibilityPolicy {
     }
 
     if (voucher.minOrderValue !== null && totalPrice < voucher.minOrderValue) {
-      throw new BadRequestException(`Don hang chua dat gia tri toi thieu de ap dung ma giam gia (${voucher.minOrderValue.toLocaleString()} VND)`);
+      throw new BadRequestException(
+        `Don hang chua dat gia tri toi thieu de ap dung ma giam gia (${voucher.minOrderValue.toLocaleString()} VND)`,
+      );
     }
   }
 }

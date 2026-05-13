@@ -42,3 +42,5 @@ export class UpdateHomestayDto {
   @IsUUID('4', { each: true })
   amenityIds?: string[];
 }
+
+

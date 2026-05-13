@@ -1,6 +1,6 @@
-import { Amenity } from '../../../amenity/entities/amenity.entity';
-import { Room } from '../../entities/room.entity';
+import { RoomStatus } from '../../../common/enums';
 import { PublicRoom } from '../../domain/public-room';
+import { RoomDomain } from '../../domain/room';
 
 export const ROOM_REPOSITORY = Symbol('ROOM_REPOSITORY');
 
@@ -11,20 +11,31 @@ export interface PaginatedPublicRooms {
   limit: number;
 }
 
+export interface SaveRoomData {
+  homestayId: string;
+  name: string;
+  roomType: string;
+  capacity: number;
+  description: string | null;
+  basePrice: number;
+  images: string[];
+  status: RoomStatus;
+  amenityIds?: string[];
+}
+
 export interface RoomRepositoryPort {
-  create(data: Partial<Room>): Room;
-  save(room: Room): Promise<Room>;
-  remove(room: Room): Promise<void>;
-  resolveAmenities(amenityIds?: string[]): Promise<Amenity[]>;
+  create(data: SaveRoomData): Promise<RoomDomain>;
+  save(room: RoomDomain, amenityIds?: string[]): Promise<RoomDomain>;
+  remove(room: RoomDomain): Promise<void>;
   findPublic(query: Record<string, string>): Promise<PaginatedPublicRooms>;
   findFeatured(limit?: number): Promise<PublicRoom[]>;
-  findByHomestay(homestayId: string): Promise<Room[]>;
-  findById(id: string): Promise<Room | null>;
-  search(homestayId: string, keyword: string): Promise<Room[]>;
+  findByHomestay(homestayId: string): Promise<RoomDomain[]>;
+  findById(id: string): Promise<RoomDomain | null>;
+  search(homestayId: string, keyword: string): Promise<RoomDomain[]>;
   findAvailableRooms(
     checkInDate: string,
     checkOutDate: string,
     minCapacity: number,
-  ): Promise<Room[]>;
+  ): Promise<RoomDomain[]>;
   hasActiveFutureBookings(roomId: string, fromDate: string): Promise<boolean>;
 }

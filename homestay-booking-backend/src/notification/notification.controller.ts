@@ -20,3 +20,4 @@ export class NotificationController {
     return { success: true };
   }
 }
+

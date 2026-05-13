@@ -18,3 +18,5 @@ export class CreateHomestayDto {
   @IsNumber()
   longitude?: number;
 }
+
+

@@ -1,15 +1,20 @@
-import { Booking } from '../../entities/booking.entity';
+import { BookingDomain } from '../../domain/booking';
 
 export const BOOKING_REPOSITORY = Symbol('BOOKING_REPOSITORY');
 
 export interface BookingRepositoryPort {
-  create(data: Partial<Booking>): Booking;
-  save(booking: Booking): Promise<Booking>;
-  remove(booking: Booking): Promise<void>;
-  findById(id: string): Promise<Booking | null>;
-  findByUser(userId: string): Promise<Booking[]>;
-  findByRoom(roomId: string): Promise<Booking[]>;
-  findByHomestay(homestayId: string): Promise<Booking[]>;
-  findAll(): Promise<Booking[]>;
-  hasRoomConflict(roomId: string, checkInDate: string, checkOutDate: string, excludeBookingId?: string): Promise<boolean>;
+  create(data: Partial<BookingDomain>): BookingDomain;
+  save(booking: BookingDomain): Promise<BookingDomain>;
+  remove(booking: BookingDomain): Promise<void>;
+  findById(id: string): Promise<BookingDomain | null>;
+  findByUser(userId: string): Promise<BookingDomain[]>;
+  findByRoom(roomId: string): Promise<BookingDomain[]>;
+  findByHomestay(homestayId: string): Promise<BookingDomain[]>;
+  findAll(): Promise<BookingDomain[]>;
+  hasRoomConflict(
+    roomId: string,
+    checkInDate: string,
+    checkOutDate: string,
+    excludeBookingId?: string,
+  ): Promise<boolean>;
 }

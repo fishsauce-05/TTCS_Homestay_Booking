@@ -48,3 +48,5 @@ export class BankAccountController {
     return await this.service.verify(id);
   }
 }
+
+

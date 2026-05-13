@@ -50,3 +50,4 @@ export class PricingScheduleController {
     return this.service.remove(id);
   }
 }
+

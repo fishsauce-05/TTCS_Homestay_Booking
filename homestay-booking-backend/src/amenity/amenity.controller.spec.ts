@@ -18,3 +18,5 @@ describe('AmenityController', () => {
     expect(controller).toBeDefined();
   });
 });
+
+

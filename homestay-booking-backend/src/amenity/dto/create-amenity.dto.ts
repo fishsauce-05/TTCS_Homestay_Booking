@@ -11,3 +11,5 @@ export class CreateAmenityDto {
   @MaxLength(50)
   icon?: string;
 }
+
+

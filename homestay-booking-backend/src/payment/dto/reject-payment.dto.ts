@@ -5,3 +5,4 @@ export class RejectPaymentDto {
   @IsOptional()
   reason?: string;
 }
+

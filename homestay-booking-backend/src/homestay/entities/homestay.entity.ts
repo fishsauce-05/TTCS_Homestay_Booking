@@ -52,3 +52,5 @@ export class Homestay {
   @UpdateDateColumn()
   updatedAt!: Date;
 }
+
+

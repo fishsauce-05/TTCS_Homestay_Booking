@@ -46,3 +46,5 @@ export class AmenityController {
     return this.amenityService.deleteAmenity(id);
   }
 }
+
+

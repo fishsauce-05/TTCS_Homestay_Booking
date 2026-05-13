@@ -41,3 +41,4 @@ export class Payment {
   @Column('timestamp', { nullable: true })
   reviewedAt!: Date | null;
 }
+

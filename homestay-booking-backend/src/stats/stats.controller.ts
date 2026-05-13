@@ -67,3 +67,4 @@ export class StatsController {
     return this.statsService.bookingsByRoom(params.roomId, query.startDate, query.endDate, ownerId);
   }
 }
+

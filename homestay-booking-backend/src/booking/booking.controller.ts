@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+  Query,
+} from '@nestjs/common';
 import { BookingService } from './booking.service';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingStatusDto } from './dto/update-booking-status.dto';
@@ -65,7 +75,10 @@ export class BookingController {
 
   @Patch(':id/cancel')
   @UseGuards(JwtAuthGuard)
-  cancelBooking(@Param('id') id: string, @Body() body: { cancellationReason?: string }) {
+  cancelBooking(
+    @Param('id') id: string,
+    @Body() body: { cancellationReason?: string },
+  ) {
     return this.bookingService.cancelBooking(id, body.cancellationReason || '');
   }
 
@@ -78,7 +91,10 @@ export class BookingController {
 
   @Patch(':id/status')
   @UseGuards(JwtAuthGuard)
-  updateBookingStatus(@Param('id') id: string, @Body() dto: UpdateBookingStatusDto) {
+  updateBookingStatus(
+    @Param('id') id: string,
+    @Body() dto: UpdateBookingStatusDto,
+  ) {
     return this.bookingService.updateBookingStatus(id, dto);
   }
 

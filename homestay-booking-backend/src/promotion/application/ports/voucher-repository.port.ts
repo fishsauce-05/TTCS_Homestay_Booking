@@ -1,5 +1,5 @@
-import { Voucher } from '../../infrastructure/persistence/entities/voucher.entity';
-import { CreateVoucherDto } from '../dto/create-voucher.dto';
+import { Voucher } from '../../domain/voucher';
+import { CreateVoucherDto } from '../../presenters/http/dto/create-voucher.dto';
 
 export const VOUCHER_REPOSITORY = Symbol('VOUCHER_REPOSITORY');
 
