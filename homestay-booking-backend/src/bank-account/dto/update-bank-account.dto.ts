@@ -1,12 +1,4 @@
-import { IsString, IsOptional, Length } from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
+import { CreateBankAccountDto } from './create-bank-account.dto';
 
-export class UpdateBankAccountDto {
-  @IsString()
-  @IsOptional()
-  bankName?: string;
-
-  @IsString()
-  @IsOptional()
-  @Length(8, 20)
-  accountNumber?: string;
-}
+export class UpdateBankAccountDto extends PartialType(CreateBankAccountDto) {}

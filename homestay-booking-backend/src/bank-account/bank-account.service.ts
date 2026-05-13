@@ -1,83 +1,54 @@
-import { Injectable, ForbiddenException, ConflictException, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { BankAccount } from './entities/bank-account.entity';
 import { CreateBankAccountDto } from './dto/create-bank-account.dto';
 import { UpdateBankAccountDto } from './dto/update-bank-account.dto';
-import { User } from '../user/entities/user.entity';
-import { UserRole } from '../user/enums/user-role.enum';
 
 @Injectable()
 export class BankAccountService {
   constructor(
     @InjectRepository(BankAccount)
-    private readonly bankAccountRepository: Repository<BankAccount>,
-    @InjectRepository(User)
-    private readonly userRepository: Repository<User>,
+    private readonly repo: Repository<BankAccount>,
   ) {}
 
-  async createBankAccount(
-    createBankAccountDto: CreateBankAccountDto,
-    userId: string,
-  ): Promise<BankAccount> {
-    const user = await this.userRepository.findOne({ where: { id: userId } });
-    if (!user) {
-      throw new NotFoundException('User không tồn tại');
-    }
-
-    if (user.role !== UserRole.OWNER) {
-      throw new ForbiddenException('Chỉ OWNER mới được tạo tài khoản ngân hàng');
-    }
-
-    const existingBankAccount = await this.bankAccountRepository.findOne({
-      where: { userId },
-    });
-    if (existingBankAccount) {
-      throw new ConflictException('User đã có tài khoản ngân hàng rồi');
-    }
-
-    const bankAccount = this.bankAccountRepository.create({
-      ...createBankAccountDto,
-      userId,
-    });
-
-    return this.bankAccountRepository.save(bankAccount);
+  async create(userId: string, dto: CreateBankAccountDto): Promise<BankAccount> {
+    const existing = await this.repo.findOne({ where: { userId } });
+    if (existing) throw new ConflictException('Người dùng đã có tài khoản ngân hàng');
+    const account = this.repo.create({ ...dto, userId });
+    return this.repo.save(account);
   }
 
-  async getBankAccountByUserId(userId: string): Promise<BankAccount> {
-    const bankAccount = await this.bankAccountRepository.findOne({
-      where: { userId },
-      relations: ['user'],
-    });
+  async findByUser(userId: string): Promise<BankAccount | null> {
+    return this.repo.findOne({ where: { userId } });
+  }
 
-    if (!bankAccount) {
-      throw new NotFoundException('Tài khoản ngân hàng không tồn tại');
+  async update(userId: string, dto: UpdateBankAccountDto): Promise<BankAccount> {
+    const account = await this.repo.findOne({ where: { userId } });
+    if (!account) throw new NotFoundException('Chưa có tài khoản ngân hàng');
+    // Reset verification when bank info changes
+    if (dto.bankName || dto.accountNumber || dto.accountHolderName) {
+      account.isVerified = false;
     }
-
-    return bankAccount;
+    Object.assign(account, dto);
+    return this.repo.save(account);
   }
 
-  async updateBankAccount(
-    userId: string,
-    updateBankAccountDto: UpdateBankAccountDto,
-  ): Promise<BankAccount> {
-    const bankAccount = await this.getBankAccountByUserId(userId);
-
-    Object.assign(bankAccount, updateBankAccountDto);
-    return this.bankAccountRepository.save(bankAccount);
-  }
-
-  async deleteBankAccount(userId: string): Promise<{ message: string }> {
-    const bankAccount = await this.getBankAccountByUserId(userId);
-    await this.bankAccountRepository.remove(bankAccount);
-
+  async remove(userId: string): Promise<{ message: string }> {
+    const account = await this.repo.findOne({ where: { userId } });
+    if (!account) throw new NotFoundException('Chưa có tài khoản ngân hàng');
+    await this.repo.remove(account);
     return { message: 'Xóa tài khoản ngân hàng thành công' };
   }
 
-  async verifyBankAccount(userId: string): Promise<BankAccount> {
-    const bankAccount = await this.getBankAccountByUserId(userId);
-    bankAccount.isVerified = true;
+  async verify(id: string): Promise<BankAccount> {
+    const account = await this.repo.findOne({ where: { id } });
+    if (!account) throw new NotFoundException('Tài khoản ngân hàng không tồn tại');
+    account.isVerified = true;
+    return this.repo.save(account);
+  }
 
-    return this.bankAccountRepository.save(bankAccount);
+  async findAll(): Promise<BankAccount[]> {
+    return this.repo.find({ relations: ['user'] });
   }
 }

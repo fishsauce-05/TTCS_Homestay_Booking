@@ -1,0 +1,20 @@
+﻿export const state = {
+  currentPage: 1,
+  filters: {},
+  currentRoomId: null,
+  booking: {
+    roomId: null,
+    roomName: '',
+    roomType: '',
+    roomImgUrl: '',
+    nightlyRate: 0,
+    checkinDate: '',
+    checkoutDate: '',
+    nights: 0,
+    subtotal: 0,
+    voucherCode: '',
+    discountAmount: 0,
+    totalAmount: 0,
+    guestsCount: 1,
+  },
+};

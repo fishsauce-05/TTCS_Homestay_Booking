@@ -1,9 +1,9 @@
 import { IsEnum, IsOptional, IsString } from 'class-validator';
-import { HomestayStatus } from '../enums/homestay-status.enum';
+import { HomestayStatus } from '../../common/enums';
 
 export class UpdateStatusDto {
   @IsEnum(HomestayStatus)
-  status: HomestayStatus;
+  status!: HomestayStatus;
 
   @IsOptional()
   @IsString()

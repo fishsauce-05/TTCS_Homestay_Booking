@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+<main>
+<section id="section-admin-dashboard" class="app-section active">
+  <div class="container-xl py-5 mt-5">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div>
+        <span class="section-label">Admin</span>
+        <h2 class="page-title mb-0">Dashboard quản trị</h2>
+      </div>
+    </div>
+
+    <ul class="nav nav-pills booking-tabs mb-4 flex-wrap" id="adminTabs">
+      <li class="nav-item"><button class="nav-link active"><i class="bi bi-people me-1"></i>Người dùng</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-building me-1"></i>Duyệt Owner</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-ticket-perforated me-1"></i>Voucher</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-bar-chart me-1"></i>Thống kê</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-house-heart me-1"></i>Homestay</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-calendar-check me-1"></i>Đặt phòng</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-credit-card me-1"></i>Thanh toán</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-stars me-1"></i>Tiện nghi</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-bank me-1"></i>Tài khoản NH</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-receipt me-1"></i>Hoá đơn</button></li>
+    </ul>
+
+    <!-- Tab: Users -->
+    <div id="admin-tab-users">
+      <div class="d-flex gap-2 mb-3 flex-wrap">
+        <input type="text" id="admin-user-search" class="form-control form-control-brand" style="max-width:280px" placeholder="Tìm theo tên, email..." />
+        <select id="admin-user-role-filter" class="form-select form-control-brand" style="max-width:150px">
+          <option value="">Tất cả role</option>
+          <option value="guest">Guest</option>
+          <option value="owner">Owner</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button class="btn btn-brand px-3" id="btn-admin-search-users"><i class="bi bi-search"></i></button>
+        <button class="btn btn-brand-outline px-3 ms-auto" id="btn-create-user"><i class="bi bi-person-plus me-1"></i>Tạo user</button>
+      </div>
+      <div id="admin-users-list">
+        <div class="text-muted text-center py-5"><i class="bi bi-people fs-1 d-block mb-3"></i>Nhấn tìm kiếm để tải danh sách</div>
+      </div>
+    </div>
+
+    <!-- Tab: Owners pending approval -->
+    <div id="admin-tab-owners" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Danh sách Owner chờ duyệt</h6>
+        <button class="btn btn-brand-outline btn-sm" onclick="loadOwners()"><i class="bi bi-arrow-repeat me-1"></i>Làm mới</button>
+      </div>
+      <div id="admin-owners-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Vouchers -->
+    <div id="admin-tab-vouchers" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Danh sách Voucher</h6>
+        <button class="btn btn-brand btn-sm"><i class="bi bi-plus-lg me-1"></i>Tạo voucher</button>
+      </div>
+      <div id="voucher-form-wrap" class="checkout-card p-3 mb-3 d-none">
+        <h6 class="fw-600 mb-3" id="voucher-form-title">Tạo voucher mới</h6>
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label class="form-label small">Mã voucher <span class="text-danger">*</span></label>
+            <input type="text" id="v-code" class="form-control form-control-brand" placeholder="FISHSAUCE10" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Tên voucher</label>
+            <input type="text" id="v-name" class="form-control form-control-brand" placeholder="Giảm 10% mùa hè" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Loại giảm giá <span class="text-danger">*</span></label>
+            <select id="v-type" class="form-select form-control-brand">
+              <option value="percent">Phần trăm (%)</option>
+              <option value="fixed">Cố định (VND)</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Giá trị giảm <span class="text-danger">*</span></label>
+            <input type="number" id="v-value" class="form-control form-control-brand" placeholder="10" min="0" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Đơn hàng tối thiểu (VND)</label>
+            <input type="number" id="v-min-order" class="form-control form-control-brand" placeholder="500000" min="0" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Giới hạn sử dụng</label>
+            <input type="number" id="v-max-uses" class="form-control form-control-brand" placeholder="100" min="1" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Ngày bắt đầu</label>
+            <input type="date" id="v-start-date" class="form-control form-control-brand" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Ngày hết hạn <span class="text-danger">*</span></label>
+            <input type="date" id="v-expiry-date" class="form-control form-control-brand" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Mô tả</label>
+            <input type="text" id="v-description" class="form-control form-control-brand" placeholder="Mô tả ngắn..." />
+          </div>
+        </div>
+        <div class="d-flex gap-2 mt-3">
+          <button class="btn btn-brand btn-sm"><i class="bi bi-check-lg me-1"></i>Lưu</button>
+          <button class="btn btn-outline-secondary btn-sm">Hủy</button>
+        </div>
+      </div>
+      <div id="admin-vouchers-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Stats -->
+    <div id="admin-tab-stats" class="d-none">
+      <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3"><div class="checkout-card text-center p-3"><div class="fs-2 fw-700 text-brand" id="stat-total-bookings">—</div><div class="text-muted small">Tổng đặt phòng</div></div></div>
+        <div class="col-6 col-md-3"><div class="checkout-card text-center p-3"><div class="fs-2 fw-700 text-brand" id="stat-pending-bookings">—</div><div class="text-muted small">Chờ xác nhận</div></div></div>
+        <div class="col-6 col-md-3"><div class="checkout-card text-center p-3"><div class="fs-2 fw-700 text-brand" id="stat-total-revenue">—</div><div class="text-muted small">Tổng doanh thu</div></div></div>
+        <div class="col-6 col-md-3"><div class="checkout-card text-center p-3"><div class="fs-2 fw-700 text-brand" id="stat-total-users">—</div><div class="text-muted small">Tổng người dùng</div></div></div>
+      </div>
+      <div class="row g-3 align-items-end mb-3">
+        <div class="col-md-4">
+          <label class="form-label small">Từ ngày</label>
+          <input type="date" id="stats-start-date" class="form-control form-control-brand" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label small">Đến ngày</label>
+          <input type="date" id="stats-end-date" class="form-control form-control-brand" />
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-brand w-100"><i class="bi bi-bar-chart me-1"></i>Xem doanh thu</button>
+        </div>
+      </div>
+      <div id="admin-stats-list">
+        <div class="text-muted text-center py-5"><i class="bi bi-bar-chart fs-1 d-block mb-3"></i>Chọn khoảng thời gian để xem thống kê</div>
+      </div>
+    </div>
+
+    <!-- Tab: Homestays -->
+    <div id="admin-tab-homestays" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Quản lý Homestay</h6>
+        <button class="btn btn-brand-outline btn-sm" id="btn-refresh-homestays"><i class="bi bi-arrow-repeat me-1"></i>Làm mới</button>
+      </div>
+      <div id="admin-homestays-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Bookings -->
+    <div id="admin-tab-bookings" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Tất cả đặt phòng</h6>
+        <button class="btn btn-brand-outline btn-sm" id="btn-refresh-bookings"><i class="bi bi-arrow-repeat me-1"></i>Làm mới</button>
+      </div>
+      <div id="admin-bookings-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Payments -->
+    <div id="admin-tab-payments" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Quản lý Thanh toán</h6>
+        <button class="btn btn-brand-outline btn-sm" id="btn-refresh-payments"><i class="bi bi-arrow-repeat me-1"></i>Làm mới</button>
+      </div>
+      <div id="admin-payments-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Amenities -->
+    <div id="admin-tab-amenities" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Quản lý Tiện nghi</h6>
+        <button class="btn btn-brand btn-sm" id="btn-add-amenity"><i class="bi bi-plus-lg me-1"></i>Thêm tiện nghi</button>
+      </div>
+      <div id="admin-amenities-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Bank Accounts -->
+    <div id="admin-tab-bank-accounts" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Tài khoản ngân hàng của Owner</h6>
+        <button class="btn btn-brand-outline btn-sm" id="btn-refresh-bank"><i class="bi bi-arrow-repeat me-1"></i>Làm mới</button>
+      </div>
+      <div id="admin-bank-accounts-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Invoices -->
+    <div id="admin-tab-invoices" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Tất cả Hoá đơn</h6>
+        <button class="btn btn-brand-outline btn-sm" id="btn-refresh-invoices"><i class="bi bi-arrow-repeat me-1"></i>Làm mới</button>
+      </div>
+      <div id="admin-invoices-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- User Form Modal -->
+<div class="modal fade" id="userFormModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-brand">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title" id="user-form-title">Tạo người dùng mới</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="user-form-id" />
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label small">Họ và tên <span class="text-danger">*</span></label>
+            <input type="text" id="user-form-fullname" class="form-control form-control-brand" placeholder="Nguyễn Văn A" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small">Email <span class="text-danger">*</span></label>
+            <input type="email" id="user-form-email" class="form-control form-control-brand" placeholder="user@example.com" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small">Số điện thoại</label>
+            <input type="text" id="user-form-phone" class="form-control form-control-brand" placeholder="0912345678" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small">Vai trò</label>
+            <select id="user-form-role" class="form-select form-control-brand">
+              <option value="guest">Guest</option>
+              <option value="owner">Owner</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <div class="col-12" id="user-form-password-row">
+            <label class="form-label small">Mật khẩu <span class="text-danger">*</span></label>
+            <input type="password" id="user-form-password" class="form-control form-control-brand" placeholder="Ít nhất 8 ký tự" />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-brand" id="btn-save-user-form">
+          <span class="spinner-border spinner-border-sm d-none me-1"></span>Lưu
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Amenity Form Modal -->
+<div class="modal fade" id="amenityFormModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content modal-brand">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title" id="amenity-form-title">Thêm tiện nghi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="amenity-form-id" />
+        <div class="mb-3">
+          <label class="form-label small">Tên tiện nghi <span class="text-danger">*</span></label>
+          <input type="text" id="amenity-form-name" class="form-control form-control-brand" placeholder="WiFi tốc độ cao" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label small">Icon (Bootstrap Icons class)</label>
+          <input type="text" id="amenity-form-icon" class="form-control form-control-brand" placeholder="bi bi-wifi" />
+          <div class="form-text small">Ví dụ: bi bi-wifi, bi bi-thermometer, bi bi-tv</div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-brand" id="btn-save-amenity-form">Lưu</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/features/admin/admin-init.js"></script>
+</body>
+</html>

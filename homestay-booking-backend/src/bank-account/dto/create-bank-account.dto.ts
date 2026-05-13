@@ -1,12 +1,18 @@
-import { IsString, IsNotEmpty, Length } from 'class-validator';
+import { IsString, IsNotEmpty, MaxLength } from 'class-validator';
 
 export class CreateBankAccountDto {
   @IsString()
   @IsNotEmpty()
-  bankName: string;
+  @MaxLength(100)
+  bankName!: string;
 
   @IsString()
   @IsNotEmpty()
-  @Length(8, 20)
-  accountNumber: string;
+  @MaxLength(50)
+  accountNumber!: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(100)
+  accountHolderName!: string;
 }

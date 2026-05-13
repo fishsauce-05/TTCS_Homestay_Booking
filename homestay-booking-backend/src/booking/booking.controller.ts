@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Query } from '@nestjs/common';
 import { BookingService } from './booking.service';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingStatusDto } from './dto/update-booking-status.dto';
@@ -14,71 +14,77 @@ export class BookingController {
   constructor(private readonly bookingService: BookingService) {}
 
   @Post('calculate-price')
-  async calculatePrice(@Body() calculatePriceDto: CalculatePriceDto) {
-    return this.bookingService.calculatePrice(calculatePriceDto);
+  calculatePrice(@Body() dto: CalculatePriceDto) {
+    return this.bookingService.calculatePrice(dto);
   }
 
   @Post()
   @UseGuards(JwtAuthGuard)
-  async createBooking(
-    @Body() createBookingDto: CreateBookingDto,
-    @CurrentUser() user: User,
-  ) {
-    return this.bookingService.createBooking(user.id, createBookingDto);
+  createBooking(@Body() dto: CreateBookingDto, @CurrentUser() user: User) {
+    return this.bookingService.createBooking(user.id, dto);
   }
 
   @Get('my')
   @UseGuards(JwtAuthGuard)
-  async getMyBookings(@CurrentUser() user: User) {
+  getMyBookings(@CurrentUser() user: User) {
     return this.bookingService.getMyBookings(user.id);
+  }
+
+  @Get('all')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  getAllBookings() {
+    return this.bookingService.getAllBookings();
+  }
+
+  @Get('room/:roomId')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('owner', 'admin')
+  getRoomBookings(@Param('roomId') roomId: string) {
+    return this.bookingService.getRoomBookings(roomId);
   }
 
   @Get('homestay/:homestayId')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('owner', 'admin')
-  async getHomestayBookings(@Param('homestayId') homestayId: string) {
+  getHomestayBookings(@Param('homestayId') homestayId: string) {
     return this.bookingService.getHomestayBookings(homestayId);
   }
 
   @Get(':id')
-  async getBookingById(@Param('id') id: string) {
+  getBookingById(@Param('id') id: string) {
     return this.bookingService.getBookingById(id);
   }
 
-  @Patch(':id/status')
-  @UseGuards(JwtAuthGuard)
-  async updateBookingStatus(
-    @Param('id') id: string,
-    @Body() updateBookingStatusDto: UpdateBookingStatusDto,
-  ) {
-    return this.bookingService.updateBookingStatus(id, updateBookingStatusDto);
-  }
-
   @Patch(':id/confirm')
-  @UseGuards(JwtAuthGuard)
-  async confirmBooking(@Param('id') id: string) {
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('owner')
+  confirmBooking(@Param('id') id: string) {
     return this.bookingService.confirmBooking(id);
   }
 
   @Patch(':id/cancel')
   @UseGuards(JwtAuthGuard)
-  async cancelBooking(
-    @Param('id') id: string,
-    @Body() body: { cancellationReason: string },
-  ) {
-    return this.bookingService.cancelBooking(id, body.cancellationReason);
+  cancelBooking(@Param('id') id: string, @Body() body: { cancellationReason?: string }) {
+    return this.bookingService.cancelBooking(id, body.cancellationReason || '');
   }
 
   @Patch(':id/complete')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('owner', 'admin')
-  async completeBooking(@Param('id') id: string) {
+  @Roles('owner')
+  completeBooking(@Param('id') id: string) {
     return this.bookingService.completeBooking(id);
+  }
+
+  @Patch(':id/status')
+  @UseGuards(JwtAuthGuard)
+  updateBookingStatus(@Param('id') id: string, @Body() dto: UpdateBookingStatusDto) {
+    return this.bookingService.updateBookingStatus(id, dto);
   }
 
   @Delete(':id')
   @UseGuards(JwtAuthGuard)
-  async deleteBooking(@Param('id') id: string) {
+  deleteBooking(@Param('id') id: string) {
     return this.bookingService.deleteBooking(id);
   }
 }

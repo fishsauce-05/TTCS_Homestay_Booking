@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(\\(Get-Content \"d:\\\\Hoc tap\\\\Code\\\\TTCS\\\\homestay-booking\\\\homestay-booking-frontend\\\\script.js\" | Measure-Object -Line\\).Lines; \\(Get-Content \"d:\\\\Hoc tap\\\\Code\\\\TTCS\\\\homestay-booking\\\\homestay-booking-frontend\\\\index.html\" | Measure-Object -Line\\).Lines)",
+      "Read(//d/Hoc tap/Code/TTCS/**)",
+      "Bash(xargs grep -l \"owner\\\\|upload\")",
+      "Bash(xargs grep -l \"FileInterceptor\\\\|multer\\\\|upload\")",
+      "Bash(npm run *)",
+      "Bash(psql -U postgres -h localhost -W -c \"\\\\l\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"\\\\l\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"SELECT pg_terminate_backend\\(pid\\) FROM pg_stat_activity WHERE datname = 'homestay_booking' AND pid <> pg_backend_pid\\(\\);\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"DROP DATABASE IF EXISTS homestay_booking;\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"CREATE DATABASE homestay_booking;\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"CREATE DATABASE homestay_booking TEMPLATE template0 ENCODING 'UTF8' LC_COLLATE 'vi-VN' LC_CTYPE 'vi-VN';\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"SELECT datname, datistemplate FROM pg_database;\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"SELECT datname, datistemplate, datallowconn FROM pg_database;\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"UPDATE pg_database SET datistemplate = true WHERE datname = 'postgres'; CREATE DATABASE homestay_booking TEMPLATE postgres; UPDATE pg_database SET datistemplate = false WHERE datname = 'postgres';\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"UPDATE pg_database SET datistemplate = true WHERE datname = 'postgres';\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"CREATE DATABASE homestay_booking TEMPLATE postgres;\")",
+      "Bash(PGPASSWORD=fishsauce psql -U postgres -h localhost -c \"UPDATE pg_database SET datistemplate = false WHERE datname = 'postgres';\")",
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(curl -s http://localhost:3000/api/rooms)"
+    ]
+  }
+}

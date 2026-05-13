@@ -1,0 +1,868 @@
+{
+  "projectName": "Homestay Booking",
+  "projectDescription": "A full-stack homestay booking platform with NestJS backend and HTML/CSS frontend",
+  "languages": [
+    "json",
+    "markdown",
+    "typescript",
+    "html",
+    "javascript",
+    "css"
+  ],
+  "frameworks": [
+    "NestJS",
+    "TypeORM",
+    "Passport",
+    "JWT"
+  ],
+  "files": [
+    {
+      "path": "homestay-booking-backend/.env",
+      "sizeLines": 12,
+      "sizeBytes": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/eslint.config.mjs",
+      "sizeLines": 36,
+      "sizeBytes": 934,
+      "fileCategory": "config"
+    },
+    {
+      "path": "homestay-booking-backend/nest-cli.json",
+      "sizeLines": 9,
+      "sizeBytes": 179,
+      "fileCategory": "config"
+    },
+    {
+      "path": "homestay-booking-backend/package-lock.json",
+      "sizeLines": 12695,
+      "sizeBytes": 476193,
+      "fileCategory": "config"
+    },
+    {
+      "path": "homestay-booking-backend/package.json",
+      "sizeLines": 87,
+      "sizeBytes": 2550,
+      "fileCategory": "config"
+    },
+    {
+      "path": "homestay-booking-backend/README.md",
+      "sizeLines": 99,
+      "sizeBytes": 5125,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 606,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "sizeLines": 49,
+      "sizeBytes": 1654,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/amenity.module.ts",
+      "sizeLines": 14,
+      "sizeBytes": 456,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 485,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/amenity.service.ts",
+      "sizeLines": 62,
+      "sizeBytes": 2042,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "sizeLines": 14,
+      "sizeBytes": 243,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "sizeLines": 5,
+      "sizeBytes": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "sizeLines": 24,
+      "sizeBytes": 608,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/app.controller.spec.ts",
+      "sizeLines": 23,
+      "sizeBytes": 639,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/app.controller.ts",
+      "sizeLines": 13,
+      "sizeBytes": 286,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/app.module.ts",
+      "sizeLines": 51,
+      "sizeBytes": 1775,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/app.service.ts",
+      "sizeLines": 9,
+      "sizeBytes": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 576,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/auth.controller.ts",
+      "sizeLines": 49,
+      "sizeBytes": 1352,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/auth.module.ts",
+      "sizeLines": 41,
+      "sizeBytes": 1383,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 464,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/auth.service.ts",
+      "sizeLines": 90,
+      "sizeBytes": 3020,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "sizeLines": 10,
+      "sizeBytes": 317,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "sizeLines": 4,
+      "sizeBytes": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "sizeLines": 12,
+      "sizeBytes": 191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "sizeLines": 30,
+      "sizeBytes": 502,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "sizeLines": 6,
+      "sizeBytes": 160,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "sizeLines": 28,
+      "sizeBytes": 765,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/services/password.service.ts",
+      "sizeLines": 15,
+      "sizeBytes": 398,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/services/token.service.ts",
+      "sizeLines": 21,
+      "sizeBytes": 470,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/services/validation.service.ts",
+      "sizeLines": 58,
+      "sizeBytes": 1826,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "sizeLines": 24,
+      "sizeBytes": 774,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 648,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "sizeLines": 42,
+      "sizeBytes": 1318,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "sizeLines": 15,
+      "sizeBytes": 549,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 514,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "sizeLines": 84,
+      "sizeBytes": 2708,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "sizeLines": 13,
+      "sizeBytes": 226,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "sizeLines": 13,
+      "sizeBytes": 228,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "sizeLines": 31,
+      "sizeBytes": 758,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/booking.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 606,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/booking.controller.ts",
+      "sizeLines": 85,
+      "sizeBytes": 2677,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/booking.module.ts",
+      "sizeLines": 21,
+      "sizeBytes": 775,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/booking.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 485,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/booking.service.ts",
+      "sizeLines": 241,
+      "sizeBytes": 7460,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "sizeLines": 21,
+      "sizeBytes": 338,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "sizeLines": 21,
+      "sizeBytes": 337,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "sizeLines": 12,
+      "sizeBytes": 280,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "sizeLines": 5,
+      "sizeBytes": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "sizeLines": 63,
+      "sizeBytes": 1774,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "sizeLines": 6,
+      "sizeBytes": 138,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "sizeLines": 39,
+      "sizeBytes": 561,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+      "sizeLines": 56,
+      "sizeBytes": 866,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "sizeLines": 45,
+      "sizeBytes": 673,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "sizeLines": 12,
+      "sizeBytes": 289,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "sizeLines": 11,
+      "sizeBytes": 272,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "sizeLines": 81,
+      "sizeBytes": 2371,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "sizeLines": 9,
+      "sizeBytes": 204,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 616,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "sizeLines": 58,
+      "sizeBytes": 1760,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/homestay.module.ts",
+      "sizeLines": 15,
+      "sizeBytes": 525,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 492,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/homestay/homestay.service.ts",
+      "sizeLines": 128,
+      "sizeBytes": 4375,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "sizeLines": 19,
+      "sizeBytes": 280,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "sizeLines": 5,
+      "sizeBytes": 177,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/entities/image.entity.ts",
+      "sizeLines": 36,
+      "sizeBytes": 1032,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/image.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 586,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/image.controller.ts",
+      "sizeLines": 43,
+      "sizeBytes": 1235,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/image.module.ts",
+      "sizeLines": 14,
+      "sizeBytes": 421,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/image.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 471,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/image/image.service.ts",
+      "sizeLines": 70,
+      "sizeBytes": 2116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/main.ts",
+      "sizeLines": 14,
+      "sizeBytes": 410,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "sizeLines": 19,
+      "sizeBytes": 400,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "sizeLines": 7,
+      "sizeBytes": 153,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "sizeLines": 33,
+      "sizeBytes": 877,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/notification.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 656,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/notification.controller.ts",
+      "sizeLines": 41,
+      "sizeBytes": 1442,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/notification.module.ts",
+      "sizeLines": 13,
+      "sizeBytes": 509,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/notification.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 520,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/notification/notification.service.ts",
+      "sizeLines": 74,
+      "sizeBytes": 2270,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "sizeLines": 7,
+      "sizeBytes": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "sizeLines": 5,
+      "sizeBytes": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "sizeLines": 63,
+      "sizeBytes": 1627,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/payment.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 606,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/payment.controller.ts",
+      "sizeLines": 44,
+      "sizeBytes": 1361,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/payment.module.ts",
+      "sizeLines": 18,
+      "sizeBytes": 725,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/payment.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 485,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/payment/payment.service.ts",
+      "sizeLines": 160,
+      "sizeBytes": 4774,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "sizeLines": 21,
+      "sizeBytes": 355,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "sizeLines": 18,
+      "sizeBytes": 305,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "sizeLines": 12,
+      "sizeBytes": 213,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "sizeLines": 33,
+      "sizeBytes": 857,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 668,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "sizeLines": 87,
+      "sizeBytes": 2925,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "sizeLines": 14,
+      "sizeBytes": 512,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 528,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "sizeLines": 160,
+      "sizeBytes": 5586,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "sizeLines": 16,
+      "sizeBytes": 292,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "sizeLines": 7,
+      "sizeBytes": 146,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "sizeLines": 5,
+      "sizeBytes": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/entities/review.entity.ts",
+      "sizeLines": 52,
+      "sizeBytes": 1406,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/review.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 596,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/review.controller.ts",
+      "sizeLines": 48,
+      "sizeBytes": 1490,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/review.module.ts",
+      "sizeLines": 13,
+      "sizeBytes": 478,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/review.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 478,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/review/review.service.ts",
+      "sizeLines": 85,
+      "sizeBytes": 2553,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "sizeLines": 15,
+      "sizeBytes": 244,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "sizeLines": 37,
+      "sizeBytes": 586,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "sizeLines": 20,
+      "sizeBytes": 316,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "sizeLines": 42,
+      "sizeBytes": 671,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/entities/user.entity.ts",
+      "sizeLines": 66,
+      "sizeBytes": 1780,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "sizeLines": 6,
+      "sizeBytes": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/user.controller.spec.ts",
+      "sizeLines": 34,
+      "sizeBytes": 942,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/user.controller.ts",
+      "sizeLines": 60,
+      "sizeBytes": 1959,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/user.module.ts",
+      "sizeLines": 14,
+      "sizeBytes": 425,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/user.service.spec.ts",
+      "sizeLines": 33,
+      "sizeBytes": 879,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/user/user.service.ts",
+      "sizeLines": 132,
+      "sizeBytes": 4239,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "sizeLines": 28,
+      "sizeBytes": 524,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "sizeLines": 5,
+      "sizeBytes": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "sizeLines": 45,
+      "sizeBytes": 1226,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "sizeLines": 5,
+      "sizeBytes": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+      "sizeLines": 21,
+      "sizeBytes": 606,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "sizeLines": 52,
+      "sizeBytes": 1593,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/voucher.module.ts",
+      "sizeLines": 14,
+      "sizeBytes": 443,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+      "sizeLines": 19,
+      "sizeBytes": 485,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher/voucher.service.ts",
+      "sizeLines": 60,
+      "sizeBytes": 1955,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "sizeLines": 39,
+      "sizeBytes": 1116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+      "sizeLines": 29,
+      "sizeBytes": 940,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "sizeLines": 28,
+      "sizeBytes": 1047,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "sizeLines": 15,
+      "sizeBytes": 641,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "sizeLines": 40,
+      "sizeBytes": 1215,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "sizeLines": 93,
+      "sizeBytes": 3105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/test/app.e2e-spec.ts",
+      "sizeLines": 26,
+      "sizeBytes": 694,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-backend/test/jest-e2e.json",
+      "sizeLines": 10,
+      "sizeBytes": 192,
+      "fileCategory": "config"
+    },
+    {
+      "path": "homestay-booking-backend/tsconfig.build.json",
+      "sizeLines": 5,
+      "sizeBytes": 101,
+      "fileCategory": "config"
+    },
+    {
+      "path": "homestay-booking-backend/tsconfig.json",
+      "sizeLines": 26,
+      "sizeBytes": 702,
+      "fileCategory": "config"
+    },
+    {
+      "path": "homestay-booking-frontend/index.html",
+      "sizeLines": 1151,
+      "sizeBytes": 51880,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "homestay-booking-frontend/script.js",
+      "sizeLines": 1107,
+      "sizeBytes": 42723,
+      "fileCategory": "code"
+    },
+    {
+      "path": "homestay-booking-frontend/style.css",
+      "sizeLines": 1452,
+      "sizeBytes": 32121,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "README.md",
+      "sizeLines": 2,
+      "sizeBytes": 24,
+      "fileCategory": "docs"
+    }
+  ],
+  "filteredByIgnore": 0,
+  "totalFilesScanned": 141
+}

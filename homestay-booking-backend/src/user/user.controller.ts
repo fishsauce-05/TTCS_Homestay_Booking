@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode, HttpStatus, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpCode, HttpStatus, UseGuards, Query } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -6,6 +6,8 @@ import { UpdateProfileDto } from './dto/update-profile.dto';
 import { ChangePasswordDto } from './dto/change-password.dto';
 import { CurrentUser } from '../auth/decorators/current-user.decorator';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { RolesGuard } from '../auth/guards/roles.guard';
+import { Roles } from '../auth/decorators/roles.decorator';
 import { User } from './entities/user.entity';
 
 @Controller('users')
@@ -13,47 +15,78 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
   @HttpCode(HttpStatus.CREATED)
-  async create(@Body() createUserDto: CreateUserDto) {
-    return await this.userService.create(createUserDto);
+  create(@Body() dto: CreateUserDto) {
+    return this.userService.create(dto);
   }
 
   @Get()
-  async findAll() {
-    return await this.userService.findAll();
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  findAll(@Query('search') search?: string, @Query('role') role?: string) {
+    return this.userService.findAll(search, role);
   }
 
   @Get('profile/me')
   @UseGuards(JwtAuthGuard)
-  async getProfile(@CurrentUser() user: User) {
-    return await this.userService.getProfile(user.id);
+  getProfile(@CurrentUser() user: User) {
+    return this.userService.getProfile(user.id);
   }
 
   @Get(':id')
-  async findOne(@Param('id') id: string) {
-    return await this.userService.findById(id);
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  findOne(@Param('id') id: string) {
+    return this.userService.findById(id);
   }
 
   @Patch('profile/me')
   @UseGuards(JwtAuthGuard)
-  async updateProfile(@CurrentUser() user: User, @Body() updateProfileDto: UpdateProfileDto) {
-    return await this.userService.updateProfile(user.id, updateProfileDto);
+  updateProfile(@CurrentUser() user: User, @Body() dto: UpdateProfileDto) {
+    return this.userService.updateProfile(user.id, dto);
   }
 
   @Patch('change-password')
   @UseGuards(JwtAuthGuard)
-  async changePassword(@CurrentUser() user: User, @Body() changePasswordDto: ChangePasswordDto) {
-    return await this.userService.changePassword(user.id, changePasswordDto);
+  changePassword(@CurrentUser() user: User, @Body() dto: ChangePasswordDto) {
+    return this.userService.changePassword(user.id, dto);
+  }
+
+  @Patch(':id/lock')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  lockUser(@Param('id') id: string, @Body() body: { reason?: string }) {
+    return this.userService.lockUser(id, body.reason);
+  }
+
+  @Patch(':id/unlock')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  unlockUser(@Param('id') id: string) {
+    return this.userService.unlockUser(id);
+  }
+
+  @Patch(':id/approve-owner')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  approveOwner(@Param('id') id: string) {
+    return this.userService.approveOwner(id);
   }
 
   @Patch(':id')
-  async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return await this.userService.update(id, updateUserDto);
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  update(@Param('id') id: string, @Body() dto: UpdateUserDto) {
+    return this.userService.update(id, dto);
   }
 
   @Delete(':id')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
   @HttpCode(HttpStatus.NO_CONTENT)
-  async remove(@Param('id') id: string) {
-    await this.userService.remove(id);
+  remove(@Param('id') id: string) {
+    return this.userService.remove(id);
   }
 }

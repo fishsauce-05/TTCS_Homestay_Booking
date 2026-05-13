@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owner Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+<main>
+<section id="section-owner-dashboard" class="app-section active">
+  <div class="container-xl py-5 mt-5">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <div>
+        <span class="section-label">Owner</span>
+        <h2 class="page-title mb-0">Quản lý Homestay</h2>
+      </div>
+    </div>
+
+    <ul class="nav nav-pills booking-tabs mb-4 flex-wrap" id="ownerTabs">
+      <li class="nav-item"><button class="nav-link active"><i class="bi bi-house me-1"></i>Homestay</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-door-closed me-1"></i>Phòng</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-calendar3 me-1"></i>Lịch giá</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-calendar-check me-1"></i>Đặt phòng</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-credit-card me-1"></i>Thanh toan</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-graph-up me-1"></i>Doanh thu</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-star me-1"></i>Đánh giá</button></li>
+      <li class="nav-item"><button class="nav-link"><i class="bi bi-bank me-1"></i>Tài khoản NH</button></li>
+    </ul>
+
+    <!-- Tab: Homestays -->
+    <div id="owner-tab-homestays">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Homestay của tôi</h6>
+        <button class="btn btn-brand btn-sm" id="btn-show-homestay-form"><i class="bi bi-plus-lg me-1"></i>Thêm Homestay</button>
+      </div>
+      <div id="homestay-form-wrap" class="checkout-card p-3 mb-3 d-none">
+        <h6 class="fw-600 mb-3" id="homestay-form-title">Thêm Homestay mới</h6>
+        <div class="row g-2">
+          <div class="col-md-6">
+            <label class="form-label small">Tên homestay <span class="text-danger">*</span></label>
+            <input type="text" id="hs-title" class="form-control form-control-brand" placeholder="Villa Sương Mai" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small">Địa chỉ <span class="text-danger">*</span></label>
+            <input type="text" id="hs-address" class="form-control form-control-brand" placeholder="12 Đường Hoa Hồng, Đà Lạt" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small">Vĩ độ (Lat)</label>
+            <input type="number" id="hs-lat" class="form-control form-control-brand" placeholder="11.9404" step="0.0001" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label small">Kinh độ (Lng)</label>
+            <input type="number" id="hs-lng" class="form-control form-control-brand" placeholder="108.4583" step="0.0001" />
+          </div>
+          <div class="col-12">
+            <label class="form-label small">Mô tả <span class="text-danger">*</span></label>
+            <textarea id="hs-description" class="form-control form-control-brand" rows="2" placeholder="Mô tả ngắn về homestay..."></textarea>
+          </div>
+        </div>
+        <input type="hidden" id="hs-editing-id" />
+        <div class="d-flex gap-2 mt-3">
+          <button class="btn btn-brand btn-sm" id="btn-save-homestay"><i class="bi bi-check-lg me-1"></i>Lưu</button>
+          <button class="btn btn-outline-secondary btn-sm" id="btn-cancel-homestay">Hủy</button>
+        </div>
+      </div>
+      <div id="owner-homestays-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Rooms -->
+    <div id="owner-tab-rooms" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <h6 class="mb-0 fw-600">Phòng</h6>
+          <select id="owner-room-homestay-filter" class="form-select form-control-brand form-select-sm" style="max-width:220px">
+            <option value="">-- Chọn homestay --</option>
+          </select>
+        </div>
+        <button class="btn btn-brand btn-sm" id="btn-show-room-form"><i class="bi bi-plus-lg me-1"></i>Thêm phòng</button>
+      </div>
+      <div id="room-form-wrap" class="checkout-card p-3 mb-3 d-none">
+        <h6 class="fw-600 mb-3" id="room-form-title">Thêm phòng mới</h6>
+        <div class="row g-2">
+          <div class="col-md-4">
+            <label class="form-label small">Homestay <span class="text-danger">*</span></label>
+            <select id="r-homestay-id" class="form-select form-control-brand"></select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Tên phòng <span class="text-danger">*</span></label>
+            <input type="text" id="r-name" class="form-control form-control-brand" placeholder="Phòng 101" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Loại phòng <span class="text-danger">*</span></label>
+            <select id="r-type" class="form-select form-control-brand">
+              <option value="SINGLE">Phòng Đơn</option>
+              <option value="DOUBLE">Phòng Đôi</option>
+              <option value="FAMILY">Phòng Gia Đình</option>
+              <option value="SUITE">Suite</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Sức chứa (khách) <span class="text-danger">*</span></label>
+            <input type="number" id="r-capacity" class="form-control form-control-brand" min="1" placeholder="2" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Giá cơ bản (VND/đêm) <span class="text-danger">*</span></label>
+            <input type="number" id="r-base-price" class="form-control form-control-brand" min="0" placeholder="500000" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Trạng thái</label>
+            <select id="r-status" class="form-select form-control-brand">
+              <option value="ACTIVE">Hoạt động</option>
+              <option value="INACTIVE">Tạm ngừng</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label small">Mô tả</label>
+            <textarea id="r-description" class="form-control form-control-brand" rows="2" placeholder="Mô tả phòng..."></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-label small">Ảnh phòng (URL)</label>
+            <div id="r-images-preview" class="d-flex flex-wrap gap-2 mb-2"></div>
+            <div class="input-group input-group-sm">
+              <input type="url" id="r-image-url-input" class="form-control form-control-brand" placeholder="https://example.com/photo.jpg" />
+              <button type="button" id="btn-add-room-image" class="btn btn-brand-outline text-nowrap">
+                <i class="bi bi-plus-lg me-1"></i>Thêm ảnh
+              </button>
+            </div>
+          </div>
+        </div>
+        <input type="hidden" id="r-editing-id" />
+        <div class="d-flex gap-2 mt-3">
+          <button class="btn btn-brand btn-sm" id="btn-save-room"><i class="bi bi-check-lg me-1"></i>Lưu</button>
+          <button class="btn btn-outline-secondary btn-sm" id="btn-cancel-room">Hủy</button>
+        </div>
+      </div>
+      <div id="owner-rooms-list">
+        <div class="text-muted text-center py-5"><i class="bi bi-door-closed fs-1 d-block mb-3"></i>Chọn homestay để xem phòng</div>
+      </div>
+    </div>
+
+    <!-- Tab: Pricing Schedules -->
+    <div id="owner-tab-pricing" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <h6 class="mb-0 fw-600">Lịch giá</h6>
+          <select id="owner-pricing-room-filter" class="form-select form-control-brand form-select-sm" style="max-width:220px">
+            <option value="">-- Chọn phòng --</option>
+          </select>
+        </div>
+        <button class="btn btn-brand btn-sm" id="btn-show-pricing-form"><i class="bi bi-plus-lg me-1"></i>Thêm lịch giá</button>
+      </div>
+      <div id="pricing-form-wrap" class="checkout-card p-3 mb-3 d-none">
+        <h6 class="fw-600 mb-3" id="pricing-form-title">Thêm lịch giá</h6>
+        <div class="row g-2">
+          <div class="col-md-3">
+            <label class="form-label small">Phòng <span class="text-danger">*</span></label>
+            <select id="ps-room-id" class="form-select form-control-brand"></select>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small">Từ ngày <span class="text-danger">*</span></label>
+            <input type="date" id="ps-start-date" class="form-control form-control-brand" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small">Đến ngày <span class="text-danger">*</span></label>
+            <input type="date" id="ps-end-date" class="form-control form-control-brand" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small">Giá/đêm (VND) <span class="text-danger">*</span></label>
+            <input type="number" id="ps-price" class="form-control form-control-brand" min="0" placeholder="800000" />
+          </div>
+        </div>
+        <input type="hidden" id="ps-editing-id" />
+        <div class="d-flex gap-2 mt-3">
+          <button class="btn btn-brand btn-sm" id="btn-save-pricing"><i class="bi bi-check-lg me-1"></i>Lưu</button>
+          <button class="btn btn-outline-secondary btn-sm" id="btn-cancel-pricing">Hủy</button>
+        </div>
+      </div>
+      <div id="owner-pricing-list">
+        <div class="text-muted text-center py-5"><i class="bi bi-calendar3 fs-1 d-block mb-3"></i>Chọn phòng để xem lịch giá</div>
+      </div>
+    </div>
+
+    <!-- Tab: Bookings -->
+    <div id="owner-tab-bookings" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex align-items-center gap-2">
+          <h6 class="mb-0 fw-600">Đặt phòng</h6>
+          <select id="owner-booking-homestay-filter" class="form-select form-control-brand form-select-sm" style="max-width:220px">
+            <option value="">-- Chọn homestay --</option>
+          </select>
+        </div>
+        <button class="btn btn-brand-outline btn-sm" id="btn-refresh-owner-bookings"><i class="bi bi-arrow-repeat me-1"></i>Làm mới</button>
+      </div>
+      <div id="owner-bookings-list">
+        <div class="text-muted text-center py-5"><i class="bi bi-calendar-check fs-1 d-block mb-3"></i>Chọn homestay để xem đặt phòng</div>
+      </div>
+    </div>
+
+    <!-- Tab: Payments -->
+    <div id="owner-tab-payments" class="d-none">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="mb-0 fw-600">Thanh toan cho xac nhan</h6>
+        <button class="btn btn-brand-outline btn-sm" id="btn-refresh-owner-payments"><i class="bi bi-arrow-repeat me-1"></i>Lam moi</button>
+      </div>
+      <div id="owner-payments-list">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+    </div>
+
+    <!-- Tab: Owner Stats -->
+    <div id="owner-tab-owner-stats" class="d-none">
+      <div class="row g-3 align-items-end mb-4">
+        <div class="col-md-4">
+          <label class="form-label small">Từ ngày</label>
+          <input type="date" id="owner-stats-start" class="form-control form-control-brand" />
+        </div>
+        <div class="col-md-4">
+          <label class="form-label small">Đến ngày</label>
+          <input type="date" id="owner-stats-end" class="form-control form-control-brand" />
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-brand w-100"><i class="bi bi-graph-up me-1"></i>Xem doanh thu</button>
+        </div>
+      </div>
+      <div id="owner-stats-list">
+        <div class="text-muted text-center py-5"><i class="bi bi-graph-up fs-1 d-block mb-3"></i>Chọn khoảng thời gian để xem doanh thu</div>
+      </div>
+      <!-- Room-level stats drill-down -->
+      <div id="owner-room-stats-list" class="mt-3 d-none"></div>
+    </div>
+
+    <!-- Tab: Reviews -->
+    <div id="owner-tab-reviews" class="d-none">
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <h6 class="mb-0 fw-600">Đánh giá khách hàng</h6>
+        <select id="owner-reviews-homestay-filter" class="form-select form-control-brand form-select-sm" style="max-width:220px">
+          <option value="">-- Chọn homestay --</option>
+        </select>
+      </div>
+      <div id="owner-reviews-list">
+        <div class="text-muted text-center py-5"><i class="bi bi-star fs-1 d-block mb-3"></i>Chọn homestay để xem đánh giá</div>
+      </div>
+    </div>
+
+    <!-- Tab: Bank Account -->
+    <div id="owner-tab-bank-account" class="d-none">
+      <h6 class="fw-600 mb-3">Tài khoản ngân hàng nhận tiền</h6>
+      <div id="owner-bank-account-display" class="mb-3">
+        <div class="text-center py-4"><div class="spinner-border spinner-border-sm text-brand"></div></div>
+      </div>
+      <div class="d-flex gap-2 mb-3">
+        <button class="btn btn-brand-outline btn-sm" id="btn-edit-bank-account"><i class="bi bi-pencil me-1"></i>Cập nhật tài khoản</button>
+        <button class="btn btn-outline-danger btn-sm" id="btn-delete-bank-account"><i class="bi bi-trash me-1"></i>Xóa</button>
+      </div>
+      <div id="owner-bank-form-wrap" class="checkout-card p-3">
+        <h6 class="fw-600 mb-3">Thông tin tài khoản ngân hàng</h6>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label small">Tên chủ tài khoản <span class="text-danger">*</span></label>
+            <input type="text" id="bank-holder-name" class="form-control form-control-brand" placeholder="NGUYEN VAN A" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Ngân hàng <span class="text-danger">*</span></label>
+            <input type="text" id="bank-name" class="form-control form-control-brand" placeholder="Vietcombank" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label small">Số tài khoản <span class="text-danger">*</span></label>
+            <input type="text" id="bank-account-number" class="form-control form-control-brand" placeholder="0123456789" />
+          </div>
+        </div>
+        <div class="mt-3">
+          <button class="btn btn-brand btn-sm" id="btn-save-bank-account">
+            <span class="spinner-border spinner-border-sm d-none me-1"></span>
+            <i class="bi bi-check-lg me-1"></i>Lưu tài khoản
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/features/owner/owner-init.js"></script>
+</body>
+</html>

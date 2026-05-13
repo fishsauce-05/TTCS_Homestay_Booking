@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToMany } from 'typeorm';
-import { Homestay } from '../../homestay/entities/homestay.entity';
+import { Room } from '../../room/entities/room.entity';
 
 @Entity('amenities')
 export class Amenity {
@@ -10,7 +10,7 @@ export class Amenity {
   name!: string;
 
   @Column({ type: 'varchar', length: 50, nullable: true })
-  icon!: string;
+  icon!: string | null;
 
   @CreateDateColumn()
   createdAt!: Date;
@@ -18,6 +18,6 @@ export class Amenity {
   @UpdateDateColumn()
   updatedAt!: Date;
 
-  @ManyToMany(() => Homestay, (homestay) => homestay.amenities)
-  homestays!: Homestay[];
+  @ManyToMany(() => Room, (room) => room.amenities)
+  rooms!: Room[];
 }

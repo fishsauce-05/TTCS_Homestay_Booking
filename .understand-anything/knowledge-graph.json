@@ -1,0 +1,4977 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "TTCS_Homestay_Booking",
+    "languages": [
+      "TypeScript",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "JSON",
+      "Markdown"
+    ],
+    "frameworks": [
+      "NestJS",
+      "Bootstrap"
+    ],
+    "description": "Homestay booking platform with a NestJS backend and a static frontend prototype.",
+    "analyzedAt": "2026-05-12T08:53:53.236Z",
+    "gitCommitHash": "c0e59c2c1a9780769419c71b2866a069e68e3c06"
+  },
+  "nodes": [
+    {
+      "id": "config:homestay-booking-backend/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "homestay-booking-backend/.env.example",
+      "summary": "Example environment variables for the backend runtime configuration.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/.gitignore",
+      "type": "config",
+      "name": ".gitignore",
+      "filePath": "homestay-booking-backend/.gitignore",
+      "summary": "Source file for .gitignore in homestay-booking-backend.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/.prettierrc",
+      "type": "config",
+      "name": ".prettierrc",
+      "filePath": "homestay-booking-backend/.prettierrc",
+      "summary": "Source file for .prettierrc in homestay-booking-backend.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/.vscode/settings.json",
+      "type": "config",
+      "name": "settings.json",
+      "filePath": "homestay-booking-backend/.vscode/settings.json",
+      "summary": "Source file for settings.json in .vscode.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/eslint.config.mjs",
+      "type": "config",
+      "name": "eslint.config.mjs",
+      "filePath": "homestay-booking-backend/eslint.config.mjs",
+      "summary": "ESLint configuration for backend TypeScript linting.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/nest-cli.json",
+      "type": "config",
+      "name": "nest-cli.json",
+      "filePath": "homestay-booking-backend/nest-cli.json",
+      "summary": "Nest CLI configuration for backend code generation and build behavior.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/package-lock.json",
+      "type": "config",
+      "name": "package-lock.json",
+      "filePath": "homestay-booking-backend/package-lock.json",
+      "summary": "Source file for package-lock.json in homestay-booking-backend.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "homestay-booking-backend/package.json",
+      "summary": "Backend package manifest with scripts, dependencies, and test configuration.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/test/jest-e2e.json",
+      "type": "config",
+      "name": "jest-e2e.json",
+      "filePath": "homestay-booking-backend/test/jest-e2e.json",
+      "summary": "Source file for jest-e2e.json in test.",
+      "tags": [
+        "backend",
+        "test",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/tsconfig.build.json",
+      "type": "config",
+      "name": "tsconfig.build.json",
+      "filePath": "homestay-booking-backend/tsconfig.build.json",
+      "summary": "TypeScript compiler configuration for the backend project.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "config:homestay-booking-backend/tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "homestay-booking-backend/tsconfig.json",
+      "summary": "TypeScript compiler configuration for the backend project.",
+      "tags": [
+        "backend",
+        "config"
+      ]
+    },
+    {
+      "id": "document:homestay-booking-backend/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "homestay-booking-backend/README.md",
+      "summary": "Backend-specific setup and usage notes.",
+      "tags": [
+        "backend",
+        "docs"
+      ]
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Top-level project overview for the homestay booking workspace.",
+      "tags": [
+        "docs"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "type": "file",
+      "name": "amenity.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "summary": "Jest unit test for amenity.controller.ts in amenity.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "type": "file",
+      "name": "amenity.controller.ts",
+      "filePath": "homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "summary": "HTTP controller for amenity endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "type": "file",
+      "name": "amenity.module.ts",
+      "filePath": "homestay-booking-backend/src/amenity/amenity.module.ts",
+      "summary": "NestJS feature module for amenity functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "type": "file",
+      "name": "amenity.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "summary": "Jest unit test for amenity.service.ts in amenity.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "file",
+      "name": "amenity.service.ts",
+      "filePath": "homestay-booking-backend/src/amenity/amenity.service.ts",
+      "summary": "Application service for amenity business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "file",
+      "name": "create-amenity.dto.ts",
+      "filePath": "homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "summary": "DTO definitions for amenity request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "type": "file",
+      "name": "update-amenity.dto.ts",
+      "filePath": "homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "summary": "DTO definitions for amenity request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "file",
+      "name": "amenity.entity.ts",
+      "filePath": "homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/app.controller.spec.ts",
+      "type": "file",
+      "name": "app.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/app.controller.spec.ts",
+      "summary": "Jest unit test for app.controller.ts in src.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/app.controller.ts",
+      "type": "file",
+      "name": "app.controller.ts",
+      "filePath": "homestay-booking-backend/src/app.controller.ts",
+      "summary": "HTTP controller for src endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/app.module.ts",
+      "type": "file",
+      "name": "app.module.ts",
+      "filePath": "homestay-booking-backend/src/app.module.ts",
+      "summary": "Root NestJS module that wires config, TypeORM, and feature modules together.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/app.service.ts",
+      "type": "file",
+      "name": "app.service.ts",
+      "filePath": "homestay-booking-backend/src/app.service.ts",
+      "summary": "Application service for src business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "type": "file",
+      "name": "auth.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "summary": "Jest unit test for auth.controller.ts in auth.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "type": "file",
+      "name": "auth.controller.ts",
+      "filePath": "homestay-booking-backend/src/auth/auth.controller.ts",
+      "summary": "HTTP controller for auth endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "type": "file",
+      "name": "auth.module.ts",
+      "filePath": "homestay-booking-backend/src/auth/auth.module.ts",
+      "summary": "NestJS feature module for auth functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "type": "file",
+      "name": "auth.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "summary": "Jest unit test for auth.service.ts in auth.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "file",
+      "name": "auth.service.ts",
+      "filePath": "homestay-booking-backend/src/auth/auth.service.ts",
+      "summary": "Application service for auth business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "type": "file",
+      "name": "current-user.decorator.ts",
+      "filePath": "homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "summary": "Source file for current-user.decorator.ts in decorators.",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "file",
+      "name": "roles.decorator.ts",
+      "filePath": "homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "summary": "Source file for roles.decorator.ts in decorators.",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "type": "file",
+      "name": "login.dto.ts",
+      "filePath": "homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "summary": "DTO definitions for auth request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "type": "file",
+      "name": "register.dto.ts",
+      "filePath": "homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "summary": "DTO definitions for auth request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "file",
+      "name": "jwt-auth.guard.ts",
+      "filePath": "homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "summary": "Source file for jwt-auth.guard.ts in guards.",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "file",
+      "name": "roles.guard.ts",
+      "filePath": "homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "summary": "Source file for roles.guard.ts in guards.",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/services/password.service.ts",
+      "type": "file",
+      "name": "password.service.ts",
+      "filePath": "homestay-booking-backend/src/auth/services/password.service.ts",
+      "summary": "Application service for services business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/services/token.service.ts",
+      "type": "file",
+      "name": "token.service.ts",
+      "filePath": "homestay-booking-backend/src/auth/services/token.service.ts",
+      "summary": "Application service for services business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/services/validation.service.ts",
+      "type": "file",
+      "name": "validation.service.ts",
+      "filePath": "homestay-booking-backend/src/auth/services/validation.service.ts",
+      "summary": "Application service for services business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "type": "file",
+      "name": "jwt.strategy.ts",
+      "filePath": "homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "summary": "Source file for jwt.strategy.ts in strategies.",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+      "type": "file",
+      "name": "bank-account.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+      "summary": "Jest unit test for bank-account.controller.ts in bank-account.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "type": "file",
+      "name": "bank-account.controller.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "summary": "HTTP controller for bank-account endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "type": "file",
+      "name": "bank-account.module.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "summary": "NestJS feature module for bank-account functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+      "type": "file",
+      "name": "bank-account.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+      "summary": "Jest unit test for bank-account.service.ts in bank-account.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "type": "file",
+      "name": "bank-account.service.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "summary": "Application service for bank-account business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "type": "file",
+      "name": "create-bank-account.dto.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "summary": "DTO definitions for bank-account request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "type": "file",
+      "name": "update-bank-account.dto.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "summary": "DTO definitions for bank-account request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "file",
+      "name": "bank-account.entity.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/booking.controller.spec.ts",
+      "type": "file",
+      "name": "booking.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/booking/booking.controller.spec.ts",
+      "summary": "Jest unit test for booking.controller.ts in booking.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "type": "file",
+      "name": "booking.controller.ts",
+      "filePath": "homestay-booking-backend/src/booking/booking.controller.ts",
+      "summary": "HTTP controller for booking endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "type": "file",
+      "name": "booking.module.ts",
+      "filePath": "homestay-booking-backend/src/booking/booking.module.ts",
+      "summary": "NestJS feature module for booking functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/booking.service.spec.ts",
+      "type": "file",
+      "name": "booking.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/booking/booking.service.spec.ts",
+      "summary": "Jest unit test for booking.service.ts in booking.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "type": "file",
+      "name": "booking.service.ts",
+      "filePath": "homestay-booking-backend/src/booking/booking.service.ts",
+      "summary": "Application service for booking business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "type": "file",
+      "name": "calculate-price.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "summary": "DTO definitions for booking request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "file",
+      "name": "create-booking.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "summary": "DTO definitions for booking request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "type": "file",
+      "name": "update-booking-status.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "summary": "DTO definitions for booking request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "type": "file",
+      "name": "update-booking.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "summary": "DTO definitions for booking request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "file",
+      "name": "booking.entity.ts",
+      "filePath": "homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "type": "file",
+      "name": "booking-status.enum.ts",
+      "filePath": "homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "summary": "Enum definitions for booking domain rules.",
+      "tags": [
+        "backend",
+        "enum"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "type": "file",
+      "name": "create-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "summary": "DTO definitions for homestay request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+      "type": "file",
+      "name": "search-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+      "summary": "DTO definitions for homestay request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "type": "file",
+      "name": "update-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "summary": "DTO definitions for homestay request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "type": "file",
+      "name": "update-status-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "summary": "DTO definitions for homestay request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "type": "file",
+      "name": "update-status.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "summary": "DTO definitions for homestay request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "file",
+      "name": "homestay.entity.ts",
+      "filePath": "homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "file",
+      "name": "homestay-status.enum.ts",
+      "filePath": "homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "summary": "Enum definitions for homestay domain rules.",
+      "tags": [
+        "backend",
+        "enum"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+      "type": "file",
+      "name": "homestay.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+      "summary": "Jest unit test for homestay.controller.ts in homestay.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "type": "file",
+      "name": "homestay.controller.ts",
+      "filePath": "homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "summary": "HTTP controller for homestay endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "type": "file",
+      "name": "homestay.module.ts",
+      "filePath": "homestay-booking-backend/src/homestay/homestay.module.ts",
+      "summary": "NestJS feature module for homestay functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+      "type": "file",
+      "name": "homestay.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+      "summary": "Jest unit test for homestay.service.ts in homestay.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "file",
+      "name": "homestay.service.ts",
+      "filePath": "homestay-booking-backend/src/homestay/homestay.service.ts",
+      "summary": "Application service for homestay business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "type": "file",
+      "name": "create-image.dto.ts",
+      "filePath": "homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "summary": "DTO definitions for image request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "type": "file",
+      "name": "update-image.dto.ts",
+      "filePath": "homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "summary": "DTO definitions for image request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "file",
+      "name": "image.entity.ts",
+      "filePath": "homestay-booking-backend/src/image/entities/image.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/image.controller.spec.ts",
+      "type": "file",
+      "name": "image.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/image/image.controller.spec.ts",
+      "summary": "Jest unit test for image.controller.ts in image.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "type": "file",
+      "name": "image.controller.ts",
+      "filePath": "homestay-booking-backend/src/image/image.controller.ts",
+      "summary": "HTTP controller for image endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/image.module.ts",
+      "type": "file",
+      "name": "image.module.ts",
+      "filePath": "homestay-booking-backend/src/image/image.module.ts",
+      "summary": "NestJS feature module for image functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/image.service.spec.ts",
+      "type": "file",
+      "name": "image.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/image/image.service.spec.ts",
+      "summary": "Jest unit test for image.service.ts in image.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/image.service.ts",
+      "type": "file",
+      "name": "image.service.ts",
+      "filePath": "homestay-booking-backend/src/image/image.service.ts",
+      "summary": "Application service for image business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/main.ts",
+      "type": "file",
+      "name": "main.ts",
+      "filePath": "homestay-booking-backend/src/main.ts",
+      "summary": "Bootstraps the NestJS API, enables CORS, and sets the global /api prefix.",
+      "tags": [
+        "backend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "type": "file",
+      "name": "create-notification.dto.ts",
+      "filePath": "homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "summary": "DTO definitions for notification request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "type": "file",
+      "name": "update-notification.dto.ts",
+      "filePath": "homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "summary": "DTO definitions for notification request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "file",
+      "name": "notification.entity.ts",
+      "filePath": "homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/notification.controller.spec.ts",
+      "type": "file",
+      "name": "notification.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/notification/notification.controller.spec.ts",
+      "summary": "Jest unit test for notification.controller.ts in notification.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "type": "file",
+      "name": "notification.controller.ts",
+      "filePath": "homestay-booking-backend/src/notification/notification.controller.ts",
+      "summary": "HTTP controller for notification endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "type": "file",
+      "name": "notification.module.ts",
+      "filePath": "homestay-booking-backend/src/notification/notification.module.ts",
+      "summary": "NestJS feature module for notification functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/notification.service.spec.ts",
+      "type": "file",
+      "name": "notification.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/notification/notification.service.spec.ts",
+      "summary": "Jest unit test for notification.service.ts in notification.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "type": "file",
+      "name": "notification.service.ts",
+      "filePath": "homestay-booking-backend/src/notification/notification.service.ts",
+      "summary": "Application service for notification business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "type": "file",
+      "name": "create-payment.dto.ts",
+      "filePath": "homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "summary": "DTO definitions for payment request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "type": "file",
+      "name": "update-payment.dto.ts",
+      "filePath": "homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "summary": "DTO definitions for payment request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "file",
+      "name": "payment.entity.ts",
+      "filePath": "homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/payment.controller.spec.ts",
+      "type": "file",
+      "name": "payment.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/payment/payment.controller.spec.ts",
+      "summary": "Jest unit test for payment.controller.ts in payment.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "type": "file",
+      "name": "payment.controller.ts",
+      "filePath": "homestay-booking-backend/src/payment/payment.controller.ts",
+      "summary": "HTTP controller for payment endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "type": "file",
+      "name": "payment.module.ts",
+      "filePath": "homestay-booking-backend/src/payment/payment.module.ts",
+      "summary": "NestJS feature module for payment functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/payment.service.spec.ts",
+      "type": "file",
+      "name": "payment.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/payment/payment.service.spec.ts",
+      "summary": "Jest unit test for payment.service.ts in payment.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "type": "file",
+      "name": "payment.service.ts",
+      "filePath": "homestay-booking-backend/src/payment/payment.service.ts",
+      "summary": "Application service for payment business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "type": "file",
+      "name": "bulk-update-price-calendar.dto.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "summary": "DTO definitions for price-calendar request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "type": "file",
+      "name": "create-price-calendar.dto.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "summary": "DTO definitions for price-calendar request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "type": "file",
+      "name": "update-price-calendar.dto.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "summary": "DTO definitions for price-calendar request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "file",
+      "name": "price-calendar.entity.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+      "type": "file",
+      "name": "price-calendar.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+      "summary": "Jest unit test for price-calendar.controller.ts in price-calendar.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "type": "file",
+      "name": "price-calendar.controller.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "summary": "HTTP controller for price-calendar endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "type": "file",
+      "name": "price-calendar.module.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "summary": "NestJS feature module for price-calendar functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+      "type": "file",
+      "name": "price-calendar.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+      "summary": "Jest unit test for price-calendar.service.ts in price-calendar.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "file",
+      "name": "price-calendar.service.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "summary": "Application service for price-calendar business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "type": "file",
+      "name": "create-review.dto.ts",
+      "filePath": "homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "summary": "DTO definitions for review request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "type": "file",
+      "name": "review-reply.dto.ts",
+      "filePath": "homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "summary": "DTO definitions for review request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "type": "file",
+      "name": "update-review.dto.ts",
+      "filePath": "homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "summary": "DTO definitions for review request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "file",
+      "name": "review.entity.ts",
+      "filePath": "homestay-booking-backend/src/review/entities/review.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.controller.spec.ts",
+      "type": "file",
+      "name": "review.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/review/review.controller.spec.ts",
+      "summary": "Jest unit test for review.controller.ts in review.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "type": "file",
+      "name": "review.controller.ts",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "HTTP controller for review endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.module.ts",
+      "type": "file",
+      "name": "review.module.ts",
+      "filePath": "homestay-booking-backend/src/review/review.module.ts",
+      "summary": "NestJS feature module for review functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.service.spec.ts",
+      "type": "file",
+      "name": "review.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/review/review.service.spec.ts",
+      "summary": "Jest unit test for review.service.ts in review.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "file",
+      "name": "review.service.ts",
+      "filePath": "homestay-booking-backend/src/review/review.service.ts",
+      "summary": "Application service for review business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "type": "file",
+      "name": "change-password.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "summary": "DTO definitions for user request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "type": "file",
+      "name": "create-user.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "summary": "DTO definitions for user request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "type": "file",
+      "name": "update-profile.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "summary": "DTO definitions for user request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "type": "file",
+      "name": "update-user.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "summary": "DTO definitions for user request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "file",
+      "name": "user.entity.ts",
+      "filePath": "homestay-booking-backend/src/user/entities/user.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "file",
+      "name": "user-role.enum.ts",
+      "filePath": "homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "summary": "Enum definitions for user domain rules.",
+      "tags": [
+        "backend",
+        "enum"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.controller.spec.ts",
+      "type": "file",
+      "name": "user.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/user/user.controller.spec.ts",
+      "summary": "Jest unit test for user.controller.ts in user.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "type": "file",
+      "name": "user.controller.ts",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "HTTP controller for user endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.module.ts",
+      "type": "file",
+      "name": "user.module.ts",
+      "filePath": "homestay-booking-backend/src/user/user.module.ts",
+      "summary": "NestJS feature module for user functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.service.spec.ts",
+      "type": "file",
+      "name": "user.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/user/user.service.spec.ts",
+      "summary": "Jest unit test for user.service.ts in user.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "file",
+      "name": "user.service.ts",
+      "filePath": "homestay-booking-backend/src/user/user.service.ts",
+      "summary": "Application service for user business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "type": "file",
+      "name": "voucher-redemption.entity.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+      "type": "file",
+      "name": "voucher-redemption.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+      "summary": "Jest unit test for voucher-redemption.controller.ts in voucher-redemption.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "type": "file",
+      "name": "voucher-redemption.controller.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "summary": "HTTP controller for voucher-redemption endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "type": "file",
+      "name": "voucher-redemption.module.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "summary": "NestJS feature module for voucher-redemption functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "type": "file",
+      "name": "voucher-redemption.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "summary": "Jest unit test for voucher-redemption.service.ts in voucher-redemption.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "file",
+      "name": "voucher-redemption.service.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "summary": "Application service for voucher-redemption business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "file",
+      "name": "create-voucher.dto.ts",
+      "filePath": "homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "summary": "DTO definitions for voucher request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "type": "file",
+      "name": "update-voucher.dto.ts",
+      "filePath": "homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "summary": "DTO definitions for voucher request and response validation.",
+      "tags": [
+        "backend",
+        "dto"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "file",
+      "name": "voucher.entity.ts",
+      "filePath": "homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "summary": "Persistence entity for entities data.",
+      "tags": [
+        "backend",
+        "entity"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "type": "file",
+      "name": "voucher-type.enum.ts",
+      "filePath": "homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "summary": "Enum definitions for voucher domain rules.",
+      "tags": [
+        "backend",
+        "enum"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+      "type": "file",
+      "name": "voucher.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+      "summary": "Jest unit test for voucher.controller.ts in voucher.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "type": "file",
+      "name": "voucher.controller.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "HTTP controller for voucher endpoints.",
+      "tags": [
+        "backend",
+        "controller"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "type": "file",
+      "name": "voucher.module.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.module.ts",
+      "summary": "NestJS feature module for voucher functionality.",
+      "tags": [
+        "backend",
+        "module"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+      "type": "file",
+      "name": "voucher.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+      "summary": "Jest unit test for voucher.service.ts in voucher.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "file",
+      "name": "voucher.service.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.service.ts",
+      "summary": "Application service for voucher business logic.",
+      "tags": [
+        "backend",
+        "service"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-backend/test/app.e2e-spec.ts",
+      "type": "file",
+      "name": "app.e2e-spec.ts",
+      "filePath": "homestay-booking-backend/test/app.e2e-spec.ts",
+      "summary": "End-to-end test for the backend API.",
+      "tags": [
+        "backend",
+        "test"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-frontend/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Static frontend shell and application markup for the homestay booking UI.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-frontend/script.js",
+      "type": "file",
+      "name": "script.js",
+      "filePath": "homestay-booking-frontend/script.js",
+      "summary": "Client-side SPA behavior, mocked API flow, and UI rendering logic.",
+      "tags": [
+        "frontend"
+      ]
+    },
+    {
+      "id": "file:homestay-booking-frontend/style.css",
+      "type": "file",
+      "name": "style.css",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Brand styling, layout, and responsive presentation for the frontend UI.",
+      "tags": [
+        "frontend"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/app.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/app.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.controller.ts",
+      "target": "file:homestay-booking-backend/src/app.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/app.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/app.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/app.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/password.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/token.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/validation.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/main.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/password.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/password.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/token.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/token.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/validation.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/validation.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.module.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "target": "file:homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/password.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/token.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "target": "file:homestay-booking-backend/src/auth/services/validation.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/services/validation.service.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/booking.service.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "target": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "target": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "target": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "target": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "target": "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+      "target": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "target": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.module.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/image/image.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.service.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.service.ts",
+      "target": "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/image.service.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/main.ts",
+      "target": "file:homestay-booking-backend/src/app.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "target": "file:homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.module.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "target": "file:homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "target": "file:homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/notification.service.ts",
+      "target": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "target": "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "target": "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "target": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "target": "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "target": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/payment.service.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.service.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.service.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.service.ts",
+      "target": "file:homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.service.ts",
+      "target": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.ts",
+      "target": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "target": "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "target": "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "target": "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:homestay-booking-backend/test/app.e2e-spec.ts",
+      "target": "file:homestay-booking-backend/src/app.module.ts",
+      "type": "imports",
+      "weight": 0.7
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:docs-and-config",
+      "name": "Docs and Config",
+      "description": "Project documentation and configuration files that shape the workspace and backend runtime.",
+      "nodeIds": [
+        "document:README.md",
+        "config:homestay-booking-backend/.env.example",
+        "config:homestay-booking-backend/.gitignore",
+        "config:homestay-booking-backend/.prettierrc",
+        "config:homestay-booking-backend/.vscode/settings.json",
+        "config:homestay-booking-backend/eslint.config.mjs",
+        "config:homestay-booking-backend/nest-cli.json",
+        "config:homestay-booking-backend/package-lock.json",
+        "config:homestay-booking-backend/package.json",
+        "document:homestay-booking-backend/README.md",
+        "config:homestay-booking-backend/test/jest-e2e.json",
+        "config:homestay-booking-backend/tsconfig.build.json",
+        "config:homestay-booking-backend/tsconfig.json"
+      ]
+    },
+    {
+      "id": "layer:backend-core",
+      "name": "Backend Core",
+      "description": "NestJS bootstrap and application-wide wiring.",
+      "nodeIds": [
+        "file:homestay-booking-backend/src/app.controller.ts",
+        "file:homestay-booking-backend/src/app.module.ts",
+        "file:homestay-booking-backend/src/app.service.ts",
+        "file:homestay-booking-backend/src/main.ts"
+      ]
+    },
+    {
+      "id": "layer:backend-identity",
+      "name": "Identity and Access",
+      "description": "Authentication, authorization, and user management code.",
+      "nodeIds": [
+        "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+        "file:homestay-booking-backend/src/auth/auth.controller.ts",
+        "file:homestay-booking-backend/src/auth/auth.module.ts",
+        "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+        "file:homestay-booking-backend/src/auth/auth.service.ts",
+        "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+        "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+        "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+        "file:homestay-booking-backend/src/auth/dto/register.dto.ts",
+        "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+        "file:homestay-booking-backend/src/auth/guards/roles.guard.ts",
+        "file:homestay-booking-backend/src/auth/services/password.service.ts",
+        "file:homestay-booking-backend/src/auth/services/token.service.ts",
+        "file:homestay-booking-backend/src/auth/services/validation.service.ts",
+        "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+        "file:homestay-booking-backend/src/user/dto/change-password.dto.ts",
+        "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+        "file:homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+        "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+        "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+        "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+        "file:homestay-booking-backend/src/user/user.controller.spec.ts",
+        "file:homestay-booking-backend/src/user/user.controller.ts",
+        "file:homestay-booking-backend/src/user/user.module.ts",
+        "file:homestay-booking-backend/src/user/user.service.spec.ts",
+        "file:homestay-booking-backend/src/user/user.service.ts"
+      ]
+    },
+    {
+      "id": "layer:backend-listings",
+      "name": "Listings and Content",
+      "description": "Homestay catalog, amenities, images, reviews, and calendar data.",
+      "nodeIds": [
+        "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+        "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+        "file:homestay-booking-backend/src/amenity/amenity.module.ts",
+        "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+        "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+        "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+        "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+        "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+        "file:homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+        "file:homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+        "file:homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+        "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+        "file:homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+        "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+        "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+        "file:homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+        "file:homestay-booking-backend/src/homestay/homestay.controller.ts",
+        "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+        "file:homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+        "file:homestay-booking-backend/src/homestay/homestay.service.ts",
+        "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+        "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+        "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+        "file:homestay-booking-backend/src/image/image.controller.spec.ts",
+        "file:homestay-booking-backend/src/image/image.controller.ts",
+        "file:homestay-booking-backend/src/image/image.module.ts",
+        "file:homestay-booking-backend/src/image/image.service.spec.ts",
+        "file:homestay-booking-backend/src/image/image.service.ts",
+        "file:homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+        "file:homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+        "file:homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+        "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+        "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+        "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.ts",
+        "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+        "file:homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+        "file:homestay-booking-backend/src/price-calendar/price-calendar.service.ts",
+        "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+        "file:homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+        "file:homestay-booking-backend/src/review/dto/update-review.dto.ts",
+        "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+        "file:homestay-booking-backend/src/review/review.controller.spec.ts",
+        "file:homestay-booking-backend/src/review/review.controller.ts",
+        "file:homestay-booking-backend/src/review/review.module.ts",
+        "file:homestay-booking-backend/src/review/review.service.spec.ts",
+        "file:homestay-booking-backend/src/review/review.service.ts"
+      ]
+    },
+    {
+      "id": "layer:backend-commerce",
+      "name": "Bookings and Payments",
+      "description": "Reservation, voucher, payment, bank account, redemption, and notification flows.",
+      "nodeIds": [
+        "file:homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+        "file:homestay-booking-backend/src/bank-account/bank-account.controller.ts",
+        "file:homestay-booking-backend/src/bank-account/bank-account.module.ts",
+        "file:homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+        "file:homestay-booking-backend/src/bank-account/bank-account.service.ts",
+        "file:homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+        "file:homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+        "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+        "file:homestay-booking-backend/src/booking/booking.controller.spec.ts",
+        "file:homestay-booking-backend/src/booking/booking.controller.ts",
+        "file:homestay-booking-backend/src/booking/booking.module.ts",
+        "file:homestay-booking-backend/src/booking/booking.service.spec.ts",
+        "file:homestay-booking-backend/src/booking/booking.service.ts",
+        "file:homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+        "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+        "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+        "file:homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+        "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+        "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+        "file:homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+        "file:homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+        "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+        "file:homestay-booking-backend/src/notification/notification.controller.spec.ts",
+        "file:homestay-booking-backend/src/notification/notification.controller.ts",
+        "file:homestay-booking-backend/src/notification/notification.module.ts",
+        "file:homestay-booking-backend/src/notification/notification.service.spec.ts",
+        "file:homestay-booking-backend/src/notification/notification.service.ts",
+        "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+        "file:homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+        "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+        "file:homestay-booking-backend/src/payment/payment.controller.spec.ts",
+        "file:homestay-booking-backend/src/payment/payment.controller.ts",
+        "file:homestay-booking-backend/src/payment/payment.module.ts",
+        "file:homestay-booking-backend/src/payment/payment.service.spec.ts",
+        "file:homestay-booking-backend/src/payment/payment.service.ts",
+        "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+        "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+        "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+        "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/entities/voucher-redemption.entity.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts"
+      ]
+    },
+    {
+      "id": "layer:backend-tests",
+      "name": "Backend Tests",
+      "description": "Unit and end-to-end test coverage for backend modules.",
+      "nodeIds": [
+        "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+        "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+        "file:homestay-booking-backend/src/app.controller.spec.ts",
+        "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+        "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+        "file:homestay-booking-backend/src/bank-account/bank-account.controller.spec.ts",
+        "file:homestay-booking-backend/src/bank-account/bank-account.service.spec.ts",
+        "file:homestay-booking-backend/src/booking/booking.controller.spec.ts",
+        "file:homestay-booking-backend/src/booking/booking.service.spec.ts",
+        "file:homestay-booking-backend/src/homestay/homestay.controller.spec.ts",
+        "file:homestay-booking-backend/src/homestay/homestay.service.spec.ts",
+        "file:homestay-booking-backend/src/image/image.controller.spec.ts",
+        "file:homestay-booking-backend/src/image/image.service.spec.ts",
+        "file:homestay-booking-backend/src/notification/notification.controller.spec.ts",
+        "file:homestay-booking-backend/src/notification/notification.service.spec.ts",
+        "file:homestay-booking-backend/src/payment/payment.controller.spec.ts",
+        "file:homestay-booking-backend/src/payment/payment.service.spec.ts",
+        "file:homestay-booking-backend/src/price-calendar/price-calendar.controller.spec.ts",
+        "file:homestay-booking-backend/src/price-calendar/price-calendar.service.spec.ts",
+        "file:homestay-booking-backend/src/review/review.controller.spec.ts",
+        "file:homestay-booking-backend/src/review/review.service.spec.ts",
+        "file:homestay-booking-backend/src/user/user.controller.spec.ts",
+        "file:homestay-booking-backend/src/user/user.service.spec.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.controller.spec.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.service.spec.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.spec.ts",
+        "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.spec.ts",
+        "file:homestay-booking-backend/test/app.e2e-spec.ts",
+        "config:homestay-booking-backend/test/jest-e2e.json"
+      ]
+    },
+    {
+      "id": "layer:frontend-ui",
+      "name": "Frontend UI",
+      "description": "Static frontend markup, behavior, and styling for the homestay booking experience.",
+      "nodeIds": [
+        "file:homestay-booking-frontend/index.html",
+        "file:homestay-booking-frontend/script.js",
+        "file:homestay-booking-frontend/style.css"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Project Overview",
+      "description": "Start with the top-level README and backend manifest to understand the repository shape and runtime assumptions.",
+      "nodeIds": [
+        "document:README.md",
+        "config:homestay-booking-backend/package.json"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "NestJS Bootstrap",
+      "description": "Read the NestJS entry point and app module to see how CORS, the API prefix, config, TypeORM, and feature modules fit together.",
+      "nodeIds": [
+        "file:homestay-booking-backend/src/main.ts",
+        "file:homestay-booking-backend/src/app.module.ts"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Domain Features",
+      "description": "Explore the feature modules that implement listings, bookings, vouchers, payments, and identity flows.",
+      "nodeIds": [
+        "file:homestay-booking-backend/src/homestay/homestay.module.ts",
+        "file:homestay-booking-backend/src/booking/booking.module.ts",
+        "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+        "file:homestay-booking-backend/src/auth/auth.module.ts"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Frontend Experience",
+      "description": "Finish with the static frontend shell, its scripted behavior, and the brand styles that frame the booking flow.",
+      "nodeIds": [
+        "file:homestay-booking-frontend/index.html",
+        "file:homestay-booking-frontend/script.js",
+        "file:homestay-booking-frontend/style.css"
+      ]
+    }
+  ]
+}

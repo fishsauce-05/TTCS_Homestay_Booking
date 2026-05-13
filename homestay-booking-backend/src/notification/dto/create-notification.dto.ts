@@ -1,19 +1,20 @@
-import { IsString, IsNotEmpty, IsOptional, IsUUID } from 'class-validator';
+import { IsObject, IsOptional, IsString, IsUUID } from 'class-validator';
 
 export class CreateNotificationDto {
-  @IsString()
-  @IsNotEmpty()
-  title: string;
-
-  @IsString()
-  @IsNotEmpty()
-  message: string;
-
-  @IsString()
-  @IsOptional()
-  type?: string; // 'booking', 'review', 'payment', 'info'
-
   @IsUUID()
+  userId!: string;
+
+  @IsString()
+  title!: string;
+
+  @IsString()
+  message!: string;
+
+  @IsString()
   @IsOptional()
-  relatedId?: string; // booking/review/payment ID
+  type?: string;
+
+  @IsObject()
+  @IsOptional()
+  data?: Record<string, unknown>;
 }

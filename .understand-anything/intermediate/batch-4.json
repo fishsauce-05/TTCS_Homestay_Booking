@@ -1,0 +1,1159 @@
+{
+  "batchNumber": 4,
+  "generatedAt": "2026-05-12T00:00:00Z",
+  "nodes": [
+    {
+      "id": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "file",
+      "name": "create-amenity.dto.ts",
+      "filePath": "homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "summary": "Validation DTO for creating amenities with name and optional icon fields",
+      "tags": ["dto", "amenity", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "type": "file",
+      "name": "update-amenity.dto.ts",
+      "filePath": "homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "summary": "Partial update DTO derived from CreateAmenityDto",
+      "tags": ["dto", "amenity", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "file",
+      "name": "amenity.entity.ts",
+      "filePath": "homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "summary": "Amenity entity with unique name, optional icon, timestamps, and many-to-many homestay relation",
+      "tags": ["entity", "amenity", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "type": "file",
+      "name": "register.dto.ts",
+      "filePath": "homestay-booking-backend/src/auth/dto/register.dto.ts",
+      "summary": "Registration DTO capturing full name, nickname, email, password confirmation, and Vietnamese phone validation",
+      "tags": ["dto", "auth", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "type": "file",
+      "name": "login.dto.ts",
+      "filePath": "homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "summary": "Login DTO with email and password validation",
+      "tags": ["dto", "auth", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "file",
+      "name": "create-booking.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "summary": "Booking creation DTO with homestay, date range, guest count, and optional voucher fields",
+      "tags": ["dto", "booking", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "type": "file",
+      "name": "update-booking.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "summary": "Partial update DTO derived from CreateBookingDto",
+      "tags": ["dto", "booking", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "type": "file",
+      "name": "update-booking-status.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "summary": "Booking status update DTO with cancellation reason support",
+      "tags": ["dto", "booking", "status"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "type": "file",
+      "name": "calculate-price.dto.ts",
+      "filePath": "homestay-booking-backend/src/booking/dto/calculate-price.dto.ts",
+      "summary": "Price calculation DTO mirroring booking inputs for quote previews",
+      "tags": ["dto", "booking", "pricing"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "file",
+      "name": "booking.entity.ts",
+      "filePath": "homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "summary": "Booking entity linking users, homestays, payments, vouchers, totals, and booking status",
+      "tags": ["entity", "booking", "typeorm"]
+    },
+    {
+      "id": "enum:homestay-booking-backend/src/booking/enums/booking-status.enum.ts:BookingStatus",
+      "type": "enum",
+      "name": "BookingStatus",
+      "filePath": "homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "summary": "Booking lifecycle states used by booking and booking-status DTOs",
+      "values": ["PENDING", "COMPLETED", "CONFIRMED", "CANCELLED"],
+      "tags": ["enum", "booking", "status"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "type": "file",
+      "name": "booking-status.enum.ts",
+      "filePath": "homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "summary": "Enum source file for booking lifecycle states",
+      "tags": ["enum", "booking"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "type": "file",
+      "name": "create-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/create-homestay.dto.ts",
+      "summary": "Homestay creation DTO with owner, location, capacity, pricing, and amenity IDs",
+      "tags": ["dto", "homestay", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "type": "file",
+      "name": "update-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/update-homestay.dto.ts",
+      "summary": "Partial update DTO for homestay details and amenity IDs",
+      "tags": ["dto", "homestay", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "type": "file",
+      "name": "update-status.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/update-status.dto.ts",
+      "summary": "Homestay status update DTO with optional rejection reason",
+      "tags": ["dto", "homestay", "status"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "type": "file",
+      "name": "update-status-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/update-status-homestay.dto.ts",
+      "summary": "Alternate homestay status update DTO with nullable rejection reason",
+      "tags": ["dto", "homestay", "status"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+      "type": "file",
+      "name": "search-homestay.dto.ts",
+      "filePath": "homestay-booking-backend/src/homestay/dto/search-homestay.dto.ts",
+      "summary": "Search DTO for filtering homestays by location, price, size, amenities, and paging",
+      "tags": ["dto", "homestay", "search"]
+    },
+    {
+      "id": "enum:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts:HomestayStatus",
+      "type": "enum",
+      "name": "HomestayStatus",
+      "filePath": "homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "summary": "Homestay approval and availability states",
+      "values": ["pending", "approved", "rejected", "available", "unavailable", "blocked"],
+      "tags": ["enum", "homestay", "status"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "type": "file",
+      "name": "homestay-status.enum.ts",
+      "filePath": "homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "summary": "Enum source file for homestay lifecycle states",
+      "tags": ["enum", "homestay"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "file",
+      "name": "homestay.entity.ts",
+      "filePath": "homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "summary": "Homestay entity with owner, amenities, images, calendars, bookings, reviews, and status fields",
+      "tags": ["entity", "homestay", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "file",
+      "name": "bank-account.entity.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "summary": "Bank account entity linked one-to-one with user and storing verification state",
+      "tags": ["entity", "bank-account", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "type": "file",
+      "name": "create-bank-account.dto.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/dto/create-bank-account.dto.ts",
+      "summary": "DTO for creating a bank account with bank name and account number validation",
+      "tags": ["dto", "bank-account", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "type": "file",
+      "name": "update-bank-account.dto.ts",
+      "filePath": "homestay-booking-backend/src/bank-account/dto/update-bank-account.dto.ts",
+      "summary": "Partial DTO for updating bank account name and number",
+      "tags": ["dto", "bank-account", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "file",
+      "name": "image.entity.ts",
+      "filePath": "homestay-booking-backend/src/image/entities/image.entity.ts",
+      "summary": "Image entity that can attach to a homestay or review with optional alt text",
+      "tags": ["entity", "image", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "type": "file",
+      "name": "create-image.dto.ts",
+      "filePath": "homestay-booking-backend/src/image/dto/create-image.dto.ts",
+      "summary": "DTO for creating images with URL and optional homestay or review linkage",
+      "tags": ["dto", "image", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "type": "file",
+      "name": "update-image.dto.ts",
+      "filePath": "homestay-booking-backend/src/image/dto/update-image.dto.ts",
+      "summary": "Partial DTO for updating image metadata and relationships",
+      "tags": ["dto", "image", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "file",
+      "name": "notification.entity.ts",
+      "filePath": "homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "summary": "Notification entity with user linkage, type, related entity ID, and read state",
+      "tags": ["entity", "notification", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "type": "file",
+      "name": "create-notification.dto.ts",
+      "filePath": "homestay-booking-backend/src/notification/dto/create-notification.dto.ts",
+      "summary": "DTO for creating notifications with title, message, type, and related ID",
+      "tags": ["dto", "notification", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "type": "file",
+      "name": "update-notification.dto.ts",
+      "filePath": "homestay-booking-backend/src/notification/dto/update-notification.dto.ts",
+      "summary": "DTO for toggling notification read state",
+      "tags": ["dto", "notification", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "file",
+      "name": "payment.entity.ts",
+      "filePath": "homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "summary": "Payment entity linking booking, user, and bank account with amount, status, and QR metadata",
+      "tags": ["entity", "payment", "typeorm"]
+    },
+    {
+      "id": "enum:homestay-booking-backend/src/payment/entities/payment.entity.ts:PaymentStatus",
+      "type": "enum",
+      "name": "PaymentStatus",
+      "filePath": "homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "summary": "Payment lifecycle states embedded in the payment entity file",
+      "values": ["pending", "completed", "failed", "cancelled"],
+      "tags": ["enum", "payment", "status"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "type": "file",
+      "name": "create-payment.dto.ts",
+      "filePath": "homestay-booking-backend/src/payment/dto/create-payment.dto.ts",
+      "summary": "DTO for creating a payment from a booking ID",
+      "tags": ["dto", "payment", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "type": "file",
+      "name": "update-payment.dto.ts",
+      "filePath": "homestay-booking-backend/src/payment/dto/update-payment.dto.ts",
+      "summary": "Partial DTO for payment updates",
+      "tags": ["dto", "payment", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "file",
+      "name": "price-calendar.entity.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "summary": "Per-day price calendar entity with availability flag and unique homestay/date constraint",
+      "tags": ["entity", "price-calendar", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "type": "file",
+      "name": "create-price-calendar.dto.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/dto/create-price-calendar.dto.ts",
+      "summary": "DTO for creating a single calendar price entry",
+      "tags": ["dto", "price-calendar", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "type": "file",
+      "name": "update-price-calendar.dto.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/dto/update-price-calendar.dto.ts",
+      "summary": "DTO for updating price or availability of a calendar entry",
+      "tags": ["dto", "price-calendar", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "type": "file",
+      "name": "bulk-update-price-calendar.dto.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/dto/bulk-update-price-calendar.dto.ts",
+      "summary": "DTO for applying price or availability changes across a date range",
+      "tags": ["dto", "price-calendar", "bulk"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "file",
+      "name": "review.entity.ts",
+      "filePath": "homestay-booking-backend/src/review/entities/review.entity.ts",
+      "summary": "Review entity linking users, homestays, optional owner replies, and attached images",
+      "tags": ["entity", "review", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "type": "file",
+      "name": "create-review.dto.ts",
+      "filePath": "homestay-booking-backend/src/review/dto/create-review.dto.ts",
+      "summary": "DTO for creating a review with rating, comment, and optional image URLs",
+      "tags": ["dto", "review", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "type": "file",
+      "name": "update-review.dto.ts",
+      "filePath": "homestay-booking-backend/src/review/dto/update-review.dto.ts",
+      "summary": "Partial DTO for editing review content",
+      "tags": ["dto", "review", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "type": "file",
+      "name": "review-reply.dto.ts",
+      "filePath": "homestay-booking-backend/src/review/dto/review-reply.dto.ts",
+      "summary": "DTO for a homestay owner reply to a review",
+      "tags": ["dto", "review", "reply"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "file",
+      "name": "user.entity.ts",
+      "filePath": "homestay-booking-backend/src/user/entities/user.entity.ts",
+      "summary": "User entity with role, verification, lock state, and relations to vouchers, bank account, and notifications",
+      "tags": ["entity", "user", "typeorm"]
+    },
+    {
+      "id": "enum:homestay-booking-backend/src/user/enums/user-role.enum.ts:UserRole",
+      "type": "enum",
+      "name": "UserRole",
+      "filePath": "homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "summary": "User role enum used across auth, user, and bank-account flows",
+      "values": ["GUEST", "CUSTOMER", "OWNER", "ADMIN"],
+      "tags": ["enum", "user", "role"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "type": "file",
+      "name": "user-role.enum.ts",
+      "filePath": "homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "summary": "Enum source file for user roles",
+      "tags": ["enum", "user"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "type": "file",
+      "name": "create-user.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "summary": "DTO for creating users with role and optional lock reason support",
+      "tags": ["dto", "user", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "type": "file",
+      "name": "update-user.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "summary": "Partial DTO for updating user profile and admin-only fields",
+      "tags": ["dto", "user", "update"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "type": "file",
+      "name": "update-profile.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/update-profile.dto.ts",
+      "summary": "Self-service profile update DTO for the authenticated user",
+      "tags": ["dto", "user", "profile"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "type": "file",
+      "name": "change-password.dto.ts",
+      "filePath": "homestay-booking-backend/src/user/dto/change-password.dto.ts",
+      "summary": "DTO for password changes with current password and confirmation fields",
+      "tags": ["dto", "user", "security"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "file",
+      "name": "voucher.entity.ts",
+      "filePath": "homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "summary": "Voucher entity with owner relation, code, discount details, expiry, and redemption history",
+      "tags": ["entity", "voucher", "typeorm"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "file",
+      "name": "create-voucher.dto.ts",
+      "filePath": "homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "summary": "DTO for creating vouchers with type, discount value, usage limit, and expiry date",
+      "tags": ["dto", "voucher", "validation"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "type": "file",
+      "name": "update-voucher.dto.ts",
+      "filePath": "homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "summary": "Partial DTO for voucher updates",
+      "tags": ["dto", "voucher", "update"]
+    },
+    {
+      "id": "enum:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts:VoucherType",
+      "type": "enum",
+      "name": "VoucherType",
+      "filePath": "homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "summary": "Voucher discount type enum for percentage or fixed-value promotions",
+      "values": ["PERCENT", "FIXED"],
+      "tags": ["enum", "voucher", "discount"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "type": "file",
+      "name": "voucher-type.enum.ts",
+      "filePath": "homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "summary": "Enum source file for voucher discount types",
+      "tags": ["enum", "voucher"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/app.controller.spec.ts",
+      "type": "file",
+      "name": "app.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/app.controller.spec.ts",
+      "summary": "Jest unit spec scaffold for the root AppController",
+      "tags": ["test", "nestjs", "spec"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "type": "file",
+      "name": "amenity.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "summary": "Jest unit spec scaffold for AmenityController",
+      "tags": ["test", "amenity", "spec"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "type": "file",
+      "name": "amenity.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "summary": "Jest unit spec scaffold for AmenityService",
+      "tags": ["test", "amenity", "spec"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "type": "file",
+      "name": "auth.controller.spec.ts",
+      "filePath": "homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "summary": "Jest unit spec scaffold for AuthController",
+      "tags": ["test", "auth", "spec"]
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "type": "file",
+      "name": "auth.service.spec.ts",
+      "filePath": "homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "summary": "Jest unit spec scaffold for AuthService",
+      "tags": ["test", "auth", "spec"]
+    },
+    {
+      "id": "file:homestay-booking-backend/test/jest-e2e.json",
+      "type": "file",
+      "name": "jest-e2e.json",
+      "filePath": "homestay-booking-backend/test/jest-e2e.json",
+      "summary": "Jest end-to-end test configuration",
+      "tags": ["config", "test", "jest"]
+    },
+    {
+      "id": "file:README.md",
+      "type": "file",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Top-level project README with repository name only",
+      "tags": ["docs", "readme"]
+    },
+    {
+      "id": "file:homestay-booking-frontend/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Single-page HTML shell for the Fishsauce Homestay frontend with navigation, listing, detail, checkout, booking, and auth modals",
+      "tags": ["frontend", "html", "spa"]
+    },
+    {
+      "id": "file:homestay-booking-frontend/script.js",
+      "type": "file",
+      "name": "script.js",
+      "filePath": "homestay-booking-frontend/script.js",
+      "summary": "Frontend SPA controller with mock data, room discovery, room detail rendering, checkout, voucher, auth, and utility helpers",
+      "tags": ["frontend", "javascript", "spa"]
+    },
+    {
+      "id": "file:homestay-booking-frontend/style.css",
+      "type": "file",
+      "name": "style.css",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Brand stylesheet covering typography, layout sections, cards, filters, detail views, checkout, modals, skeletons, and responsive behavior",
+      "tags": ["frontend", "css", "design"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:main-header",
+      "type": "section",
+      "name": "main-header",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Fixed navbar and global navigation bar",
+      "tags": ["html", "navigation"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:section-home",
+      "type": "section",
+      "name": "section-home",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Hero landing section with search form, featured categories, and featured rooms preview",
+      "tags": ["html", "hero", "search"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:section-rooms",
+      "type": "section",
+      "name": "section-rooms",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Room list and filter sidebar section",
+      "tags": ["html", "listing", "filters"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:section-room-detail",
+      "type": "section",
+      "name": "section-room-detail",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Detailed homestay page with gallery, amenities, reviews, map, and booking widget",
+      "tags": ["html", "detail", "booking"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:section-checkout",
+      "type": "section",
+      "name": "section-checkout",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Checkout flow section for guest details, summary, voucher redemption, and payment QR",
+      "tags": ["html", "checkout", "payment"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:section-booking-success",
+      "type": "section",
+      "name": "section-booking-success",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Post-booking success screen with booking code and payment instructions",
+      "tags": ["html", "success", "booking"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:section-my-bookings",
+      "type": "section",
+      "name": "section-my-bookings",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Logged-in user booking history and status filters",
+      "tags": ["html", "bookings", "account"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:section-admin-dashboard",
+      "type": "section",
+      "name": "section-admin-dashboard",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Admin dashboard placeholder section for elevated management flows",
+      "tags": ["html", "admin", "dashboard"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:loginModal",
+      "type": "section",
+      "name": "loginModal",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Login modal for customer, owner, and admin sign-in",
+      "tags": ["html", "auth", "modal"]
+    },
+    {
+      "id": "section:homestay-booking-frontend/index.html:registerModal",
+      "type": "section",
+      "name": "registerModal",
+      "filePath": "homestay-booking-frontend/index.html",
+      "summary": "Registration modal for new user accounts",
+      "tags": ["html", "auth", "modal"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:tokens",
+      "type": "style-layer",
+      "name": "tokens",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "CSS custom properties for brand colors, radii, shadows, and motion",
+      "tags": ["css", "variables"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:base",
+      "type": "style-layer",
+      "name": "base",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Global typography, body, and reset rules",
+      "tags": ["css", "base"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:navbar",
+      "type": "style-layer",
+      "name": "navbar",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Navbar, brand, dropdown, and avatar styling",
+      "tags": ["css", "navbar"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:sections",
+      "type": "style-layer",
+      "name": "sections",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Shared SPA section visibility and transitions",
+      "tags": ["css", "layout"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:hero-search",
+      "type": "style-layer",
+      "name": "hero-search",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Hero banner and search card presentation",
+      "tags": ["css", "hero", "search"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:buttons",
+      "type": "style-layer",
+      "name": "buttons",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Brand buttons and text-link variants",
+      "tags": ["css", "buttons"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:cards",
+      "type": "style-layer",
+      "name": "cards",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Category pills, room cards, and preview card styling",
+      "tags": ["css", "cards"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:filters-detail",
+      "type": "style-layer",
+      "name": "filters-detail",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Filters, breadcrumbs, and room detail presentation",
+      "tags": ["css", "detail", "filters"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:checkout-success",
+      "type": "style-layer",
+      "name": "checkout-success",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Checkout page, success state, and booking summary styling",
+      "tags": ["css", "checkout", "success"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:modals",
+      "type": "style-layer",
+      "name": "modals",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Modal layout and auth dialog styling",
+      "tags": ["css", "modals", "auth"]
+    },
+    {
+      "id": "style-layer:homestay-booking-frontend/style.css:utilities-responsive",
+      "type": "style-layer",
+      "name": "utilities-responsive",
+      "filePath": "homestay-booking-frontend/style.css",
+      "summary": "Utility text classes, skeleton loaders, scrollbar, and responsive tweaks",
+      "tags": ["css", "utilities", "responsive"]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:homestay-booking-backend/src/amenity/dto/update-amenity.dto.ts",
+      "target": "file:homestay-booking-backend/src/amenity/dto/create-amenity.dto.ts",
+      "type": "imports",
+      "label": "PartialType(CreateAmenityDto)"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "uses",
+      "label": "many-to-many homestay relation"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/dto/update-booking.dto.ts",
+      "target": "file:homestay-booking-backend/src/booking/dto/create-booking.dto.ts",
+      "type": "imports",
+      "label": "PartialType(CreateBookingDto)"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/dto/update-booking-status.dto.ts",
+      "target": "enum:homestay-booking-backend/src/booking/enums/booking-status.enum.ts:BookingStatus",
+      "type": "uses",
+      "label": "validates booking status"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/enums/booking-status.enum.ts",
+      "target": "enum:homestay-booking-backend/src/booking/enums/booking-status.enum.ts:BookingStatus",
+      "type": "contains",
+      "label": "defines BookingStatus"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "uses",
+      "label": "belongs to user"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "uses",
+      "label": "books a homestay"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "target": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "type": "uses",
+      "label": "optional payment relation"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "target": "enum:homestay-booking-backend/src/booking/enums/booking-status.enum.ts:BookingStatus",
+      "type": "uses",
+      "label": "booking status column"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts",
+      "target": "enum:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts:HomestayStatus",
+      "type": "contains",
+      "label": "defines HomestayStatus"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "uses",
+      "label": "owned by user"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/amenity/entities/amenity.entity.ts",
+      "type": "uses",
+      "label": "many-to-many amenities"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "uses",
+      "label": "one-to-many images"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "type": "uses",
+      "label": "one-to-many price calendars"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "uses",
+      "label": "one-to-many bookings"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "uses",
+      "label": "one-to-many reviews"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "target": "enum:homestay-booking-backend/src/homestay/enums/homestay-status.enum.ts:HomestayStatus",
+      "type": "uses",
+      "label": "status column"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "uses",
+      "label": "one-to-one user relation"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "uses",
+      "label": "optional homestay attachment"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "target": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "type": "uses",
+      "label": "optional review attachment"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "uses",
+      "label": "notification owner"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "target": "file:homestay-booking-backend/src/booking/entities/booking.entity.ts",
+      "type": "uses",
+      "label": "one-to-one booking link"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "uses",
+      "label": "payment owner"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "uses",
+      "label": "bank account transfer target"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/payment/entities/payment.entity.ts",
+      "target": "enum:homestay-booking-backend/src/payment/entities/payment.entity.ts:PaymentStatus",
+      "type": "contains",
+      "label": "defines PaymentStatus"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/entities/price-calendar.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "uses",
+      "label": "calendar belongs to homestay"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "uses",
+      "label": "review author"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "target": "file:homestay-booking-backend/src/homestay/entities/homestay.entity.ts",
+      "type": "uses",
+      "label": "review target"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/entities/review.entity.ts",
+      "target": "file:homestay-booking-backend/src/image/entities/image.entity.ts",
+      "type": "uses",
+      "label": "attached review images"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "type": "uses",
+      "label": "user vouchers"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "file:homestay-booking-backend/src/bank-account/entities/bank-account.entity.ts",
+      "type": "uses",
+      "label": "user bank account"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "file:homestay-booking-backend/src/notification/entities/notification.entity.ts",
+      "type": "uses",
+      "label": "user notifications"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "target": "enum:homestay-booking-backend/src/user/enums/user-role.enum.ts:UserRole",
+      "type": "uses",
+      "label": "role column"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/enums/user-role.enum.ts",
+      "target": "enum:homestay-booking-backend/src/user/enums/user-role.enum.ts:UserRole",
+      "type": "contains",
+      "label": "defines UserRole"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/dto/create-user.dto.ts",
+      "target": "enum:homestay-booking-backend/src/user/enums/user-role.enum.ts:UserRole",
+      "type": "uses",
+      "label": "optional role validation"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/dto/update-user.dto.ts",
+      "target": "enum:homestay-booking-backend/src/user/enums/user-role.enum.ts:UserRole",
+      "type": "uses",
+      "label": "optional role validation"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "target": "file:homestay-booking-backend/src/user/entities/user.entity.ts",
+      "type": "uses",
+      "label": "voucher owner"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/entities/voucher.entity.ts",
+      "target": "enum:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts:VoucherType",
+      "type": "uses",
+      "label": "type column"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts",
+      "target": "enum:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts:VoucherType",
+      "type": "contains",
+      "label": "defines VoucherType"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "target": "enum:homestay-booking-backend/src/voucher/enums/voucher-type.enum.ts:VoucherType",
+      "type": "uses",
+      "label": "voucher type validation"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/dto/update-voucher.dto.ts",
+      "target": "file:homestay-booking-backend/src/voucher/dto/create-voucher.dto.ts",
+      "type": "imports",
+      "label": "PartialType(CreateVoucherDto)"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/app.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/app.controller.ts",
+      "type": "tests",
+      "label": "tests AppController"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.controller.ts",
+      "type": "tests",
+      "label": "tests AmenityController"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/amenity/amenity.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/amenity/amenity.service.ts",
+      "type": "tests",
+      "label": "tests AmenityService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.controller.spec.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.controller.ts",
+      "type": "tests",
+      "label": "tests AuthController"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/auth.service.spec.ts",
+      "target": "file:homestay-booking-backend/src/auth/auth.service.ts",
+      "type": "tests",
+      "label": "tests AuthService"
+    },
+    {
+      "source": "file:homestay-booking-backend/test/jest-e2e.json",
+      "target": "file:homestay-booking-backend/test/app.e2e-spec.ts",
+      "type": "configures",
+      "label": "e2e Jest configuration"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "file:homestay-booking-frontend/style.css",
+      "type": "imports",
+      "label": "links stylesheet"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "file:homestay-booking-frontend/script.js",
+      "type": "imports",
+      "label": "loads frontend script"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:main-header",
+      "type": "contains",
+      "label": "contains main header"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:section-home",
+      "type": "contains",
+      "label": "contains home section"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:section-rooms",
+      "type": "contains",
+      "label": "contains rooms section"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:section-room-detail",
+      "type": "contains",
+      "label": "contains room detail section"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:section-checkout",
+      "type": "contains",
+      "label": "contains checkout section"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:section-booking-success",
+      "type": "contains",
+      "label": "contains booking success section"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:section-my-bookings",
+      "type": "contains",
+      "label": "contains booking history section"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:section-admin-dashboard",
+      "type": "contains",
+      "label": "contains admin dashboard section"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:loginModal",
+      "type": "contains",
+      "label": "contains login modal"
+    },
+    {
+      "source": "file:homestay-booking-frontend/index.html",
+      "target": "section:homestay-booking-frontend/index.html:registerModal",
+      "type": "contains",
+      "label": "contains register modal"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:tokens",
+      "type": "contains",
+      "label": "defines design tokens"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:base",
+      "type": "contains",
+      "label": "defines base styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:navbar",
+      "type": "contains",
+      "label": "defines navbar styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:sections",
+      "type": "contains",
+      "label": "defines section visibility"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:hero-search",
+      "type": "contains",
+      "label": "defines hero and search card styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:buttons",
+      "type": "contains",
+      "label": "defines button styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:cards",
+      "type": "contains",
+      "label": "defines card and pill styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:filters-detail",
+      "type": "contains",
+      "label": "defines filter and detail styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:checkout-success",
+      "type": "contains",
+      "label": "defines checkout and success styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:modals",
+      "type": "contains",
+      "label": "defines modal styles"
+    },
+    {
+      "source": "file:homestay-booking-frontend/style.css",
+      "target": "style-layer:homestay-booking-frontend/style.css:utilities-responsive",
+      "type": "contains",
+      "label": "defines utilities and responsive tweaks"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:section-home",
+      "type": "controls",
+      "label": "renders home view"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:section-rooms",
+      "type": "controls",
+      "label": "renders room listing"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:section-room-detail",
+      "type": "controls",
+      "label": "renders room detail"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:section-checkout",
+      "type": "controls",
+      "label": "drives checkout flow"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:section-booking-success",
+      "type": "controls",
+      "label": "shows booking success"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:section-my-bookings",
+      "type": "controls",
+      "label": "loads booking history"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:section-admin-dashboard",
+      "type": "controls",
+      "label": "routes admin users"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:loginModal",
+      "type": "controls",
+      "label": "handles login modal"
+    },
+    {
+      "source": "file:homestay-booking-frontend/script.js",
+      "target": "section:homestay-booking-frontend/index.html:registerModal",
+      "type": "controls",
+      "label": "handles register modal"
+    }
+  ]
+}

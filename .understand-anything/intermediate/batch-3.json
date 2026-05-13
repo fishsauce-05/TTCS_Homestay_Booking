@@ -1,0 +1,1288 @@
+{
+  "nodes": [
+    {
+      "id": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "type": "file",
+      "name": "price-calendar.module.ts",
+      "filePath": "homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "summary": "NestJS module configuration for price calendar feature with TypeORM integration",
+      "complexity": "simple",
+      "tags": ["module", "price-calendar", "feature", "typeorm"],
+      "languageNotes": "TypeScript NestJS @Module decorator"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/price-calendar/price-calendar.module.ts:PriceCalendarModule",
+      "type": "class",
+      "name": "PriceCalendarModule",
+      "filePath": "homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "summary": "Feature module for price calendar with TypeOrmModule forFeature, providers, and exports",
+      "complexity": "simple",
+      "tags": ["module", "price-calendar", "nestjs"],
+      "languageNotes": "@Module() decorator with TypeOrmModule"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "type": "file",
+      "name": "review.controller.ts",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "Controller for review management with CRUD endpoints and JWT authentication",
+      "complexity": "moderate",
+      "tags": ["controller", "review", "crud", "jwt"],
+      "languageNotes": "TypeScript NestJS with decorators"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "type": "class",
+      "name": "ReviewController",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "NestJS controller handling review endpoints including create, read, reply, and delete",
+      "complexity": "moderate",
+      "tags": ["controller", "review", "nestjs"],
+      "languageNotes": "@Controller('reviews') decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:create",
+      "type": "method",
+      "name": "create",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "POST endpoint to create review for homestay with JWT guard",
+      "complexity": "simple",
+      "tags": ["endpoint", "post", "jwt"],
+      "languageNotes": "@Post(':homestayId') with @UseGuards"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:getReviewsByHomestay",
+      "type": "method",
+      "name": "getReviewsByHomestay",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "GET endpoint to fetch all reviews for specific homestay",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get('homestay/:homestayId') decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:getReviewById",
+      "type": "method",
+      "name": "getReviewById",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "GET endpoint to fetch single review by ID",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get(':id') decorator with @Param"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:reply",
+      "type": "method",
+      "name": "reply",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "PATCH endpoint for homestay owner to reply to review with JWT guard",
+      "complexity": "simple",
+      "tags": ["endpoint", "patch", "jwt"],
+      "languageNotes": "@Patch(':id/reply') with @UseGuards"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:delete",
+      "type": "method",
+      "name": "delete",
+      "filePath": "homestay-booking-backend/src/review/review.controller.ts",
+      "summary": "DELETE endpoint to remove review with JWT authentication",
+      "complexity": "simple",
+      "tags": ["endpoint", "delete", "jwt"],
+      "languageNotes": "@Delete(':id') with @UseGuards"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.service.ts",
+      "type": "file",
+      "name": "review.service.ts",
+      "filePath": "homestay-booking-backend/src/review/review.service.ts",
+      "summary": "Service for review business logic with CRUD operations and image management",
+      "complexity": "moderate",
+      "tags": ["service", "review", "crud"],
+      "languageNotes": "TypeScript NestJS with TypeORM repositories"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/review/review.service.ts:ReviewService",
+      "type": "class",
+      "name": "ReviewService",
+      "filePath": "homestay-booking-backend/src/review/review.service.ts",
+      "summary": "NestJS service managing review database operations with image handling",
+      "complexity": "moderate",
+      "tags": ["service", "review", "injectable"],
+      "languageNotes": "@Injectable() decorator with @InjectRepository"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/review/review.service.ts:ReviewService:create",
+      "type": "method",
+      "name": "create",
+      "filePath": "homestay-booking-backend/src/review/review.service.ts",
+      "summary": "Creates new review with optional image attachments",
+      "complexity": "moderate",
+      "tags": ["method", "create", "image-handling"],
+      "languageNotes": "async method with TypeORM operations"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/review/review.service.ts:ReviewService:getReviewsByHomestay",
+      "type": "method",
+      "name": "getReviewsByHomestay",
+      "filePath": "homestay-booking-backend/src/review/review.service.ts",
+      "summary": "Fetches all reviews for homestay with related user and images ordered by creation date",
+      "complexity": "simple",
+      "tags": ["method", "read", "relations"],
+      "languageNotes": "async method with TypeORM relations"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/review/review.module.ts",
+      "type": "file",
+      "name": "review.module.ts",
+      "filePath": "homestay-booking-backend/src/review/review.module.ts",
+      "summary": "NestJS module configuration for review feature with TypeORM entities",
+      "complexity": "simple",
+      "tags": ["module", "review", "feature"],
+      "languageNotes": "TypeScript NestJS"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/review/review.module.ts:ReviewModule",
+      "type": "class",
+      "name": "ReviewModule",
+      "filePath": "homestay-booking-backend/src/review/review.module.ts",
+      "summary": "Feature module for review with TypeORM integration for Review and Image entities",
+      "complexity": "simple",
+      "tags": ["module", "review"],
+      "languageNotes": "@Module() decorator"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "type": "file",
+      "name": "user.controller.ts",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "Controller for user management with profile and password endpoints",
+      "complexity": "moderate",
+      "tags": ["controller", "user", "crud"],
+      "languageNotes": "TypeScript NestJS with HTTP decorators"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "type": "class",
+      "name": "UserController",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "NestJS controller handling user CRUD and profile management with JWT guards",
+      "complexity": "moderate",
+      "tags": ["controller", "user", "nestjs"],
+      "languageNotes": "@Controller('users') decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:create",
+      "type": "method",
+      "name": "create",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "POST endpoint to create new user",
+      "complexity": "simple",
+      "tags": ["endpoint", "post"],
+      "languageNotes": "@Post() with @HttpCode(HttpStatus.CREATED)"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:findAll",
+      "type": "method",
+      "name": "findAll",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "GET endpoint to fetch all users",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get() decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:getProfile",
+      "type": "method",
+      "name": "getProfile",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "GET endpoint to fetch current authenticated user profile",
+      "complexity": "simple",
+      "tags": ["endpoint", "get", "jwt"],
+      "languageNotes": "@Get('profile/me') with @UseGuards and @CurrentUser"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:findOne",
+      "type": "method",
+      "name": "findOne",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "GET endpoint to fetch user by ID",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get(':id') decorator with @Param"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:updateProfile",
+      "type": "method",
+      "name": "updateProfile",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "PATCH endpoint to update current user profile with JWT guard",
+      "complexity": "simple",
+      "tags": ["endpoint", "patch", "jwt"],
+      "languageNotes": "@Patch('profile/me') with @UseGuards"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:changePassword",
+      "type": "method",
+      "name": "changePassword",
+      "filePath": "homestay-booking-backend/src/user/user.controller.ts",
+      "summary": "PATCH endpoint for authenticated user to change password",
+      "complexity": "simple",
+      "tags": ["endpoint", "patch", "jwt"],
+      "languageNotes": "@Patch('change-password') with @UseGuards"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.service.ts",
+      "type": "file",
+      "name": "user.service.ts",
+      "filePath": "homestay-booking-backend/src/user/user.service.ts",
+      "summary": "Service for user business logic including CRUD, profile updates, and password management",
+      "complexity": "moderate",
+      "tags": ["service", "user", "crud"],
+      "languageNotes": "TypeScript NestJS with bcrypt password hashing"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/user/user.service.ts:UserService",
+      "type": "class",
+      "name": "UserService",
+      "filePath": "homestay-booking-backend/src/user/user.service.ts",
+      "summary": "NestJS service managing user database operations with password hashing and validation",
+      "complexity": "moderate",
+      "tags": ["service", "user", "injectable"],
+      "languageNotes": "@Injectable() decorator with bcrypt integration"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.service.ts:UserService:create",
+      "type": "method",
+      "name": "create",
+      "filePath": "homestay-booking-backend/src/user/user.service.ts",
+      "summary": "Creates new user with email/nickname duplication check and password hashing",
+      "complexity": "moderate",
+      "tags": ["method", "create", "security"],
+      "languageNotes": "async method with validation and bcrypt.hash"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/user/user.service.ts:UserService:findAll",
+      "type": "method",
+      "name": "findAll",
+      "filePath": "homestay-booking-backend/src/user/user.service.ts",
+      "summary": "Fetches all users with selected fields excluding password",
+      "complexity": "simple",
+      "tags": ["method", "read"],
+      "languageNotes": "async method with select option"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/user/user.module.ts",
+      "type": "file",
+      "name": "user.module.ts",
+      "filePath": "homestay-booking-backend/src/user/user.module.ts",
+      "summary": "NestJS module configuration for user feature with TypeORM and exports",
+      "complexity": "simple",
+      "tags": ["module", "user", "feature"],
+      "languageNotes": "TypeScript NestJS"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/user/user.module.ts:UserModule",
+      "type": "class",
+      "name": "UserModule",
+      "filePath": "homestay-booking-backend/src/user/user.module.ts",
+      "summary": "Feature module for user with TypeORM User entity and service exports",
+      "complexity": "simple",
+      "tags": ["module", "user"],
+      "languageNotes": "@Module() decorator with TypeOrmModule"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "type": "file",
+      "name": "voucher.controller.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "Controller for voucher management with admin-only CRUD endpoints",
+      "complexity": "moderate",
+      "tags": ["controller", "voucher", "crud", "rbac"],
+      "languageNotes": "TypeScript NestJS with role-based access control"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "type": "class",
+      "name": "VoucherController",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "NestJS controller for voucher CRUD with JWT and role-based guards",
+      "complexity": "moderate",
+      "tags": ["controller", "voucher", "rbac"],
+      "languageNotes": "@Controller('vouchers') decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:createVoucher",
+      "type": "method",
+      "name": "createVoucher",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "POST endpoint to create voucher (admin only)",
+      "complexity": "simple",
+      "tags": ["endpoint", "post", "admin"],
+      "languageNotes": "@Post() with @UseGuards(JwtAuthGuard, RolesGuard)"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:getAllVouchers",
+      "type": "method",
+      "name": "getAllVouchers",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "GET endpoint to fetch all vouchers",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get() decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:getVoucherById",
+      "type": "method",
+      "name": "getVoucherById",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "GET endpoint to fetch voucher by ID",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get(':id') decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:updateVoucher",
+      "type": "method",
+      "name": "updateVoucher",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "PATCH endpoint to update voucher (admin only)",
+      "complexity": "simple",
+      "tags": ["endpoint", "patch", "admin"],
+      "languageNotes": "@Patch(':id') with role guard"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:deleteVoucher",
+      "type": "method",
+      "name": "deleteVoucher",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "summary": "DELETE endpoint to remove voucher (admin only)",
+      "complexity": "simple",
+      "tags": ["endpoint", "delete", "admin"],
+      "languageNotes": "@Delete(':id') with role guard"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "type": "file",
+      "name": "voucher.service.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.service.ts",
+      "summary": "Service for voucher business logic with CRUD operations and validation",
+      "complexity": "moderate",
+      "tags": ["service", "voucher", "crud"],
+      "languageNotes": "TypeScript NestJS with TypeORM"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "type": "class",
+      "name": "VoucherService",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.service.ts",
+      "summary": "NestJS service managing voucher database operations",
+      "complexity": "moderate",
+      "tags": ["service", "voucher", "injectable"],
+      "languageNotes": "@Injectable() decorator with @InjectRepository"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService:createVoucher",
+      "type": "method",
+      "name": "createVoucher",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.service.ts",
+      "summary": "Creates new voucher with admin user association",
+      "complexity": "simple",
+      "tags": ["method", "create"],
+      "languageNotes": "async method with repository.create and save"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService:getAllVouchers",
+      "type": "method",
+      "name": "getAllVouchers",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.service.ts",
+      "summary": "Fetches all vouchers with user relations ordered by creation date",
+      "complexity": "simple",
+      "tags": ["method", "read"],
+      "languageNotes": "async method with TypeORM relations"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService:getVoucherById",
+      "type": "method",
+      "name": "getVoucherById",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.service.ts",
+      "summary": "Fetches single voucher with not found error handling",
+      "complexity": "simple",
+      "tags": ["method", "read", "error-handling"],
+      "languageNotes": "async method with NotFoundException"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "type": "file",
+      "name": "voucher.module.ts",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.module.ts",
+      "summary": "NestJS module configuration for voucher feature",
+      "complexity": "simple",
+      "tags": ["module", "voucher", "feature"],
+      "languageNotes": "TypeScript NestJS"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/voucher/voucher.module.ts:VoucherModule",
+      "type": "class",
+      "name": "VoucherModule",
+      "filePath": "homestay-booking-backend/src/voucher/voucher.module.ts",
+      "summary": "Feature module for voucher with TypeORM Voucher entity",
+      "complexity": "simple",
+      "tags": ["module", "voucher"],
+      "languageNotes": "@Module() decorator"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "type": "file",
+      "name": "voucher-redemption.controller.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "summary": "Controller for voucher redemption queries with admin-only access",
+      "complexity": "simple",
+      "tags": ["controller", "voucher-redemption", "rbac"],
+      "languageNotes": "TypeScript NestJS with role-based access"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "type": "class",
+      "name": "VoucherRedemptionController",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "summary": "NestJS controller for voucher redemption queries with role-based guards",
+      "complexity": "simple",
+      "tags": ["controller", "voucher-redemption"],
+      "languageNotes": "@Controller with @UseGuards class-level decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController:getAllRedemptions",
+      "type": "method",
+      "name": "getAllRedemptions",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "summary": "GET endpoint to fetch all voucher redemption records (admin only)",
+      "complexity": "simple",
+      "tags": ["endpoint", "get", "admin"],
+      "languageNotes": "@Get() decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController:getRedemptionsByVoucherId",
+      "type": "method",
+      "name": "getRedemptionsByVoucherId",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "summary": "GET endpoint to fetch redemption records for specific voucher",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get('voucher/:voucherId') decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController:getRedemptionByBookingId",
+      "type": "method",
+      "name": "getRedemptionByBookingId",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "summary": "GET endpoint to fetch redemption record for specific booking",
+      "complexity": "simple",
+      "tags": ["endpoint", "get"],
+      "languageNotes": "@Get('booking/:bookingId') decorator"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "type": "file",
+      "name": "voucher-redemption.service.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "summary": "Service for voucher redemption logic including validation and discount calculation",
+      "complexity": "moderate",
+      "tags": ["service", "voucher-redemption", "validation"],
+      "languageNotes": "TypeScript NestJS with complex business logic"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "type": "class",
+      "name": "VoucherRedemptionService",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "summary": "NestJS service managing voucher validation, discount calculation, and redemption",
+      "complexity": "moderate",
+      "tags": ["service", "voucher-redemption", "injectable"],
+      "languageNotes": "@Injectable() with multiple repositories"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService:getVoucherById",
+      "type": "method",
+      "name": "getVoucherById",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "summary": "Retrieves voucher by ID with not found error handling",
+      "complexity": "simple",
+      "tags": ["method", "read", "error-handling"],
+      "languageNotes": "async method with NotFoundException"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService:validateVoucherForBooking",
+      "type": "method",
+      "name": "validateVoucherForBooking",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "summary": "Validates voucher expiry date and usage limits",
+      "complexity": "moderate",
+      "tags": ["method", "validation", "business-logic"],
+      "languageNotes": "async method with date comparison and count query"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService:calculateDiscount",
+      "type": "method",
+      "name": "calculateDiscount",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "summary": "Calculates discount amount based on type (fixed or percentage)",
+      "complexity": "simple",
+      "tags": ["method", "calculation"],
+      "languageNotes": "Pure function with Math.min and Math.floor"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "type": "file",
+      "name": "voucher-redemption.module.ts",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "summary": "NestJS module configuration for voucher redemption with multiple entities",
+      "complexity": "simple",
+      "tags": ["module", "voucher-redemption", "feature"],
+      "languageNotes": "TypeScript NestJS"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts:VoucherRedemptionModule",
+      "type": "class",
+      "name": "VoucherRedemptionModule",
+      "filePath": "homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "summary": "Feature module for voucher redemption with Voucher and VoucherRedemption entities",
+      "complexity": "simple",
+      "tags": ["module", "voucher-redemption"],
+      "languageNotes": "@Module() decorator with TypeOrmModule"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "type": "file",
+      "name": "jwt-auth.guard.ts",
+      "filePath": "homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "summary": "Guard for JWT token validation using Passport authentication strategy",
+      "complexity": "simple",
+      "tags": ["guard", "auth", "jwt", "security"],
+      "languageNotes": "TypeScript NestJS extending AuthGuard"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts:JwtAuthGuard",
+      "type": "class",
+      "name": "JwtAuthGuard",
+      "filePath": "homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "summary": "NestJS guard extending Passport JWT guard for route protection",
+      "complexity": "simple",
+      "tags": ["guard", "jwt", "nestjs"],
+      "languageNotes": "@Injectable() extending AuthGuard('jwt')"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "type": "file",
+      "name": "jwt.strategy.ts",
+      "filePath": "homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "summary": "Passport JWT strategy for extracting and validating JWT tokens from HTTP Bearer headers",
+      "complexity": "moderate",
+      "tags": ["strategy", "auth", "jwt", "passport"],
+      "languageNotes": "TypeScript Passport strategy extending PassportStrategy"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy",
+      "type": "class",
+      "name": "JwtStrategy",
+      "filePath": "homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "summary": "NestJS JWT Passport strategy validating Bearer tokens via AuthService",
+      "complexity": "moderate",
+      "tags": ["strategy", "jwt", "nestjs"],
+      "languageNotes": "@Injectable() extending PassportStrategy"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy:constructor",
+      "type": "method",
+      "name": "constructor",
+      "filePath": "homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "summary": "Initializes JWT strategy with Bearer token extraction and secret from environment",
+      "complexity": "simple",
+      "tags": ["method", "configuration"],
+      "languageNotes": "Constructor with dependency injection"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy:validate",
+      "type": "method",
+      "name": "validate",
+      "filePath": "homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "summary": "Validates JWT payload by checking user existence in database",
+      "complexity": "simple",
+      "tags": ["method", "validation"],
+      "languageNotes": "async method called by Passport"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "type": "file",
+      "name": "roles.decorator.ts",
+      "filePath": "homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "summary": "Decorator for specifying required roles for route handlers",
+      "complexity": "simple",
+      "tags": ["decorator", "auth", "rbac"],
+      "languageNotes": "TypeScript using NestJS SetMetadata"
+    },
+    {
+      "id": "function:homestay-booking-backend/src/auth/decorators/roles.decorator.ts:Roles",
+      "type": "function",
+      "name": "Roles",
+      "filePath": "homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "summary": "Decorator function attaching required roles to route handler metadata",
+      "complexity": "simple",
+      "tags": ["decorator", "factory", "metadata"],
+      "languageNotes": "Decorator factory using SetMetadata"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "type": "file",
+      "name": "current-user.decorator.ts",
+      "filePath": "homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "summary": "Decorator for injecting authenticated user from request into controller methods",
+      "complexity": "simple",
+      "tags": ["decorator", "auth", "user"],
+      "languageNotes": "TypeScript using NestJS createParamDecorator"
+    },
+    {
+      "id": "function:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts:CurrentUser",
+      "type": "function",
+      "name": "CurrentUser",
+      "filePath": "homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "summary": "Param decorator extracting authenticated user from HTTP request",
+      "complexity": "simple",
+      "tags": ["decorator", "param-extractor"],
+      "languageNotes": "createParamDecorator with ExecutionContext"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/services/password.service.ts",
+      "type": "file",
+      "name": "password.service.ts",
+      "filePath": "homestay-booking-backend/src/auth/services/password.service.ts",
+      "summary": "Service for password hashing and verification using bcrypt",
+      "complexity": "simple",
+      "tags": ["service", "security", "password", "bcrypt"],
+      "languageNotes": "TypeScript NestJS with bcrypt library"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService",
+      "type": "class",
+      "name": "PasswordService",
+      "filePath": "homestay-booking-backend/src/auth/services/password.service.ts",
+      "summary": "NestJS service providing password hashing and comparison operations",
+      "complexity": "simple",
+      "tags": ["service", "password", "injectable"],
+      "languageNotes": "@Injectable() decorator"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService:hashPassword",
+      "type": "method",
+      "name": "hashPassword",
+      "filePath": "homestay-booking-backend/src/auth/services/password.service.ts",
+      "summary": "Hashes password using bcrypt with 10 salt rounds",
+      "complexity": "simple",
+      "tags": ["method", "security"],
+      "languageNotes": "async method using bcrypt.hash"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService:comparePassword",
+      "type": "method",
+      "name": "comparePassword",
+      "filePath": "homestay-booking-backend/src/auth/services/password.service.ts",
+      "summary": "Verifies plaintext password against bcrypt hash",
+      "complexity": "simple",
+      "tags": ["method", "security"],
+      "languageNotes": "async method using bcrypt.compare"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/services/token.service.ts",
+      "type": "file",
+      "name": "token.service.ts",
+      "filePath": "homestay-booking-backend/src/auth/services/token.service.ts",
+      "summary": "Service for JWT token generation and decoding",
+      "complexity": "simple",
+      "tags": ["service", "auth", "jwt"],
+      "languageNotes": "TypeScript NestJS with JwtService"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/auth/services/token.service.ts:TokenService",
+      "type": "class",
+      "name": "TokenService",
+      "filePath": "homestay-booking-backend/src/auth/services/token.service.ts",
+      "summary": "NestJS service managing JWT token operations",
+      "complexity": "simple",
+      "tags": ["service", "jwt", "injectable"],
+      "languageNotes": "@Injectable() decorator with JwtService dependency"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/auth/services/token.service.ts:TokenService:generateAccessToken",
+      "type": "method",
+      "name": "generateAccessToken",
+      "filePath": "homestay-booking-backend/src/auth/services/token.service.ts",
+      "summary": "Creates JWT access token with user ID, email, and role claims",
+      "complexity": "simple",
+      "tags": ["method", "token-generation"],
+      "languageNotes": "Method using jwtService.sign"
+    },
+    {
+      "id": "method:homestay-booking-backend/src/auth/services/token.service.ts:TokenService:decodeToken",
+      "type": "method",
+      "name": "decodeToken",
+      "filePath": "homestay-booking-backend/src/auth/services/token.service.ts",
+      "summary": "Decodes JWT token and returns payload without verification",
+      "complexity": "simple",
+      "tags": ["method", "token-decoding"],
+      "languageNotes": "Method using jwtService.decode"
+    },
+    {
+      "id": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "type": "file",
+      "name": "login.dto.ts",
+      "filePath": "homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "summary": "DTO for login endpoint with email and password validation",
+      "complexity": "simple",
+      "tags": ["dto", "auth", "validation"],
+      "languageNotes": "TypeScript DTO with class-validator decorators"
+    },
+    {
+      "id": "class:homestay-booking-backend/src/auth/dto/login.dto.ts:LoginDto",
+      "type": "class",
+      "name": "LoginDto",
+      "filePath": "homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "summary": "Data transfer object for login with email and password fields",
+      "complexity": "simple",
+      "tags": ["dto", "validation"],
+      "languageNotes": "@IsEmail() and @IsString() decorators"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:homestay-booking-backend/src/price-calendar/price-calendar.module.ts",
+      "target": "class:homestay-booking-backend/src/price-calendar/price-calendar.module.ts:PriceCalendarModule",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "price-calendar.module.ts defines PriceCalendarModule class"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.controller.ts",
+      "target": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "review.controller.ts defines ReviewController class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "target": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:create",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "ReviewController contains create method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "target": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:getReviewsByHomestay",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "ReviewController contains getReviewsByHomestay method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "target": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:getReviewById",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "ReviewController contains getReviewById method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "target": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:reply",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "ReviewController contains reply method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "target": "method:homestay-booking-backend/src/review/review.controller.ts:ReviewController:delete",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "ReviewController contains delete method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "target": "class:homestay-booking-backend/src/review/review.service.ts:ReviewService",
+      "type": "injects",
+      "weight": 0.9,
+      "summary": "ReviewController depends on ReviewService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.service.ts",
+      "target": "class:homestay-booking-backend/src/review/review.service.ts:ReviewService",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "review.service.ts defines ReviewService class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.service.ts:ReviewService",
+      "target": "method:homestay-booking-backend/src/review/review.service.ts:ReviewService:create",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "ReviewService contains create method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.service.ts:ReviewService",
+      "target": "method:homestay-booking-backend/src/review/review.service.ts:ReviewService:getReviewsByHomestay",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "ReviewService contains getReviewsByHomestay method"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/review/review.module.ts",
+      "target": "class:homestay-booking-backend/src/review/review.module.ts:ReviewModule",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "review.module.ts defines ReviewModule class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.module.ts:ReviewModule",
+      "target": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "ReviewModule imports ReviewController"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.module.ts:ReviewModule",
+      "target": "class:homestay-booking-backend/src/review/review.service.ts:ReviewService",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "ReviewModule imports ReviewService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.controller.ts",
+      "target": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "user.controller.ts defines UserController class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:create",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserController contains create method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:findAll",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserController contains findAll method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:getProfile",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserController contains getProfile method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:findOne",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserController contains findOne method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:updateProfile",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserController contains updateProfile method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "method:homestay-booking-backend/src/user/user.controller.ts:UserController:changePassword",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserController contains changePassword method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "class:homestay-booking-backend/src/user/user.service.ts:UserService",
+      "type": "injects",
+      "weight": 0.9,
+      "summary": "UserController depends on UserService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.service.ts",
+      "target": "class:homestay-booking-backend/src/user/user.service.ts:UserService",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "user.service.ts defines UserService class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.service.ts:UserService",
+      "target": "method:homestay-booking-backend/src/user/user.service.ts:UserService:create",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserService contains create method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.service.ts:UserService",
+      "target": "method:homestay-booking-backend/src/user/user.service.ts:UserService:findAll",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "UserService contains findAll method"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/user/user.module.ts",
+      "target": "class:homestay-booking-backend/src/user/user.module.ts:UserModule",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "user.module.ts defines UserModule class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.module.ts:UserModule",
+      "target": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "UserModule imports UserController"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.module.ts:UserModule",
+      "target": "class:homestay-booking-backend/src/user/user.service.ts:UserService",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "UserModule imports UserService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.controller.ts",
+      "target": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "voucher.controller.ts defines VoucherController class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:createVoucher",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherController contains createVoucher method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:getAllVouchers",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherController contains getAllVouchers method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:getVoucherById",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherController contains getVoucherById method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:updateVoucher",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherController contains updateVoucher method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController:deleteVoucher",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherController contains deleteVoucher method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "type": "injects",
+      "weight": 0.9,
+      "summary": "VoucherController depends on VoucherService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.service.ts",
+      "target": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "voucher.service.ts defines VoucherService class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService:createVoucher",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherService contains createVoucher method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService:getAllVouchers",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherService contains getAllVouchers method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "target": "method:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService:getVoucherById",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherService contains getVoucherById method"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher/voucher.module.ts",
+      "target": "class:homestay-booking-backend/src/voucher/voucher.module.ts:VoucherModule",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "voucher.module.ts defines VoucherModule class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.module.ts:VoucherModule",
+      "target": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "VoucherModule imports VoucherController"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.module.ts:VoucherModule",
+      "target": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "VoucherModule imports VoucherService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts",
+      "target": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "voucher-redemption.controller.ts defines VoucherRedemptionController class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "target": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController:getAllRedemptions",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherRedemptionController contains getAllRedemptions method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "target": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController:getRedemptionsByVoucherId",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherRedemptionController contains getRedemptionsByVoucherId method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "target": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController:getRedemptionByBookingId",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherRedemptionController contains getRedemptionByBookingId method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "target": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "type": "injects",
+      "weight": 0.9,
+      "summary": "VoucherRedemptionController depends on VoucherRedemptionService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts",
+      "target": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "voucher-redemption.service.ts defines VoucherRedemptionService class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "target": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService:getVoucherById",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherRedemptionService contains getVoucherById method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "target": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService:validateVoucherForBooking",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherRedemptionService contains validateVoucherForBooking method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "target": "method:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService:calculateDiscount",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "VoucherRedemptionService contains calculateDiscount method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "target": "class:homestay-booking-backend/src/voucher/voucher.service.ts:VoucherService",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "VoucherRedemptionService depends on Voucher repository"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts",
+      "target": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts:VoucherRedemptionModule",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "voucher-redemption.module.ts defines VoucherRedemptionModule class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts:VoucherRedemptionModule",
+      "target": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "VoucherRedemptionModule imports VoucherRedemptionController"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.module.ts:VoucherRedemptionModule",
+      "target": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.service.ts:VoucherRedemptionService",
+      "type": "imports",
+      "weight": 0.8,
+      "summary": "VoucherRedemptionModule imports VoucherRedemptionService"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts",
+      "target": "class:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts:JwtAuthGuard",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "jwt-auth.guard.ts defines JwtAuthGuard class"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts",
+      "target": "class:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "jwt.strategy.ts defines JwtStrategy class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy",
+      "target": "method:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy:constructor",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "JwtStrategy contains constructor method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy",
+      "target": "method:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy:validate",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "JwtStrategy contains validate method"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/decorators/roles.decorator.ts",
+      "target": "function:homestay-booking-backend/src/auth/decorators/roles.decorator.ts:Roles",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "roles.decorator.ts defines Roles decorator function"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts",
+      "target": "function:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts:CurrentUser",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "current-user.decorator.ts defines CurrentUser decorator function"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/services/password.service.ts",
+      "target": "class:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "password.service.ts defines PasswordService class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService",
+      "target": "method:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService:hashPassword",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "PasswordService contains hashPassword method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService",
+      "target": "method:homestay-booking-backend/src/auth/services/password.service.ts:PasswordService:comparePassword",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "PasswordService contains comparePassword method"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/services/token.service.ts",
+      "target": "class:homestay-booking-backend/src/auth/services/token.service.ts:TokenService",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "token.service.ts defines TokenService class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/auth/services/token.service.ts:TokenService",
+      "target": "method:homestay-booking-backend/src/auth/services/token.service.ts:TokenService:generateAccessToken",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "TokenService contains generateAccessToken method"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/auth/services/token.service.ts:TokenService",
+      "target": "method:homestay-booking-backend/src/auth/services/token.service.ts:TokenService:decodeToken",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "TokenService contains decodeToken method"
+    },
+    {
+      "source": "file:homestay-booking-backend/src/auth/dto/login.dto.ts",
+      "target": "class:homestay-booking-backend/src/auth/dto/login.dto.ts:LoginDto",
+      "type": "contains",
+      "weight": 1.0,
+      "summary": "login.dto.ts defines LoginDto class"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts:JwtAuthGuard",
+      "target": "class:homestay-booking-backend/src/auth/strategies/jwt.strategy.ts:JwtStrategy",
+      "type": "uses",
+      "weight": 0.8,
+      "summary": "JwtAuthGuard uses JwtStrategy for validation"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/review/review.controller.ts:ReviewController",
+      "target": "class:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts:JwtAuthGuard",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "ReviewController uses JwtAuthGuard for protected endpoints"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "class:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts:JwtAuthGuard",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "UserController uses JwtAuthGuard for protected endpoints"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/user/user.controller.ts:UserController",
+      "target": "function:homestay-booking-backend/src/auth/decorators/current-user.decorator.ts:CurrentUser",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "UserController uses CurrentUser decorator for user injection"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "class:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts:JwtAuthGuard",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "VoucherController uses JwtAuthGuard for admin protection"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher/voucher.controller.ts:VoucherController",
+      "target": "function:homestay-booking-backend/src/auth/decorators/roles.decorator.ts:Roles",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "VoucherController uses Roles decorator for RBAC"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "target": "class:homestay-booking-backend/src/auth/guards/jwt-auth.guard.ts:JwtAuthGuard",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "VoucherRedemptionController uses JwtAuthGuard for admin protection"
+    },
+    {
+      "source": "class:homestay-booking-backend/src/voucher-redemption/voucher-redemption.controller.ts:VoucherRedemptionController",
+      "target": "function:homestay-booking-backend/src/auth/decorators/roles.decorator.ts:Roles",
+      "type": "uses",
+      "weight": 0.7,
+      "summary": "VoucherRedemptionController uses Roles decorator"
+    }
+  ]
+}

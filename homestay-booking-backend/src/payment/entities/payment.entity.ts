@@ -1,62 +1,43 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToOne, JoinColumn, ManyToOne } from 'typeorm';
-import { User } from '../../user/entities/user.entity';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { Booking } from '../../booking/entities/booking.entity';
-import { BankAccount } from '../../bank-account/entities/bank-account.entity';
-
-export enum PaymentStatus {
-  PENDING = 'pending',
-  COMPLETED = 'completed',
-  FAILED = 'failed',
-  CANCELLED = 'cancelled',
-}
+import { PaymentStatus } from '../../common/enums';
 
 @Entity('payments')
 export class Payment {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
-  @OneToOne(() => Booking, (booking) => booking.payment, { onDelete: 'CASCADE' })
+  @Column('uuid')
+  bookingId!: string;
+
+  @ManyToOne(() => Booking, (booking) => booking.payments, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'bookingId' })
-  booking: Booking;
+  booking?: Booking;
 
-  @Column({ type: 'uuid', unique: true })
-  bookingId: string;
-
-  @ManyToOne(() => User, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'userId' })
-  user: User;
-
-  @Column({ type: 'uuid' })
-  userId: string;
-
-  @ManyToOne(() => BankAccount, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'bankAccountId' })
-  bankAccount: BankAccount;
-
-  @Column({ type: 'uuid' })
-  bankAccountId: string;
-
-  @Column({ type: 'decimal', precision: 10, scale: 2 })
-  amount: number;
+  @Column('decimal', { precision: 15, scale: 0 })
+  amount!: number;
 
   @Column({ type: 'enum', enum: PaymentStatus, default: PaymentStatus.PENDING })
-  status: PaymentStatus;
+  status!: PaymentStatus;
 
-  @Column({ type: 'text', nullable: true })
-  transactionId: string;
+  @Column('text', { nullable: true })
+  description!: string | null;
 
-  @Column({ type: 'text', nullable: true })
-  qrCode: string;
-
-  @Column({ type: 'text', nullable: true })
-  description: string;
-
-  @Column({ type: 'timestamp', nullable: true })
-  completedAt: Date;
+  @Column('text', { nullable: true })
+  rejectionReason!: string | null;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
+
+  @Column('timestamp', { nullable: true })
+  paidAt!: Date | null;
+
+  @Column('timestamp', { nullable: true })
+  reportedAt!: Date | null;
+
+  @Column('timestamp', { nullable: true })
+  reviewedAt!: Date | null;
 }

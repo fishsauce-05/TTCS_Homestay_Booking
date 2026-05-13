@@ -1,33 +1,28 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
-import { User } from '../../user/entities/user.entity';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('notifications')
 export class Notification {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ type: 'uuid' })
-  userId: string;
+  userId!: string;
 
-  @Column({ type: 'varchar', length: 255 })
-  title: string;
+  @Column({ type: 'varchar', length: 120 })
+  title!: string;
 
   @Column({ type: 'text' })
-  message: string;
+  message!: string;
 
-  @Column({ type: 'varchar', length: 50, default: 'info' })
-  type: string; // 'booking', 'review', 'payment', 'info'
+  @Column({ type: 'varchar', length: 80, default: 'general' })
+  type!: string;
 
-  @Column({ type: 'uuid', nullable: true })
-  relatedId: string; // booking/review/payment ID
+  @Column('simple-json', { nullable: true })
+  data?: Record<string, unknown>;
 
   @Column({ type: 'boolean', default: false })
-  isRead: boolean;
+  isRead!: boolean;
 
   @CreateDateColumn()
-  createdAt: Date;
-
-  @ManyToOne(() => User, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'userId' })
-  user: User;
+  createdAt!: Date;
 }

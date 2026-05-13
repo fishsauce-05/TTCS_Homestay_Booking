@@ -1,26 +1,34 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Request, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Query } from '@nestjs/common';
 import { HomestayService } from './homestay.service';
 import { CreateHomestayDto } from './dto/create-homestay.dto';
 import { UpdateHomestayDto } from './dto/update-homestay.dto';
 import { UpdateStatusHomestayDto } from './dto/update-status-homestay.dto';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { RolesGuard } from '../auth/guards/roles.guard';
+import { Roles } from '../auth/decorators/roles.decorator';
+import { CurrentUser } from '../auth/decorators/current-user.decorator';
+import { User } from '../user/entities/user.entity';
 
 @Controller('homestays')
 export class HomestayController {
   constructor(private readonly homestayService: HomestayService) {}
 
   @Post()
-  async createHomestay(@Body() createHomestayDto: CreateHomestayDto) {
-    return this.homestayService.createHomestay(createHomestayDto);
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('owner', 'admin')
+  createHomestay(@Body() dto: CreateHomestayDto, @CurrentUser() user: User) {
+    return this.homestayService.createHomestay(user.id, dto);
   }
 
   @Get('search')
-  async searchHomestays(@Query('keyword') keyword: string) {
-    return this.homestayService.searchHomestays(keyword);
+  searchHomestays(@Query('keyword') keyword: string) {
+    return this.homestayService.searchHomestays(keyword || '');
   }
 
   @Get('my-homestays')
-  async getMyHomestays(@Request() req: any) {
-    return this.homestayService.getHomestaysByOwner(req.user.id);
+  @UseGuards(JwtAuthGuard)
+  getMyHomestays(@CurrentUser() user: User) {
+    return this.homestayService.getHomestaysByOwner(user.id);
   }
 
   @Get()
@@ -30,28 +38,28 @@ export class HomestayController {
   }
 
   @Get(':id')
-  async getHomestayById(@Param('id') id: string) {
+  getHomestayById(@Param('id') id: string) {
     return this.homestayService.getHomestayById(id);
   }
 
   @Patch(':id')
-  async updateHomestay(
-    @Param('id') id: string,
-    @Body() updateHomestayDto: UpdateHomestayDto,
-  ) {
-    return this.homestayService.updateHomestay(id, updateHomestayDto);
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('owner', 'admin')
+  updateHomestay(@Param('id') id: string, @Body() dto: UpdateHomestayDto) {
+    return this.homestayService.updateHomestay(id, dto);
   }
 
   @Patch(':id/status')
-  async updateStatus(
-    @Param('id') id: string,
-    @Body() updateStatusDto: UpdateStatusHomestayDto,
-  ) {
-    return this.homestayService.updateStatusHomestay(id, updateStatusDto);
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('admin')
+  updateStatus(@Param('id') id: string, @Body() dto: UpdateStatusHomestayDto) {
+    return this.homestayService.updateStatusHomestay(id, dto);
   }
 
   @Delete(':id')
-  async deleteHomestay(@Param('id') id: string) {
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('owner', 'admin')
+  deleteHomestay(@Param('id') id: string) {
     return this.homestayService.deleteHomestay(id);
   }
 }

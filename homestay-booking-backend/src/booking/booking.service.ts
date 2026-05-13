@@ -1,240 +1,109 @@
-import { Injectable, NotFoundException, BadRequestException, ConflictException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository, Between } from 'typeorm';
-import { Booking } from './entities/booking.entity';
+import { BadRequestException, Inject, Injectable, NotFoundException } from '@nestjs/common';
+import { BookingStatus } from '../common/enums';
+import { CalculatePriceDto } from './dto/calculate-price.dto';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingStatusDto } from './dto/update-booking-status.dto';
-import { CalculatePriceDto } from './dto/calculate-price.dto';
-import { BookingStatus } from './enums/booking-status.enum';
-import { PriceCalendarService } from '../price-calendar/price-calendar.service';
-import { HomestayService } from '../homestay/homestay.service';
-import { VoucherRedemptionService } from '../voucher-redemption/voucher-redemption.service';
+import { Booking } from './entities/booking.entity';
+import { CalculatePriceHandler } from './application/handlers/calculate-price.handler';
+import { CancelBookingHandler } from './application/handlers/cancel-booking.handler';
+import { CompleteBookingHandler } from './application/handlers/complete-booking.handler';
+import { ConfirmBookingHandler } from './application/handlers/confirm-booking.handler';
+import { CreateBookingHandler } from './application/handlers/create-booking.handler';
+import { GetAllBookingsHandler } from './application/handlers/get-all-bookings.handler';
+import { GetBookingDetailHandler } from './application/handlers/get-booking-detail.handler';
+import { GetMyBookingsHandler } from './application/handlers/get-my-bookings.handler';
+import { GetOwnerBookingsHandler } from './application/handlers/get-owner-bookings.handler';
+import { GetRoomBookingsHandler } from './application/handlers/get-room-bookings.handler';
+import { CalculatePriceQuery } from './application/queries/calculate-price.query';
+import { GetAllBookingsQuery } from './application/queries/get-all-bookings.query';
+import { GetBookingDetailQuery } from './application/queries/get-booking-detail.query';
+import { GetMyBookingsQuery } from './application/queries/get-my-bookings.query';
+import { GetOwnerBookingsQuery } from './application/queries/get-owner-bookings.query';
+import { GetRoomBookingsQuery } from './application/queries/get-room-bookings.query';
+import { CancelBookingCommand } from './application/commands/cancel-booking.command';
+import { CompleteBookingCommand } from './application/commands/complete-booking.command';
+import { ConfirmBookingCommand } from './application/commands/confirm-booking.command';
+import { CreateBookingCommand } from './application/commands/create-booking.command';
+import { BOOKING_REPOSITORY } from './application/ports/booking-repository.port';
+import { BOOKING_VOUCHER } from './application/ports/voucher.port';
+import type { BookingRepositoryPort } from './application/ports/booking-repository.port';
+import type { BookingVoucherPort } from './application/ports/voucher.port';
 
 @Injectable()
 export class BookingService {
   constructor(
-    @InjectRepository(Booking)
-    private readonly bookingRepository: Repository<Booking>,
-    private readonly priceCalendarService: PriceCalendarService,
-    private readonly voucherRedemptionService: VoucherRedemptionService,
-    private readonly homestayService: HomestayService,
+    private readonly calculatePriceHandler: CalculatePriceHandler,
+    private readonly createBookingHandler: CreateBookingHandler,
+    private readonly getBookingDetailHandler: GetBookingDetailHandler,
+    private readonly getMyBookingsHandler: GetMyBookingsHandler,
+    private readonly getRoomBookingsHandler: GetRoomBookingsHandler,
+    private readonly getOwnerBookingsHandler: GetOwnerBookingsHandler,
+    private readonly getAllBookingsHandler: GetAllBookingsHandler,
+    private readonly confirmBookingHandler: ConfirmBookingHandler,
+    private readonly cancelBookingHandler: CancelBookingHandler,
+    private readonly completeBookingHandler: CompleteBookingHandler,
+    @Inject(BOOKING_REPOSITORY)
+    private readonly bookings: BookingRepositoryPort,
+    @Inject(BOOKING_VOUCHER)
+    private readonly vouchers: BookingVoucherPort,
   ) {}
 
-  async calculatePrice(calculatePriceDto: CalculatePriceDto): Promise<{
-    numberOfNights: number;
-    roomPrice: number;
-    totalPrice: number;
-    discountAmount: number;
-  }> {
-    const { homestayId, checkInDate, checkOutDate, numberOfGuests, voucherId } = calculatePriceDto;
-
-    // Validate homestay exists
-    await this.homestayService.getHomestayById(homestayId);
-
-    // Validate dates
-    const checkIn = new Date(checkInDate);
-    const checkOut = new Date(checkOutDate);
-
-    if (checkIn >= checkOut) {
-      throw new BadRequestException('Ngày check-out phải sau check-in');
-    }
-
-    if (numberOfGuests <= 0) {
-      throw new BadRequestException('Số lượng khách phải lớn hơn 0');
-    }
-
-    // Calculate number of nights
-    const numberOfNights = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24));
-
-    const prices = await this.priceCalendarService.getPriceRange(
-      homestayId,
-      checkInDate,
-      checkOutDate,
-    );
-
-    if (prices.length === 0) {
-      throw new BadRequestException('Không có giá cho ngày đã chọn');
-    }
-
-    const totalRoomPrice = prices.reduce((sum, p) => sum + parseFloat(p.price.toString()), 0);
-    const roomPrice = totalRoomPrice / numberOfNights;
-
-    let discountAmount = 0;
-
-    if (voucherId) {
-      const voucher = await this.voucherRedemptionService.validateVoucherForBooking(voucherId);
-      discountAmount = this.voucherRedemptionService.calculateDiscount(
-        voucher.discountValue,
-        voucher.type,
-        totalRoomPrice,
-      );
-    }
-
-    const totalPrice = totalRoomPrice - discountAmount;
-
-    return {
-      numberOfNights,
-      roomPrice,
-      totalPrice,
-      discountAmount,
-    };
+  calculatePrice(dto: CalculatePriceDto) {
+    return this.calculatePriceHandler.execute(new CalculatePriceQuery(dto));
   }
 
-  async createBooking(userId: string, createBookingDto: CreateBookingDto): Promise<Booking> {
-    const { homestayId, checkInDate, checkOutDate, numberOfGuests, voucherId } = createBookingDto;
-
-    // Validate dates
-    const checkIn = new Date(checkInDate);
-    const checkOut = new Date(checkOutDate);
-
-    if (checkIn >= checkOut) {
-      throw new BadRequestException('Ngày check-out phải sau check-in');
-    }
-
-    const existingBooking = await this.bookingRepository.findOne({
-      where: {
-        homestayId,
-        checkInDate: Between(checkInDate, checkOutDate),
-        status: BookingStatus.CONFIRMED,
-      },
-    });
-
-    if (existingBooking) {
-      throw new ConflictException('Homestay đã được đặt trong khoảng thời gian này');
-    }
-
-    const priceInfo = await this.calculatePrice(createBookingDto);
-
-    const booking = this.bookingRepository.create({
-      userId,
-      homestayId,
-      checkInDate,
-      checkOutDate,
-      numberOfGuests,
-      voucherId: voucherId || null,
-      roomPrice: priceInfo.roomPrice,
-      discountAmount: priceInfo.discountAmount,
-      totalPrice: priceInfo.totalPrice,
-      status: BookingStatus.PENDING,
-    });
-
-    const savedBooking = await this.bookingRepository.save(booking);
-
-    if (voucherId) {
-      await this.voucherRedemptionService.reserveVoucher(
-        voucherId,
-        savedBooking.id,
-        userId,
-        priceInfo.discountAmount,
-      );
-    }
-
-    return savedBooking;
+  createBooking(userId: string, dto: CreateBookingDto): Promise<Booking> {
+    return this.createBookingHandler.execute(new CreateBookingCommand(userId, dto));
   }
 
-  async getBookingById(id: string): Promise<Booking> {
-    const booking = await this.bookingRepository.findOne({
-      where: { id },
-      relations: ['user', 'homestay'],
-    });
-
-    if (!booking) {
-      throw new NotFoundException('Booking không tồn tại');
-    }
-
-    return booking;
+  getBookingById(id: string): Promise<Booking> {
+    return this.getBookingDetailHandler.execute(new GetBookingDetailQuery(id));
   }
 
-  async getMyBookings(userId: string): Promise<Booking[]> {
-    return this.bookingRepository.find({
-      where: { userId },
-      relations: ['homestay'],
-      order: { createdAt: 'DESC' },
-    });
+  getMyBookings(userId: string): Promise<Booking[]> {
+    return this.getMyBookingsHandler.execute(new GetMyBookingsQuery(userId));
   }
 
-  async getHomestayBookings(homestayId: string): Promise<Booking[]> {
-    return this.bookingRepository.find({
-      where: { homestayId },
-      relations: ['user'],
-      order: { createdAt: 'DESC' },
-    });
+  getRoomBookings(roomId: string): Promise<Booking[]> {
+    return this.getRoomBookingsHandler.execute(new GetRoomBookingsQuery(roomId));
   }
 
-  async updateBookingStatus(id: string, updateBookingStatusDto: UpdateBookingStatusDto): Promise<Booking> {
-    const booking = await this.getBookingById(id);
-
-    const { status, cancellationReason } = updateBookingStatusDto;
-
-    if (booking.status === BookingStatus.COMPLETED) {
-      throw new BadRequestException('Không thể thay đổi booking đã hoàn thành');
-    }
-
-    if (booking.status === BookingStatus.CANCELLED) {
-      throw new BadRequestException('Không thể thay đổi booking đã bị hủy');
-    }
-
-    if (status === BookingStatus.CANCELLED) {
-      booking.cancellationReason = cancellationReason || null;
-    }
-
-    booking.status = status;
-
-    return this.bookingRepository.save(booking);
+  getHomestayBookings(homestayId: string): Promise<Booking[]> {
+    return this.getOwnerBookingsHandler.execute(new GetOwnerBookingsQuery(homestayId));
   }
 
-  async confirmBooking(id: string): Promise<Booking> {
-    const booking = await this.getBookingById(id);
-
-    if (booking.status !== BookingStatus.PENDING) {
-      throw new BadRequestException('Chỉ có thể confirm booking pending');
-    }
-
-    booking.status = BookingStatus.CONFIRMED;
-    return this.bookingRepository.save(booking);
+  getAllBookings(): Promise<Booking[]> {
+    return this.getAllBookingsHandler.execute(new GetAllBookingsQuery());
   }
 
-  async cancelBooking(id: string, cancellationReason: string): Promise<Booking> {
-    const booking = await this.getBookingById(id);
-
-    if (booking.status === BookingStatus.COMPLETED) {
-      throw new BadRequestException('Không thể hủy booking đã hoàn thành');
-    }
-
-    booking.status = BookingStatus.CANCELLED;
-    booking.cancellationReason = cancellationReason || null;
-    const updatedBooking = await this.bookingRepository.save(booking);
-
-    if (updatedBooking.voucherId) {
-      await this.voucherRedemptionService.releaseByBookingId(updatedBooking.id);
-    }
-
-    return updatedBooking;
+  confirmBooking(id: string): Promise<Booking> {
+    return this.confirmBookingHandler.execute(new ConfirmBookingCommand(id));
   }
 
-  async completeBooking(id: string): Promise<Booking> {
-    const booking = await this.getBookingById(id);
+  cancelBooking(id: string, cancellationReason: string): Promise<Booking & { penaltyPercent: number }> {
+    return this.cancelBookingHandler.execute(new CancelBookingCommand(id, cancellationReason));
+  }
 
-    if (booking.status !== BookingStatus.CONFIRMED) {
-      throw new BadRequestException('Chỉ có thể complete booking confirmed');
-    }
+  completeBooking(id: string): Promise<Booking> {
+    return this.completeBookingHandler.execute(new CompleteBookingCommand(id));
+  }
 
-    booking.status = BookingStatus.COMPLETED;
-    return this.bookingRepository.save(booking);
+  async updateBookingStatus(id: string, dto: UpdateBookingStatusDto): Promise<Booking> {
+    const booking = await this.bookings.findById(id);
+    if (!booking) throw new NotFoundException('Booking khong ton tai');
+    if (booking.status === BookingStatus.COMPLETED) throw new BadRequestException('Khong the thay doi booking da hoan thanh');
+    if (booking.status === BookingStatus.CANCELLED) throw new BadRequestException('Khong the thay doi booking da bi huy');
+    booking.status = dto.status;
+    if (dto.cancellationReason) booking.cancellationReason = dto.cancellationReason;
+    return this.bookings.save(booking);
   }
 
   async deleteBooking(id: string): Promise<{ message: string }> {
-    const booking = await this.getBookingById(id);
-
-    if (booking.status !== BookingStatus.PENDING) {
-      throw new BadRequestException('Chỉ có thể xóa booking pending');
-    }
-
-    if (booking.voucherId) {
-      await this.voucherRedemptionService.releaseByBookingId(booking.id);
-    }
-
-    await this.bookingRepository.remove(booking);
-    return { message: 'Xóa booking thành công' };
+    const booking = await this.bookings.findById(id);
+    if (!booking) throw new NotFoundException('Booking khong ton tai');
+    if (booking.status !== BookingStatus.PENDING) throw new BadRequestException('Chi co the xoa booking dang cho');
+    if (booking.voucherId) await this.vouchers.decrementUsage(booking.voucherId);
+    await this.bookings.remove(booking);
+    return { message: 'Xoa booking thanh cong' };
   }
 }

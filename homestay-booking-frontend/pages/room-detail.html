@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi tiết phòng</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+<main>
+<section id="section-room-detail" class="app-section active">
+  <div class="container-xl py-5 mt-5">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb breadcrumb-brand">
+        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a href="#">Homestay</a></li>
+        <li class="breadcrumb-item active" id="breadcrumb-room-name" data-bind="room_name">Chi tiết phòng</li>
+      </ol>
+    </nav>
+
+    <!-- Room Name + Rating -->
+    <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+      <div>
+        <h1 class="detail-room-title skeleton-text-lg" id="detail-room-name" data-bind="room_name"></h1>
+        <div class="d-flex align-items-center gap-3 mt-2">
+          <span class="detail-badge-type skeleton-badge" id="detail-room-type" data-bind="room_type"></span>
+          <span class="detail-location skeleton-text-sm" id="detail-room-location">
+            <i class="bi bi-geo-alt-fill me-1"></i><span data-bind="room_location"></span>
+          </span>
+        </div>
+      </div>
+      <div class="text-end">
+        <div class="detail-price skeleton-text-lg" id="detail-room-price" data-bind="nightly_rate_formatted"></div>
+        <small class="text-muted">mỗi đêm</small>
+      </div>
+    </div>
+
+    <!-- Photo Gallery -->
+    <div class="photo-gallery mb-4" id="detail-gallery">
+      <div class="gallery-main skeleton-gallery"></div>
+      <div class="gallery-thumbs mt-2 row g-2">
+        <div class="col-3"><div class="gallery-thumb skeleton-thumb"></div></div>
+        <div class="col-3"><div class="gallery-thumb skeleton-thumb"></div></div>
+        <div class="col-3"><div class="gallery-thumb skeleton-thumb"></div></div>
+        <div class="col-3"><div class="gallery-thumb skeleton-thumb"></div></div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- LEFT: Detail Info -->
+      <div class="col-lg-8">
+
+        <!-- Quick Stats -->
+        <div class="quick-stats-bar mb-4">
+          <div class="stat-item">
+            <i class="bi bi-people-fill"></i>
+            <span class="stat-label">Sức chứa</span>
+            <strong id="detail-capacity" data-bind="capacity"></strong>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <i class="bi bi-door-open-fill"></i>
+            <span class="stat-label">Loại phòng</span>
+            <strong id="detail-type-txt" data-bind="room_type_label"></strong>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <i class="bi bi-star-fill text-warning"></i>
+            <span class="stat-label">Đánh giá</span>
+            <strong id="detail-rating" data-bind="avg_rating"></strong>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <i class="bi bi-chat-dots-fill"></i>
+            <span class="stat-label">Nhận xét</span>
+            <strong id="detail-review-count" data-bind="review_count"></strong>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="detail-section mb-4">
+          <h4 class="detail-section-title">Mô tả</h4>
+          <div class="detail-description skeleton-para" id="detail-description" data-bind="description"></div>
+        </div>
+
+        <!-- Amenities -->
+        <div class="detail-section mb-4">
+          <h4 class="detail-section-title">Tiện ích</h4>
+          <div class="amenities-grid" id="detail-amenities" data-bind="amenities">
+            <div class="amenity-item skeleton-amenity"><div class="amenity-icon"></div><div class="amenity-label"></div></div>
+            <div class="amenity-item skeleton-amenity"><div class="amenity-icon"></div><div class="amenity-label"></div></div>
+            <div class="amenity-item skeleton-amenity"><div class="amenity-icon"></div><div class="amenity-label"></div></div>
+            <div class="amenity-item skeleton-amenity"><div class="amenity-icon"></div><div class="amenity-label"></div></div>
+            <div class="amenity-item skeleton-amenity"><div class="amenity-icon"></div><div class="amenity-label"></div></div>
+            <div class="amenity-item skeleton-amenity"><div class="amenity-icon"></div><div class="amenity-label"></div></div>
+          </div>
+        </div>
+
+        <!-- Availability & Pricing Schedule -->
+        <div class="detail-section mb-4">
+          <div class="mb-3">
+            <h4 class="detail-section-title mb-0">Lịch trống &amp; Giá theo ngày</h4>
+          </div>
+          <div class="availability-calendar" id="detail-availability" data-bind="availability_calendar">
+            <div class="calendar-skeleton">
+              <div class="cal-row skeleton-cal-row" style="width:100%"></div>
+              <div class="cal-row skeleton-cal-row" style="width:80%"></div>
+              <div class="cal-row skeleton-cal-row" style="width:90%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="detail-section mb-4" id="detail-reviews-section">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="detail-section-title mb-0">Nhận xét từ khách hàng</h4>
+            <button class="btn btn-brand-outline btn-sm d-none" id="btn-write-review"><i class="bi bi-pencil me-1"></i>Viết đánh giá</button>
+          </div>
+          <div class="reviews-summary mb-3" id="detail-reviews-summary" data-bind="reviews_summary">
+            <div class="rating-big skeleton-text-lg" style="width:60px"></div>
+          </div>
+          <div id="detail-reviews-list" data-bind="reviews_list">
+            <div class="review-card skeleton-review mb-3">
+              <div class="skeleton-avatar"></div>
+              <div class="flex-grow-1">
+                <div class="skeleton-text-sm mb-2" style="width:40%"></div>
+                <div class="skeleton-text-sm mb-1" style="width:100%"></div>
+                <div class="skeleton-text-sm" style="width:70%"></div>
+              </div>
+            </div>
+            <div class="review-card skeleton-review mb-3">
+              <div class="skeleton-avatar"></div>
+              <div class="flex-grow-1">
+                <div class="skeleton-text-sm mb-2" style="width:50%"></div>
+                <div class="skeleton-text-sm mb-1" style="width:100%"></div>
+                <div class="skeleton-text-sm" style="width:60%"></div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-brand-outline btn-sm mt-2 d-none" id="btn-load-more-reviews">
+            Xem thêm nhận xét <i class="bi bi-chevron-down ms-1"></i>
+          </button>
+        </div>
+
+        <!-- Map -->
+        <div class="detail-section mb-4">
+          <h4 class="detail-section-title">Vị trí</h4>
+          <div class="map-container" id="detail-map-container">
+            <iframe
+              id="detail-map-iframe"
+              class="map-iframe"
+              data-lat=""
+              data-lng=""
+              src="about:blank"
+              width="100%"
+              height="350"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Vị trí Homestay"
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Booking Widget (sticky) -->
+      <div class="col-lg-4">
+        <div class="booking-widget sticky-top" style="top: 90px;">
+          <div class="widget-price-row mb-3">
+            <span class="widget-price" id="widget-price" data-bind="nightly_rate_formatted"></span>
+            <span class="widget-per-night">/ đêm</span>
+          </div>
+          <div class="widget-rating-row mb-3">
+            <i class="bi bi-star-fill text-warning me-1"></i>
+            <strong id="widget-rating" data-bind="avg_rating"></strong>
+            <span class="text-muted ms-1">(<span id="widget-review-count" data-bind="review_count"></span> đánh giá)</span>
+          </div>
+
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label small mb-1">Check-in</label>
+              <input type="date" id="widget-checkin" class="form-control form-control-sm">
+            </div>
+            <div class="col-6">
+              <label class="form-label small mb-1">Check-out</label>
+              <input type="date" id="widget-checkout" class="form-control form-control-sm">
+            </div>
+            <div class="col-12">
+              <label class="form-label small mb-1">Số khách</label>
+              <select id="widget-guests" class="form-select form-select-sm">
+                <option value="1">1 khách</option>
+                <option value="2">2 khách</option>
+                <option value="3">3 khách</option>
+                <option value="4">4 khách</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="widget-nights-row mb-3 d-none" id="widget-nights-row">
+            <div class="d-flex justify-content-between">
+              <span id="widget-nights-label">— đêm × —</span>
+              <span id="widget-nights-subtotal">—</span>
+            </div>
+          </div>
+          <div class="alert alert-danger py-1 px-2 small d-none" id="widget-date-error">
+            <i class="bi bi-exclamation-triangle me-1"></i>Ngày Check-out phải sau Check-in!
+          </div>
+
+          <button class="btn btn-brand w-100 btn-lg mb-2" id="btn-book-now" data-room-id="">
+            <i class="bi bi-calendar2-plus me-2"></i>Đặt phòng ngay
+          </button>
+          <p class="text-center text-muted small mb-0">Không bị tính phí cho đến khi xác nhận</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="../js/features/room-detail/room-detail-init.js"></script>
+</body>
+</html>

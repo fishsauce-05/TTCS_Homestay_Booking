@@ -1,85 +1,44 @@
-// src/review/review.service.ts
-
-import { Injectable, NotFoundException, BadRequestException, ForbiddenException } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Review } from './entities/review.entity';
-import { Image } from '../image/entities/image.entity';
+import { Injectable } from '@nestjs/common';
+import { CreateReviewCommand } from './application/commands/create-review.command';
+import { DeleteReviewCommand } from './application/commands/delete-review.command';
+import { ReplyReviewCommand } from './application/commands/reply-review.command';
+import { CreateReviewHandler } from './application/handlers/create-review.handler';
+import { DeleteReviewHandler } from './application/handlers/delete-review.handler';
+import { GetHomestayReviewsHandler } from './application/handlers/get-homestay-reviews.handler';
+import { GetReviewDetailHandler } from './application/handlers/get-review-detail.handler';
+import { ReplyReviewHandler } from './application/handlers/reply-review.handler';
+import { GetHomestayReviewsQuery } from './application/queries/get-homestay-reviews.query';
+import { GetReviewDetailQuery } from './application/queries/get-review-detail.query';
 import { CreateReviewDto } from './dto/create-review.dto';
 import { ReviewReplyDto } from './dto/review-reply.dto';
 
 @Injectable()
 export class ReviewService {
   constructor(
-    @InjectRepository(Review)
-    private reviewRepository: Repository<Review>,
-    @InjectRepository(Image)
-    private imageRepository: Repository<Image>,
+    private readonly createReviewHandler: CreateReviewHandler,
+    private readonly deleteReviewHandler: DeleteReviewHandler,
+    private readonly getHomestayReviewsHandler: GetHomestayReviewsHandler,
+    private readonly getReviewDetailHandler: GetReviewDetailHandler,
+    private readonly replyReviewHandler: ReplyReviewHandler,
   ) {}
 
-  async create(homestayId: string, userId: string, createReviewDto: CreateReviewDto) {
-    const review = this.reviewRepository.create({
-      homestayId,
-      userId,
-      rating: createReviewDto.rating,
-      comment: createReviewDto.comment,
-    });
-
-    const savedReview = await this.reviewRepository.save(review);
-
-    // Save images nếu có
-    if (createReviewDto.images && createReviewDto.images.length > 0) {
-      const images = createReviewDto.images.map((url) => ({
-        url,
-        reviewId: savedReview.id,
-        homestayId: null,
-        altText: null,
-      }));
-      await this.imageRepository.insert(images);
-    }
-
-    return this.getReviewById(savedReview.id);
+  create(homestayId: string, userId: string, createReviewDto: CreateReviewDto) {
+    return this.createReviewHandler.execute(new CreateReviewCommand(homestayId, userId, createReviewDto));
   }
 
-  async getReviewsByHomestay(homestayId: string) {
-    return this.reviewRepository.find({
-      where: { homestayId },
-      relations: ['user', 'images'],
-      order: { createdAt: 'DESC' },
-    });
+  getReviewsByHomestay(homestayId: string) {
+    return this.getHomestayReviewsHandler.execute(new GetHomestayReviewsQuery(homestayId));
   }
 
-  async getReviewById(id: string) {
-    const review = await this.reviewRepository.findOne({
-      where: { id },
-      relations: ['user', 'owner', 'images'],
-    });
-
-    if (!review) {
-      throw new NotFoundException('Review không tồn tại');
-    }
-
-    return review;
+  getReviewById(id: string) {
+    return this.getReviewDetailHandler.execute(new GetReviewDetailQuery(id));
   }
 
-  async reply(reviewId: string, userId: string, reviewReplyDto: ReviewReplyDto) {
-    const review = await this.getReviewById(reviewId);
-    
-    review.ownerReply = reviewReplyDto.ownerReply;
-    review.ownerId = userId;
-    review.replyAt = new Date();
-
-    return this.reviewRepository.save(review);
+  reply(reviewId: string, userId: string, reviewReplyDto: ReviewReplyDto) {
+    return this.replyReviewHandler.execute(new ReplyReviewCommand(reviewId, userId, reviewReplyDto));
   }
 
-  async deleteReview(id: string, userId: string) {
-    const review = await this.getReviewById(id);
-
-    if (review.userId !== userId) {
-      throw new ForbiddenException('Không có quyền xóa review này');
-    }
-
-    await this.reviewRepository.remove(review);
-    return { message: 'Review đã xóa' };
+  deleteReview(id: string, userId: string) {
+    return this.deleteReviewHandler.execute(new DeleteReviewCommand(id, userId));
   }
 }

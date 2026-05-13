@@ -1,30 +1,36 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToOne, JoinColumn } from 'typeorm';
+import {
+  Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn,
+  OneToOne, JoinColumn,
+} from 'typeorm';
 import { User } from '../../user/entities/user.entity';
 
 @Entity('bank_accounts')
 export class BankAccount {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @OneToOne(() => User, (user) => user.bankAccount, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'userId' })
-  user: User;
+  user!: User;
 
   @Column({ type: 'uuid', unique: true })
-  userId: string;
+  userId!: string;
 
   @Column({ type: 'varchar', length: 100 })
-  bankName: string;
+  bankName!: string;
 
-  @Column({ type: 'varchar', length: 20 })
-  accountNumber: string;
+  @Column({ type: 'varchar', length: 50 })
+  accountNumber!: string;
 
-  @Column({ type: 'boolean', default: true })
-  isVerified: boolean;
+  @Column({ type: 'varchar', length: 100, default: '' })
+  accountHolderName!: string;
+
+  @Column({ type: 'boolean', default: false })
+  isVerified!: boolean;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 }

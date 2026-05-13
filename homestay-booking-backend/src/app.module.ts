@@ -5,15 +5,16 @@ import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { HomestayModule } from './homestay/homestay.module';
 import { AmenityModule } from './amenity/amenity.module';
-import { ImageModule } from './image/image.module';
-import { PriceCalendarModule } from './price-calendar/price-calendar.module';
-import { VoucherModule } from './voucher/voucher.module';
+import { RoomModule } from './room/room.module';
+import { PricingScheduleModule } from './pricing-schedule/pricing-schedule.module';
+import { PromotionModule } from './promotion/promotion.module';
 import { BookingModule } from './booking/booking.module';
-import { BankAccountModule } from './bank-account/bank-account.module';
-import { PaymentModule } from './payment/payment.module';
+import { InvoiceModule } from './invoice/invoice.module';
+import { StatsModule } from './stats/stats.module';
 import { ReviewModule } from './review/review.module';
+import { PaymentModule } from './payment/payment.module';
+import { BankAccountModule } from './bank-account/bank-account.module';
 import { NotificationModule } from './notification/notification.module';
-import { VoucherRedemptionModule } from './voucher-redemption/voucher-redemption.module';
 
 @Module({
   imports: [
@@ -23,28 +24,29 @@ import { VoucherRedemptionModule } from './voucher-redemption/voucher-redemption
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: parseInt(process.env.DB_PORT || '5432', 10),
-      username: process.env.DB_USERNAME || 'postgres',
-      password: process.env.DB_PASSWORD || 'fishsauce',
-      database: process.env.DB_NAME || 'homestay_booking',
+      host: process.env.DATABASE_HOST,
+      port: parseInt(process.env.DATABASE_PORT || '5432', 10),
+      username: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_NAME,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
-      logging: true,
+      logging: false,
     }),
     AuthModule,
     UserModule,
     HomestayModule,
     AmenityModule,
-    ImageModule,
-    PriceCalendarModule,
-    VoucherModule,
+    RoomModule,
+    PricingScheduleModule,
+    PromotionModule,
     BookingModule,
-    BankAccountModule,
-    PaymentModule,
+    InvoiceModule,
+    StatsModule,
     ReviewModule,
+    PaymentModule,
+    BankAccountModule,
     NotificationModule,
-    VoucherRedemptionModule,
   ],
 })
 export class AppModule {}

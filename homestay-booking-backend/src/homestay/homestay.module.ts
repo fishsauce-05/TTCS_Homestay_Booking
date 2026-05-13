@@ -3,10 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { HomestayService } from './homestay.service';
 import { HomestayController } from './homestay.controller';
 import { Homestay } from './entities/homestay.entity';
-import { Amenity } from '../amenity/entities/amenity.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Homestay, Amenity])],
+  imports: [TypeOrmModule.forFeature([Homestay])],
   controllers: [HomestayController],
   providers: [HomestayService],
   exports: [HomestayService],

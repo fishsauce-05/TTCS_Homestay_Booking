@@ -5,7 +5,7 @@ import { UpdateAmenityDto } from './dto/update-amenity.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
 import { Roles } from '../auth/decorators/roles.decorator';
-import { UserRole } from '../user/enums/user-role.enum';
+import { UserRole } from '../common/enums';
 import { Amenity } from './entities/amenity.entity';
 
 @Controller('amenity')

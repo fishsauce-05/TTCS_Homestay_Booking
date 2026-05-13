@@ -1,9 +1,6 @@
-import { IsString, IsNumber, IsInt, IsUUID, IsOptional, IsArray } from 'class-validator';
+import { IsString, IsNumber, IsOptional } from 'class-validator';
 
 export class CreateHomestayDto {
-  @IsUUID()
-  userId!: string;
-
   @IsString()
   title!: string;
 
@@ -13,26 +10,11 @@ export class CreateHomestayDto {
   @IsString()
   address!: string;
 
+  @IsOptional()
   @IsNumber()
-  latitude!: number;
-
-  @IsNumber()
-  longitude!: number;
-
-  @IsInt()
-  maxGuests!: number;
-
-  @IsInt()
-  bedrooms!: number;
-
-  @IsInt()
-  bathrooms!: number;
-
-  @IsNumber()
-  basePrice!: number;
+  latitude?: number;
 
   @IsOptional()
-  @IsArray()
-  @IsUUID('4', { each: true })
-  amenityIds?: string[];
+  @IsNumber()
+  longitude?: number;
 }

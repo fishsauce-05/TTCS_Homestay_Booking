@@ -1,8 +1,8 @@
-import { IsUUID, IsDateString, IsInt, Min, IsOptional } from 'class-validator';
+import { IsUUID, IsDateString, IsInt, Min, IsOptional, IsString } from 'class-validator';
 
 export class CreateBookingDto {
   @IsUUID()
-  homestayId!: string;
+  roomId!: string;
 
   @IsDateString()
   checkInDate!: string;
@@ -17,4 +17,8 @@ export class CreateBookingDto {
   @IsUUID()
   @IsOptional()
   voucherId?: string;
+
+  @IsString()
+  @IsOptional()
+  voucherCode?: string;
 }

@@ -1,65 +1,61 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, JoinColumn, OneToOne } from 'typeorm';
-import { UserRole } from '../enums/user-role.enum';
-import { Voucher } from '../../voucher/entities/voucher.entity';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany, OneToOne, JoinColumn } from 'typeorm';
+import { UserRole } from '../../common/enums';
+import { Voucher } from '../../promotion/infrastructure/persistence/entities/voucher.entity';
 import { BankAccount } from '../../bank-account/entities/bank-account.entity';
-import { Notification } from '../../notification/entities/notification.entity';
 
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  id!: string;
 
   @Column({ type: 'varchar', length: 100 })
-  fullName: string;
+  fullName!: string;
 
   @Column({ type: 'varchar', length: 50, unique: true })
-  nickname: string;
+  nickname!: string;
 
   @Column({ type: 'varchar', length: 255, unique: true })
-  email: string;
+  email!: string;
 
   @Column({ type: 'varchar', length: 255 })
-  password: string;
+  password!: string;
 
   @Column({ type: 'varchar', length: 20 })
-  phone: string;
+  phone!: string;
 
   @Column({ type: 'varchar', length: 255, nullable: true })
-  avatar: string;
+  avatar!: string;
 
   @Column({ type: 'varchar', length: 255, nullable: true })
-  address: string;
+  address!: string;
 
   @Column({
     type: 'enum',
     enum: UserRole,
     default: UserRole.GUEST,
   })
-  role: UserRole;
+  role!: UserRole;
 
   @Column({ type: 'boolean', default: false })
-  isEmailVerified: boolean;
+  isEmailVerified!: boolean;
 
   @Column({ type: 'boolean', default: false })
-  isLocked: boolean;
+  isLocked!: boolean;
 
   @Column({ type: 'text', nullable: true })
-  lockReason: string;
+  lockReason!: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  createdAt!: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updatedAt!: Date;
 
   @OneToMany(() => Voucher, (voucher) => voucher.user)
   @JoinColumn({ name: 'userId' })
-  vouchers: Voucher[];
+  vouchers!: Voucher[];
 
-  @OneToOne(() => BankAccount, (bankAccount) => bankAccount.user)
-  bankAccount: BankAccount;
-
-  @OneToMany(() => Notification, (notification) => notification.user)
-  notifications: Notification[];
+  @OneToOne(() => BankAccount, (bankAccount) => bankAccount.user, { nullable: true, eager: false })
+  bankAccount!: BankAccount | null;
 
 }

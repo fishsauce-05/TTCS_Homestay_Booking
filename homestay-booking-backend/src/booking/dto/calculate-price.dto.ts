@@ -2,7 +2,7 @@ import { IsUUID, IsDateString, IsInt, Min, IsOptional } from 'class-validator';
 
 export class CalculatePriceDto {
   @IsUUID()
-  homestayId!: string;
+  roomId!: string;
 
   @IsDateString()
   checkInDate!: string;
