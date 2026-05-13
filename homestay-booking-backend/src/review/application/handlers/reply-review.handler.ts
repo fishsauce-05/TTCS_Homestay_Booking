@@ -13,7 +13,7 @@ export class ReplyReviewHandler {
 
   async execute(command: ReplyReviewCommand): Promise<Review> {
     const review = await this.reviews.findById(command.reviewId);
-    if (!review) throw new NotFoundException('Review khong ton tai');
+    if (!review) throw new NotFoundException('Review không tồn tại');
     review.ownerReply = command.dto.ownerReply;
     review.ownerId = command.ownerId;
     review.replyAt = new Date();
